@@ -1,0 +1,2 @@
+# RobocupPy
+Robocup python wrapper
