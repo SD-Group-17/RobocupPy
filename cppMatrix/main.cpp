@@ -13,7 +13,8 @@ int main(int argc, char **argv) {
 
   QSMatrix<double> multMat = mat1 * mat2;
   QSMatrix<double> transposedMat = rectangularMatrix.transpose();
-  QSMatrix<double> identity = zeros.identity(2); //identity is a function on the QSMatrix class, so it has to be called on a rendom QS matrix. Dunno how to make it work better
+  QSMatrix<double> identity(4,8,0.0); //initialise empty 2by2 matrix
+  identity.setIdentity(); //identity is a function on the QSMatrix class, so it has to be called on a random QS matrix. Dunno how to make it work better
 
 
   addMat(0,0) = -1;

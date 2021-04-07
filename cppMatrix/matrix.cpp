@@ -158,16 +158,22 @@ QSMatrix<T> QSMatrix<T>::transpose() {
 }
 
 template<typename T>
-QSMatrix<T> QSMatrix<T>::identity(int m) {
-  QSMatrix result(m, m, 0.0);
+void  QSMatrix<T>::setIdentity() {
 
-  for (unsigned i=0; i<m; i++) {
-    
-    result(i,i) = 1;
-    
+
+  for (unsigned i=0; i<mat.size(); i++) {
+    mat[i].resize(rows, 0.0);
   }
 
-  return result;
+
+  for (int r = 0; r < rows; ++r) {
+    for (int c = 0; c < rows; ++c) {
+      this->mat[r][c] = (r == c) ? 1.0 : 0.0;
+    }
+  }
+
+  cols = rows; 
+
 }
 
 template<typename T>

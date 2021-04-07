@@ -28,7 +28,7 @@ template <typename T> class QSMatrix {
   QSMatrix<T> operator*(const QSMatrix<T>& rhs);
   QSMatrix<T>& operator*=(const QSMatrix<T>& rhs);
   QSMatrix<T> transpose();
-  QSMatrix<T> identity(int m);
+  void setIdentity();
 
   // Matrix/scalar operations                                                                                                                                                                                                     
   QSMatrix<T> operator+(const T& rhs);
