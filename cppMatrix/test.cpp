@@ -1,10 +1,9 @@
 
 #include "pch.h"
 #include "CppUnitTest.h"
-//#include "mymatrix.cpp"
+#include "mymatrix.cpp"
 #include "main.cpp"
 #include "mymatrix.h"
-#include "catch.hpp"
 #include <iostream>
 #include <sstream>
 
