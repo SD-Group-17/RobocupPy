@@ -137,7 +137,14 @@ myMatrix* myMatrix::multMatrix(const myMatrix &other) const{
  */
 myMatrix* myMatrix::square() const
 {
-    myMatrix * A = this->multMatrix(this->myMatrix);
+   //dimension for this matrix
+    int m = sizeof(this->data)/ sizeof(this->data[0]); //row
+    int n = sizeof(this->data[0])/ sizeof(this->data[0][0]); //column
+
+    myMatrix * B = new myMatrix(m,n);
+    B->data = this->data;
+
+    myMatrix * A = this->multMatrix(*B);
     return A;
 }
 
