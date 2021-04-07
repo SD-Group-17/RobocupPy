@@ -2,6 +2,10 @@
 #define __QS_MATRIX_CPP
 
 #include "matrix.h"
+#include <string>
+
+
+using namespace std;
 
 // Parameter Constructor                                                                                                                                                      
 template<typename T>
@@ -137,6 +141,8 @@ QSMatrix<T>& QSMatrix<T>::operator*=(const QSMatrix<T>& rhs) {
   return *this;
 }
 
+
+
 // Calculate a transpose of this matrix                                                                                                                                       
 template<typename T>
 QSMatrix<T> QSMatrix<T>::transpose() {
@@ -149,6 +155,33 @@ QSMatrix<T> QSMatrix<T>::transpose() {
   }
 
   return result;
+}
+
+template<typename T>
+QSMatrix<T> QSMatrix<T>::identity(int m) {
+  QSMatrix result(m, m, 0.0);
+
+  for (unsigned i=0; i<m; i++) {
+    
+    result(i,i) = 1;
+    
+  }
+
+  return result;
+}
+
+template<typename T>
+string QSMatrix<T>::printMatrix() {
+  string ret;
+  for (unsigned i=0; i<rows; i++) {
+    for (unsigned j=0; j<cols; j++) {
+      ret += to_string(this->mat[j][i]) + ", ";
+    }
+    ret+='\n';
+  }
+  ret+='\n';  
+  return ret;
+
 }
 
 // Matrix/scalar addition                                                                                                                                                     

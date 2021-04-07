@@ -2,6 +2,9 @@
 #define __QS_MATRIX_H
 
 #include <vector>
+#include <string>
+
+using namespace std;
 
 template <typename T> class QSMatrix {
  private:
@@ -25,6 +28,7 @@ template <typename T> class QSMatrix {
   QSMatrix<T> operator*(const QSMatrix<T>& rhs);
   QSMatrix<T>& operator*=(const QSMatrix<T>& rhs);
   QSMatrix<T> transpose();
+  QSMatrix<T> identity(int m);
 
   // Matrix/scalar operations                                                                                                                                                                                                     
   QSMatrix<T> operator+(const T& rhs);
@@ -44,8 +48,8 @@ template <typename T> class QSMatrix {
   unsigned get_rows() const;
   unsigned get_cols() const;
 
-  //Print Function
-  void print();
+  // Print Function
+  string printMatrix();
 
 };
 
