@@ -41,13 +41,16 @@ namespace testV1
 			fill_rand(B);
 
 			myMatrix *C = A.addMatrix(B);
-			//Assert::AreEqual(C->numRows == A.numRows);
-			REQUIRE(C->numRows == A.numRows);
-			REQUIRE(C->numCols == A.numCols);
+			Assert::AreEqual(C->numRows ,A.numRows);
+			Assert::AreEqual(C->numCols ,A.numCols);
+			//REQUIRE(C->numRows == A.numRows);
+			//REQUIRE(C->numCols == A.numCols);
 
 			for (int i = 0; i < A.numRows; ++i) {
 				for (int j = 0; j < A.numCols; ++j) {
-					REQUIRE(C->data[i][j] == A.data[i][j] + B.data[i][j]);
+					Assert::AreEqual(C->data[i][j] , A.data[i][j] + B.data[i][j]);
+					
+					//REQUIRE(C->data[i][j] == A.data[i][j] + B.data[i][j]);
 				}
 			}
 		}
