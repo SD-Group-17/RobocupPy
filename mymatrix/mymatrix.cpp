@@ -273,6 +273,8 @@ myMatrix& myMatrix::operator *=(const myMatrix &other){
 
 // how do you wrap operators??
 
+
+
 // Wrapper overhead
 static PyMethodDef myMethods[] = {
     {"myMatrix",py_myMatrix,METH_VARARGS,"Constructor"},
@@ -292,7 +294,7 @@ static struct PyModuleDef myMatrix = {
 };
 
 PyMODINIT_FUNC 
-PyInit_myModule(void)
+PyInit_myMatrix(void)
 {
     return PyModule_Create(&myMatrix);
 }
