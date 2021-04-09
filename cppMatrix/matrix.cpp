@@ -10,10 +10,11 @@ using namespace std;
 // Parameter Constructor                                                                                                                                                      
 template<typename T>
 QSMatrix<T>::QSMatrix(unsigned _rows, unsigned _cols, const T& _initial) {
-  mat.resize(_rows);
-  for (unsigned i=0; i<mat.size(); i++) {
-    mat[i].resize(_cols, _initial);
-  }
+
+  vector<vector<T> > placeHolder(_rows, vector<T>(_cols, _initial));
+  mat = placeHolder;
+  
+
   rows = _rows;
   cols = _cols;
 }
@@ -120,9 +121,20 @@ template<typename T>
 QSMatrix<T> QSMatrix<T>::operator*(const QSMatrix<T>& rhs) {
   unsigned rows = rhs.get_rows();
   unsigned cols = rhs.get_cols();
-  QSMatrix result(rows, cols, 0.0);
+  
 
-  for (unsigned i=0; i<rows; i++) {
+  unsigned n = this->get_rows();
+  unsigned m = this->get_cols();
+  
+  //We need to throw some sort of exception for when mat multiplication is invalid, don't know how though
+  // if(int(m) != int(cols) && false){
+  //   throw invalid_argument;
+  // }
+  
+
+  QSMatrix result(n, cols, 0.0);
+
+  for (unsigned i=0; i<n; i++) {
     for (unsigned j=0; j<cols; j++) {
       for (unsigned k=0; k<rows; k++) {
         result(i,j) += this->mat[i][k] * rhs(k,j);
@@ -146,11 +158,11 @@ QSMatrix<T>& QSMatrix<T>::operator*=(const QSMatrix<T>& rhs) {
 // Calculate a transpose of this matrix                                                                                                                                       
 template<typename T>
 QSMatrix<T> QSMatrix<T>::transpose() {
-  QSMatrix result(rows, cols, 0.0);
+  QSMatrix result(cols, rows, 0.0);
 
   for (unsigned i=0; i<rows; i++) {
     for (unsigned j=0; j<cols; j++) {
-      result(i,j) = this->mat[j][i];
+      result(j,i) = this->mat[i][j];
     }
   }
 
@@ -181,7 +193,7 @@ string QSMatrix<T>::printMatrix() {
   string ret;
   for (unsigned i=0; i<rows; i++) {
     for (unsigned j=0; j<cols; j++) {
-      ret += to_string(this->mat[j][i]) + ", ";
+      ret += to_string(this->mat[i][j]) + ", ";
     }
     ret+='\n';
   }

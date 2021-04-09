@@ -2,17 +2,7 @@
 g++ -o Main main.cpp
 ./Main
 //////////////////////////
-expected output:
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
-3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+
 
 The main.cpp file is just an example for how the classes and functions may be called.
 Initialise a matrix with values using:
