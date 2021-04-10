@@ -1,3 +1,5 @@
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
 #include "mymatrix.h"
 #include <iostream>
 
@@ -17,6 +19,20 @@ myMatrix::myMatrix(int nRows, int nCols) : numRows(nRows), numCols(nCols){
         data[i] = new int[numCols];
 }
 
+// need to figure out how to wrap constructor
+static PyObject* py_myMatrix(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",myMatrix(n));
+}
+
+
 /**
  * @brief myMatrix::~myMatrix
  * Destructor
@@ -27,6 +43,8 @@ myMatrix::~myMatrix(){
         delete [] data[i];
     delete[] data;
 }
+
+// what do we do with the destructor?
 
 /**
  * @brief myMatrix::swap
@@ -76,6 +94,18 @@ myMatrix* myMatrix::addMatrix(const myMatrix &other) const
 
     return A;
 
+}
+
+static PyObject* py_addMatrix(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",addMatrix(n));
 }
 
 /**
@@ -129,6 +159,18 @@ myMatrix* myMatrix::multMatrix(const myMatrix &other) const{
 
 }
 
+static PyObject* py_multMatrix(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",multMatrix(n));
+}
+
 /**
  * @brief myMatrix::square
  * @return Returns the current matrix to the power of 2.
@@ -146,6 +188,18 @@ myMatrix* myMatrix::square() const
 
     myMatrix * A = this->multMatrix(*B);
     return A;
+}
+
+static PyObject* py_square(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",square(n));
 }
 
 /**
@@ -191,6 +245,18 @@ void myMatrix::fillEye(){
             data[i][j] = (i==j);
 }
 
+static PyObject* py_fillEye(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",fillEye(n));
+}
+
 /**
  * @brief myMatrix::operator *=
  * @param other
@@ -203,4 +269,32 @@ myMatrix& myMatrix::operator *=(const myMatrix &other){
     delete temp;
 
     return *this;
+}
+
+// how do you wrap operators??
+
+
+
+// Wrapper overhead
+static PyMethodDef myMethods[] = {
+    {"myMatrix",py_myMatrix,METH_VARARGS,"Constructor"},
+    {"addMatrix",py_addMatrix,METH_VARARGS,"Add two matrices"},
+    {"multMatrix",py_multMatrix,METH_VARARGS,"Multiply two matrices"},
+    {"square",py_square,METH_VARARGS,"Multiply a matrix by itself"},
+    {"fillEye",py_fillEye,METH_VARARGS,"Turn matrix into identity matrix"},
+    {NULL,NULL,0,NULL}
+};
+
+static struct PyModuleDef myMatrix = {
+    PyModuleDef_HEAD_INIT,
+    "myMatrix",
+    "Documentation",
+    -1,
+    myMethods
+};
+
+PyMODINIT_FUNC 
+PyInit_myMatrix(void)
+{
+    return PyModule_Create(&myMatrix);
 }

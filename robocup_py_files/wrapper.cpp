@@ -7,16 +7,16 @@ static PyMethodDef Methods[] = {
     {NULL,NULL,0,NULL}
 };
 
-static struct PyModuleDef Robocup= {
+static struct PyModuleDef RobocupPy= {
     PyModuleDef_HEAD_INIT,
-    "Robocup",
+    "RobocupPy",
     "Documentation",
     -1,
     Methods
 };
 
 PyMODINIT_FUNC 
-PyInit_Robocup(void)
+PyInit_RobocupPy(void)
 {
-    return PyModule_Create(&Robocup);
+    return PyModule_Create(&RobocupPy);
 }
