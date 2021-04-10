@@ -1,6 +1,9 @@
 #ifndef __QS_MATRIX_CPP
 #define __QS_MATRIX_CPP
 
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
+
 #include "matrix.h"
 #include <string>
 
@@ -19,6 +22,19 @@ QSMatrix<T>::QSMatrix(unsigned _rows, unsigned _cols, const T& _initial) {
   cols = _cols;
 }
 
+// need to figure out how to wrap constructor
+static PyObject* py_QsMatrix(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",QsMatrix(n));
+}
+
 // Copy Constructor                                                                                                                                                           
 template<typename T>
 QSMatrix<T>::QSMatrix(const QSMatrix<T>& rhs) {
@@ -27,9 +43,15 @@ QSMatrix<T>::QSMatrix(const QSMatrix<T>& rhs) {
   cols = rhs.get_cols();
 }
 
+// how to wrap copy constructor?
+
 // (Virtual) Destructor                                                                                                                                                       
 template<typename T>
 QSMatrix<T>::~QSMatrix() {}
+
+// how to wrap destructor?
+
+// how to wrap operators?
 
 // Assignment Operator                                                                                                                                                        
 template<typename T>
@@ -169,6 +191,18 @@ QSMatrix<T> QSMatrix<T>::transpose() {
   return result;
 }
 
+static PyObject* py_transpose(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",transpose(n));
+}
+
 template<typename T>
 void  QSMatrix<T>::setIdentity() {
 
@@ -188,6 +222,18 @@ void  QSMatrix<T>::setIdentity() {
 
 }
 
+static PyObject* py_setIdentity(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",setIdentity(n));
+}
+
 template<typename T>
 string QSMatrix<T>::printMatrix() {
   string ret;
@@ -200,6 +246,18 @@ string QSMatrix<T>::printMatrix() {
   ret+='\n';  
   return ret;
 
+}
+
+static PyObject* py_printMatrix(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",printMatrix(n));
 }
 
 // Matrix/scalar addition                                                                                                                                                     
@@ -284,6 +342,18 @@ std::vector<T> QSMatrix<T>::diag_vec() {
   return result;
 }
 
+static PyObject* py_diag_vec(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",diag_vec(n));
+}
+
 // Access the individual elements                                                                                                                                             
 template<typename T>
 T& QSMatrix<T>::operator()(const unsigned& row, const unsigned& col) {
@@ -302,10 +372,60 @@ unsigned QSMatrix<T>::get_rows() const {
   return this->rows;
 }
 
+static PyObject* py_get_rows(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",get_rows(n));
+}
+
 // Get the number of columns of the matrix                                                                                                                                    
 template<typename T>
 unsigned QSMatrix<T>::get_cols() const {
   return this->cols;
+}
+
+static PyObject* py_get_cols(PyObject* self, PyObject* args)
+{
+    // int n;
+
+    // if(!PyArg_ParseTuple(args,"i",&n))
+    // {
+    //     return NULL;
+    // }
+
+    // return Py_BuildValue("i",get_cols(n));
+}
+
+// Wrapper overhead
+static PyMethodDef myMethods[] = {
+    {"QsMatrix",py_QsMatrix,METH_VARARGS,"Constructor"},
+    {"transpose",py_transpose,METH_VARARGS,"Constructor"},
+    {"setIdentity",py_setIdentity,METH_VARARGS,"Turn matrix into identity matrix"},
+    {"printMatrix",py_printMatrix,METH_VARARGS,"Print matrix"},
+    {"diag_vec",py_diag_vec,METH_VARARGS,"Vector of diagonal elements of matrix"},
+    {"get_rows",py_get_rows,METH_VARARGS,"Rows of matrix"},
+    {"get_cols",py_get_cols,METH_VARARGS,"Cols of matrix"},
+    {NULL,NULL,0,NULL}
+};
+
+static struct PyModuleDef matrixModule = {
+    PyModuleDef_HEAD_INIT,
+    "matrixModule",
+    "Documentation",
+    -1,
+    myMethods
+};
+
+PyMODINIT_FUNC 
+PyInit_matrixModule(void)
+{
+    return PyModule_Create(&matrixModule);
 }
 
 #endif
