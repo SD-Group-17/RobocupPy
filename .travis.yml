@@ -3,13 +3,11 @@ python:
   - 2.7
   - 3.6
 before_install:
-  - pip
-  #- pip install -U unittest
+  - pip install -U pytest-3
   - pip install codecov
 install:
-  - pip install ".[ExampleWrap]".
   - pip install -r requirements.txt 
 script: 
-  - python -m unittest ExampleWrap.test # run tests
+  - python -m pytest-3 ExampleWrap.test # run tests
 after_success:
   - codecov # submit coverage
