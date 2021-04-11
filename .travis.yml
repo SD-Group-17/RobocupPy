@@ -9,7 +9,7 @@ before_install:
   #- pip install -U unittest
   - pip install codecov
 install:
-  - pip install ".[test]" . # install package + test dependencies
+  #- pip install ".[test]" . # install package + test dependencies
 script: 
   - python -m unittest 'Example Wrap'.test # run tests
 after_success:
