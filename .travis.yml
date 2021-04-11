@@ -8,6 +8,7 @@ before_install:
 install:
   - pip install -r requirements.txt 
 script: 
+  - python -m setup.py build
   - python -m pytest ExampleWrap/test.py # run tests
 after_success:
   - codecov # submit coverage
