@@ -9,6 +9,6 @@ install:
   - pip install -r requirements.txt 
 script: 
   - python -m ExampleWrap/setup.py build
-  - python -m pytest ExampleWrap/test.py # run tests
+  - python -m pytest-3 ExampleWrap/test.py # run tests
 after_success:
   - codecov # submit coverage
