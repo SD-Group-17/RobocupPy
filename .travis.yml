@@ -3,7 +3,6 @@ python:
   - 3.6
 before_install:
   - python --version
-  - pip install -U pip
   - pip install -U unittest
   - pip install codecov
 install:
