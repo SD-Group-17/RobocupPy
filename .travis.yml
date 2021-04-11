@@ -12,6 +12,6 @@ install:
   #- pip install ".[test]" . # install package + test dependencies
   #
 script: 
-  - python -m unittest Example Wrap.test # run tests
+  - python -m unittest ExampleWrap.test # run tests
 after_success:
   - codecov # submit coverage
