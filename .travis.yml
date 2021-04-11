@@ -14,6 +14,6 @@ install:
  # - pip install -r requirements.txt
 # command to run tests
 script:
-  - pytest
+  - python3 test.py
 env:
   - ca31d2d8-5c7c-4b32-8695-808e1d22e365
