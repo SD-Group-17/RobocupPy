@@ -13,5 +13,5 @@ script:
   - python setup.py build
   - python -m pytest test.py # run tests
 after_success:
- # - codecov # submit coverage
-  - bash <(curl -s https://codecov.io/bash)
+  - codecov # submit coverage
+ #- bash <(curl -s https://codecov.io/bash)
