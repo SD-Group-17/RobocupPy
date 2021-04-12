@@ -2,8 +2,6 @@ import pytest
 import myModule
 import os 
 
-print(os.getcwd())
-
 def testFirst():
     wanted_result = 0
     test_result = myModule.fib(0)
