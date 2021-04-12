@@ -18,5 +18,5 @@ script:
    - py.test test.py --cov=myModule.cpp
 
 after_success:
-  #- codecov # submit coverage
+  #- codecov 
   - bash <(curl -s https://codecov.io/bash)
