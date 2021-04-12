@@ -15,7 +15,7 @@ script:
   - python setup.py build
   - python -m pytest test.py # run tests
   #- coverage run -m pytest 
-  - py.test  --cov-report term --cov=ExampleWrap/test.py/
+  - py.test  --cov-report term --cov=ExampleWrap/test/
 
 after_success:
   #- codecov # submit coverage
