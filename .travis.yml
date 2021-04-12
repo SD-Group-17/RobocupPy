@@ -7,14 +7,16 @@ before_install:
 install:
   - pip install -r requirements.txt 
   - pip install coverage
-  - pip install pytest-cov.pth
+  - pip install pytest-cov==2.11.1
 
 script: 
   - cd ExampleWrap 
   - pip3 install .
   - python setup.py build
   - python -m pytest test.py # run tests
-  - coverage run -m pytest 
+  #- coverage run -m pytest 
+  - py.test  --cov-report term --cov=ExampleWrap/test.py/
+
 after_success:
   #- codecov # submit coverage
   - bash <(curl -s https://codecov.io/bash)
