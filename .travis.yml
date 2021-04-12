@@ -7,7 +7,7 @@ before_install:
 install:
   - pip install -r requirements.txt 
   - pip install coverage
-  - pip install pytest-cov
+  - pip install pytest-cov.pth
 
 script: 
   - cd ExampleWrap 
