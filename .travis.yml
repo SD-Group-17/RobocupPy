@@ -14,7 +14,7 @@ script:
   - pip3 install .
   - python setup.py build
   - python -m pytest test.py # run tests
-  #- coverage run -m pytest 
+  - coverage run -m pytest 
   - py.test test.py --cov=myModule.cpp
 
 after_success:
