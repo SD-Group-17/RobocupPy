@@ -7,7 +7,7 @@ before_install:
 install:
   - pip install -r requirements.txt 
   - pip install coverage
-  - pip install pytest-cov==2.11.1
+  - pip install pytest-cov==2.11.1 
 
 script: 
   - cd ExampleWrap 
@@ -15,7 +15,7 @@ script:
   - python setup.py build
   - python -m pytest test.py # run tests
   #- coverage run -m pytest 
-  - py.test  --cov-report term --cov=ExampleWrap/test/
+   - py.test test.py --cov=myModule.cpp
 
 after_success:
   #- codecov # submit coverage
