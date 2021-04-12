@@ -12,7 +12,7 @@ script:
   - pip3 install .
   - python setup.py build
   - python -m pytest test.py # run tests
-  - coverage run -m pytest
+  - coverage run -m pytest discover
 after_success:
   #- codecov # submit coverage
   - bash <(curl -s https://codecov.io/bash)
