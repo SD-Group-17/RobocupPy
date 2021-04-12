@@ -15,7 +15,6 @@ script:
   - python setup.py build
   - python -m pytest test.py # run tests
   - py.test test.py --cov=myModule.cpp
-  - coverage run -m pytest 
 
 
 after_success:
