@@ -1,0 +1,6 @@
+README.md
+setup.py
+RobocupWapper.egg-info/PKG-INFO
+RobocupWapper.egg-info/SOURCES.txt
+RobocupWapper.egg-info/dependency_links.txt
+RobocupWapper.egg-info/top_level.txt

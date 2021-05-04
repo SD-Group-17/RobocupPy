@@ -1,0 +1,6 @@
+README.md
+setup.py
+RobocupPyPackage.egg-info/PKG-INFO
+RobocupPyPackage.egg-info/SOURCES.txt
+RobocupPyPackage.egg-info/dependency_links.txt
+RobocupPyPackage.egg-info/top_level.txt
