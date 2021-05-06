@@ -1,5 +1,6 @@
 #include <vector>
 #include "worldmodelWrap.h"
+#include "test.h"
 #include <Python.h>
 #include <worldModel.h>
 #define PY_SSIZE_T_CLEAN
@@ -41,8 +42,8 @@ void DistanceToBallArrayTeammates(int mynum, double* _teamMateDistances, worldmo
     }
 }
 
-PyObject * convertTeamDistanceToBall(double* teamDistance)
-{
+PyObject * convertTeamDistanceToBall(double* teamDistance){
+
     
     int size = sizeof(teamDistance) / sizeof(teamDistance[0]);
     PyObject * distance = PyList_New(size);
@@ -68,31 +69,39 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
         return NULL;
     }
 
+    PyObject* teamDistanceFromBall;
+    worldmodelWrap worldmodel = testWorldModel();
+    double* _teamMateDistances = NULL;
+
+    _teamMateDistances = (double *) malloc(sizeof(double) * worldmodel.getNUMAGENTS);
+    
+    DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
+
+    teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
     return teamDistanceFromBall;
 }
 
 //TODO
 //figure out how to make this function be called on
-void selectSkill(worldmodelWrap worldmodel) {
+//EDIT: this function is no longer called upon
+// void selectSkill(worldmodelWrap worldmodel) {
 
+//     NUMAGENTS = worldModel->getNUMAGENTS();
 
+//     int _playerNumber = worldModel->getUNum();
 
-    NUMAGENTS = worldModel->getNUMAGENTS();
+//     double* _teamMateDistances = NULL;
+//     double* _opponentDistances = NULL;
 
-    int _playerNumber = worldModel->getUNum();
+//     _teamMateDistances = (double *) malloc(sizeof(double) * NUM_AGENTS);
 
-    double* _teamMateDistances = NULL;
-    double* _opponentDistances = NULL;
+//     DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
 
-    _teamMateDistances = (double *) malloc(sizeof(double) * NUM_AGENTS);
-
-    DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
-
-    //Python Objects
-    teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
+//     //Python Objects
+//     teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
     
     
-}
+// }
 
 static PyMethodDef myMethods[] = {
     {"sendTeamDistanceToBall",sendTeamDistanceToBall,METH_VARARGS,"sends team distance to ball"},

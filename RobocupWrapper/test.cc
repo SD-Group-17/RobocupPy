@@ -1,12 +1,11 @@
 //leave for now
-
+#include "test.h"
 #include "worldmodelWrap.h"
-#include "strategy.cc"
 #include <vector>
 
 using namespace std;
 
-int main(){
+worldmodelWrap testWorldModel(){
     vector<vector<int>> teammatesIN;
     vector<int> myPositionIN;
     vector<int> ballIN;
@@ -15,7 +14,7 @@ int main(){
 
     //TODO populate above vectors
 
-    WorldModel instance = new WorldModel(teammatesIN, myPositionIN, ballIN, UNumIN, NUMAGENTSIN);
+    worldmodelWrap instance(teammatesIN, myPositionIN, ballIN, UNumIN, NUMAGENTSIN);
 
-    return 0;
+    return instance;
 }
