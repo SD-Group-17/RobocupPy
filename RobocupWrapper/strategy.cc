@@ -1,11 +1,13 @@
+#include <vector>
+#include "worldmodelWrap.h"
 #include <Python.h>
 
 extern int agentBodyType;
 
 /* Global Python Variables
  */
-PyObject* world;
-PyObject* teamDistanceFromBall;
+// PyObject* world;
+// PyObject* teamDistanceFromBall;
 
 //calling python code
 //PyObject* myModuleString = PyString_FromString((char*)"robopy");
@@ -13,11 +15,10 @@ PyObject* teamDistanceFromBall;
 
 //PyObject* myFunction = PyObject_GetAttrString(myModule,(char*)"hello");
 
-worldmodelWrap worldmodel = new worldmodelWrap();
 
-void DistanceToBallArrayTeammates(int mynum, double* _teamMateDistances){
+void DistanceToBallArrayTeammates(int mynum, double* _teamMateDistances, worldmodelWrap worldmodel){
 
-    vector<vector<int>> worldModelTeammates = worldmodel->getTeammates();
+    vector<vector<int>> worldModelTeammates = worldmodel.getTeammates();
     vector<int> ball = worldmodel.getBall();
 
     for(int i = 0; i<worldModelTeammates.size();i++){ //OUR PLAYERS
@@ -25,7 +26,7 @@ void DistanceToBallArrayTeammates(int mynum, double* _teamMateDistances){
         vector<int>  temp;
 
         if(i == mynum){
-            temp = worldModel->getMyPosition();
+            temp = worldmodel.getMyPosition();
         }
         else{
             temp = worldModelTeammates[i];
@@ -69,9 +70,10 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 
 //TODO
 //figure out how to make this function be called on
-void Main() {
+void selectSkill(worldmodelWrap worldmodel) {
 
-    worldModel->getRVSender()->clear();
+
+
     NUMAGENTS = worldModel->getNUMAGENTS();
 
     int _playerNumber = worldModel->getUNum();
@@ -81,7 +83,7 @@ void Main() {
 
     _teamMateDistances = (double *) malloc(sizeof(double) * NUM_AGENTS);
 
-    DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances); 
+    DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
 
     //Python Objects
     teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
