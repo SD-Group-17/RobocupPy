@@ -1,6 +1,9 @@
 #include <vector>
 #include "worldmodelWrap.h"
 #include <Python.h>
+#include <worldModel.h>
+#define PY_SSIZE_T_CLEAN
+
 
 extern int agentBodyType;
 
