@@ -13,7 +13,10 @@ worldmodelWrap testWorldModel(){
     int NUMAGENTSIN; //number of players
 
     //TODO populate above values with test data
-
+    /*e.g.:
+    UNumIN = 11
+    ballIN = vector(0,0)
+    */
     worldmodelWrap instance(teammatesIN, myPositionIN, ballIN, UNumIN, NUMAGENTSIN);
 
     return instance;
