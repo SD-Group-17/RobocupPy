@@ -1,7 +1,7 @@
 from setuptools import setup,Extension
 
 
-module = Extension("RobocupWrapper",sources = ["behaviors/strategy.cc","particlefilter/PFLocalization.cc"])
+module = Extension("RobocupWrapper",sources = ["strategy.cc"])
 
 setup(name="RobocupWrapper",
     version = "1.0",

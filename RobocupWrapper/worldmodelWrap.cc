@@ -1,9 +1,10 @@
 #include <vector>
 #include <Math>
+#include "worldmodelWrap.h"
 
 using namespace std;
 
-class worldmodelWrap(){
+/*class worldmodelWrap(){
     vector<vector<int>> teammates;
     vector<int> myPosition;
     vector<int> ball;
@@ -47,4 +48,71 @@ class worldmodelWrap(){
 
 
 
+}*/
+
+vector<vector<int>> teammates;
+vector<int> myPosition;
+vector<int> ball;
+int UNum;
+int NUMAGENTS;
+
+worldmodelWrap :: worldmodelWrap(vector<vector<int>> teammates,vector<int> myPosition,vector<int> ball,int UNum,int NUMAGENTS)
+{
+    this->teammates = teammates;
+    this->myPosition = myPosition;
+    this->ball =ball;
+    this->UNum = UNum;
+    this->NUMAGENTS = NUMAGENTS;
 }
+
+worldmodelWrap :: ~worldmodelWrap() 
+{
+
+}
+
+worldmodelWrap :: getDistanceTo(vector<int>pos1,vector<int>pos2)
+{
+    return Math.sqrt( (pos1[0] - pos2[0])**2 + (pos1[1] - pos2[1])**2)
+}
+
+worldmodelWrap :: getUNum()
+{
+    return UNum;
+}
+
+worldmodelWrap :: getTeammates()
+{
+    return teammates;
+}
+
+worldmodelWrap :: getNUMAGENTS()
+{
+    return NUMAGENTS;
+}
+
+worldmodelWrap :: getNUMAGENTS()
+{
+    return NUMAGENTS;
+}
+
+worldmodelWrap :: getMyPosition()
+{
+    return myPosition;
+}
+
+worldmodelWrap :: getBall()
+{
+    return ball;
+}
+
+
+
+
+
+
+
+
+
+
+
+
