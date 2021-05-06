@@ -2,7 +2,6 @@
 #include "worldmodelWrap.h"
 #include "test.h"
 #include <Python.h>
-#include <worldModel.h>
 #define PY_SSIZE_T_CLEAN
 
 
@@ -71,9 +70,11 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 
     PyObject* teamDistanceFromBall;
     worldmodelWrap worldmodel = testWorldModel();
-    double* _teamMateDistances = NULL;
+    int NUM_AGENTS = worldmodel.getNUMAGENTS();
 
-    _teamMateDistances = (double *) malloc(sizeof(double) * worldmodel.getNUMAGENTS);
+    double* _teamMateDistances = new double_t[NUM_AGENTS];
+    int _playerNumber = worldmodel.getUNum();
+
     
     DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
 
