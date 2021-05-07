@@ -15,7 +15,7 @@ worldmodelWrap::worldmodelWrap(vector<vector<int>> teammatesIN, vector<int> myPo
     NUMAGENTS = NUMAGENTSIN;
     
 }
-/*
+
 float worldmodelWrap::getDistanceTo(vector<int>pos1,vector<int>pos2){
     return sqrt( pow( pos1[0] - pos2[0],2) + pow(pos1[1] - pos2[1],2) );
 }
@@ -27,11 +27,11 @@ int worldmodelWrap::getUNum(){
 vector<vector<int>> worldmodelWrap::getTeammates(){
     return teammates;
 }
-*/
+
 int worldmodelWrap::getNUMAGENTS(){
     return NUMAGENTS;
 }
-/*
+
 vector<int> worldmodelWrap::getMyPosition(){
     return myPosition;
 }
@@ -39,7 +39,9 @@ vector<int> worldmodelWrap::getMyPosition(){
 vector<int> worldmodelWrap::getBall(){
     return ball;
 }
-*/
+
+
+
 //TODO
 //initialise world model attributes
 
