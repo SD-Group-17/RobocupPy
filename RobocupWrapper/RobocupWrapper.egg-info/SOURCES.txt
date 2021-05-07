@@ -1,0 +1,6 @@
+setup01.py
+strategy.cc
+RobocupWrapper.egg-info/PKG-INFO
+RobocupWrapper.egg-info/SOURCES.txt
+RobocupWrapper.egg-info/dependency_links.txt
+RobocupWrapper.egg-info/top_level.txt

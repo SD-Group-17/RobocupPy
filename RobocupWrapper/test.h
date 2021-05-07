@@ -3,6 +3,11 @@
 
 #include "worldmodelWrap.h"
 
-worldmodelWrap testWorldModel();
-
+worldmodelWrap testWorldModel(){
+ vector<vector<int>> teammatesIN; //coordinates of each player
+    vector<int> myPositionIN; //my coordinate
+    vector<int> ballIN; //ball coordinate
+    int UNumIN; //my player number
+    int NUMAGENTSIN; 
+}
 #endif
