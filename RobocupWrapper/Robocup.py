@@ -29,10 +29,16 @@ class Robocup:
     def playerNumber(self):
         return self.UNum
 
-    def playerCoordinates(self):
+    def thisPlayerCoordinates(self):
         return self.myPos
+
+    def playerCoordinates(self,n):
+        return self.teammatesPos[n]
 
     def num_agents(self):
         return self.NUMAGENTS
+    
+    def distance(self, pos1, pos2):
+        return RobocupWrapper.distance(pos1[0],pos1[1],pos2[0],pos2[1])
 
     

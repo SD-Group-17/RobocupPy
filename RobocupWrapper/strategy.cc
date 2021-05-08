@@ -80,30 +80,35 @@ worldmodelWrap testWorldModel(){
 
 
 //Wrapper methods:
-/*
-//TODO: Finish distance function
+
 PyObject * distance(PyObject * self,PyObject* args)
-{
-    //TODO: figure out how to accept two python list objects and input them to c++ vectors
-    //should accept 2 1d arrays of (x,y) coordinate float value pairs.
+{   
 
-    vector<float> pos1;
-    vector<float> pos2;
-    
-    int n;
+    float pos1x;
+    float pos1y;
+    float pos2x;
+    float pos2y;
 
-    if(!PyArg_ParseTuple(args,"i",&n))
+    if(!PyArg_ParseTuple(args,"ffff",&pos1x,&pos1y ,&pos2x ,&pos2y))
     {
         return NULL;
     }
     worldmodelWrap worldmodel = testWorldModel();
-    
-    //TODO: initialise pos1 & pos2
 
-    return worldmodel.getDistance(pos1,pos2);
+    vector<float> pos1(2,0.0);
+    vector<float> pos2(2,0.0);
+
+    pos1[0] = pos1x;
+    pos1[1] = pos1y;
+    pos2[0] = pos2x;
+    pos2[1] = pos2y;
+
+
+
+    return Py_BuildValue("f",worldmodel.getDistance(pos1,pos2) );
 
 }
-*/
+
 
 PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 {
@@ -269,6 +274,7 @@ static PyMethodDef myMethods[] = {
     {"sendTeamPos",sendTeamPos,METH_VARARGS,"sends team coordinates"},
     {"sendUNum",sendUNum,METH_VARARGS,"sends this player's number "},
     {"sendNUMAGENTS",sendNUMAGENTS,METH_VARARGS,"sends this number of players"},
+    {"distance",distance,METH_VARARGS,"returns the float distance between two points"},
 
     {NULL,NULL,0,NULL}
 };

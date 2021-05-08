@@ -21,7 +21,9 @@ Functionality in Library:
 Ball Coordinates (returns 1 d array of float values):  robocup.ballCoordinates() 
 
 Team Coordinates (returns 2 d array of float values, each row corresponcs to the (x,y) cooridnates of a player):  robocup.teamCoordinates()
-Player Number (returns 1 d array of float values):  robocup.playerNumber()
-Player Coordinates (returns 1 d array of float values): robocup.playerCoordinates()
+This player Number (returns 1 d array of float values):  robocup.playerNumber()
+This player Coordinates (returns 1 d array of float values): robocup.thisPlayerCoordinates()
+Coordinates of player n (returns 1 d array of float values): robocup.playerCoordinates(n)
 Number of agents  (returns integer):  robocup.num_agents()
 Distance of player n to ball (returns float):  robocup.playerDistanceToBall(n)
+Distance between two points (pos1 and pos2 are 1d arrays cotaining float (x,y) pairs): robocup.distance(pos1, pos2)
