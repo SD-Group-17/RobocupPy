@@ -1,14 +1,12 @@
 #include <vector>
-#include "worldmodelWrap.h"
-#include "test.h"
+#include <cmath>
 #include <Python.h>
 #define PY_SSIZE_T_CLEAN
 
+using namespace std;
 
-extern int agentBodyType;
-
-/* Global Python Variables
- */
+/* TODO: Python Variables
+ 
 // PyObject* world;
 // PyObject* teamDistanceFromBall;
 
@@ -17,8 +15,67 @@ extern int agentBodyType;
 //PyObject* myModule = PyImport_Import(myModuleString);
 
 //PyObject* myFunction = PyObject_GetAttrString(myModule,(char*)"hello");
+*/
+
+//support methods and classes:
+class worldmodelWrap{
+
+    
+    vector<vector<int>> teammates;
+    vector<int> myPosition;
+    vector<int> ball;
+    int UNum;
+    int NUMAGENTS;
+    
+    public:
+    worldmodelWrap(vector<vector<int>> teammatesIN,  vector<int> ballIN,  int UNumIN, int NUMAGENTSIN){
+        teammates = teammatesIN;
+        myPosition =teammatesIN[UNumIN];
+        ball = ballIN;
+        UNum = UNumIN;
+        NUMAGENTS = NUMAGENTSIN;
+        
+    }
 
 
+    float getDistanceTo(vector<int>pos1,vector<int>pos2){
+        return sqrt( pow( pos1[0] - pos2[0],2) + pow(pos1[1] - pos2[1],2) );
+    }
+
+    int getUNum(){
+        return UNum;
+    }
+
+    vector<vector<int>> getTeammates(){
+        return teammates;
+    }
+    int getNUMAGENTS(){
+        return NUMAGENTS;
+    }
+
+    vector<int> getMyPosition(){
+        return myPosition;
+    }
+
+    vector<int> getBall(){
+        return ball;
+    }
+
+};
+
+worldmodelWrap testWorldModel(){
+    vector<vector<int>> teammatesIN(11,vector<int>(2,1)); //coordinates of each player
+    vector<int> ballIN(2,0); //ball coordinate
+    int UNumIN = 0; //my player number
+    int NUMAGENTSIN = 11; //number of players
+
+
+    worldmodelWrap instance(teammatesIN, ballIN, UNumIN, NUMAGENTSIN);
+
+    return instance;
+}
+
+//Strategy cc classes:
 void DistanceToBallArrayTeammates(int mynum, double* _teamMateDistances, worldmodelWrap worldmodel){
 
     vector<vector<int>> worldModelTeammates = worldmodel.getTeammates();
@@ -41,6 +98,8 @@ void DistanceToBallArrayTeammates(int mynum, double* _teamMateDistances, worldmo
     }
 }
 
+
+//Wrapper methods:
 PyObject * convertTeamDistanceToBall(double* teamDistance){
 
     
@@ -82,27 +141,30 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
     return teamDistanceFromBall;
 }
 
-//TODO
-//figure out how to make this function be called on
-//EDIT: this function is no longer called upon
-// void selectSkill(worldmodelWrap worldmodel) {
+/*
+TODO
+figure out how to make this function be called on
+EDIT: this function is no longer called upon
+void selectSkill(worldmodelWrap worldmodel) {
 
-//     NUMAGENTS = worldModel->getNUMAGENTS();
+    NUMAGENTS = worldModel->getNUMAGENTS();
 
-//     int _playerNumber = worldModel->getUNum();
+    int _playerNumber = worldModel->getUNum();
 
-//     double* _teamMateDistances = NULL;
-//     double* _opponentDistances = NULL;
+    double* _teamMateDistances = NULL;
+    double* _opponentDistances = NULL;
 
-//     _teamMateDistances = (double *) malloc(sizeof(double) * NUM_AGENTS);
+    _teamMateDistances = (double *) malloc(sizeof(double) * NUM_AGENTS);
 
-//     DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
+    DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
 
-//     //Python Objects
-//     teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
+    //Python Objects
+    teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
     
     
-// }
+}
+*/
+
 
 static PyMethodDef myMethods[] = {
     {"sendTeamDistanceToBall",sendTeamDistanceToBall,METH_VARARGS,"sends team distance to ball"},
