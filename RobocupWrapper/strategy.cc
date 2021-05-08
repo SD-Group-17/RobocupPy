@@ -21,14 +21,14 @@ using namespace std;
 class worldmodelWrap{
 
     
-    vector<vector<int>> teammates;
-    vector<int> myPosition;
-    vector<int> ball;
+    vector<vector<float>> teammates;
+    vector<float> myPosition;
+    vector<float> ball;
     int UNum;
     int NUMAGENTS;
     
     public:
-    worldmodelWrap(vector<vector<int>> teammatesIN,  vector<int> ballIN,  int UNumIN, int NUMAGENTSIN){
+    worldmodelWrap(vector<vector<float>> teammatesIN,  vector<float> ballIN,  int UNumIN, int NUMAGENTSIN){
         teammates = teammatesIN;
         myPosition =teammatesIN[UNumIN];
         ball = ballIN;
@@ -38,7 +38,7 @@ class worldmodelWrap{
     }
 
 
-    float getDistanceTo(vector<int>pos1,vector<int>pos2){
+    float getDistance(vector<float>pos1,vector<float>pos2){
         return sqrt( pow( pos1[0] - pos2[0],2) + pow(pos1[1] - pos2[1],2) );
     }
 
@@ -46,26 +46,26 @@ class worldmodelWrap{
         return UNum;
     }
 
-    vector<vector<int>> getTeammates(){
+    vector<vector<float>> getTeammates(){
         return teammates;
     }
     int getNUMAGENTS(){
         return NUMAGENTS;
     }
 
-    vector<int> getMyPosition(){
+    vector<float> getMyPosition(){
         return myPosition;
     }
 
-    vector<int> getBall(){
+    vector<float> getBall(){
         return ball;
     }
 
 };
 
 worldmodelWrap testWorldModel(){
-    vector<vector<int>> teammatesIN(11,vector<int>(2,1)); //coordinates of each player
-    vector<int> ballIN(2,0); //ball coordinate
+    vector<vector<float>> teammatesIN(11,vector<float>(2,1.0)); //coordinates of each player
+    vector<float> ballIN(2,0.0); //ball coordinate
     int UNumIN = 0; //my player number
     int NUMAGENTSIN = 11; //number of players
 
@@ -76,47 +76,34 @@ worldmodelWrap testWorldModel(){
 }
 
 //Strategy cc classes:
-void DistanceToBallArrayTeammates(int mynum, double* _teamMateDistances, worldmodelWrap worldmodel){
 
-    vector<vector<int>> worldModelTeammates = worldmodel.getTeammates();
-    vector<int> ball = worldmodel.getBall();
-
-    for(int i = 0; i<worldModelTeammates.size();i++){ //OUR PLAYERS
-
-        vector<int>  temp;
-
-        if(i == mynum){
-            temp = worldmodel.getMyPosition();
-        }
-        else{
-            temp = worldModelTeammates[i];
-        }
-
-        float distance = worldmodel.getDistanceTo(temp,ball);
-        _teamMateDistances[i] = distance;
-
-    }
-}
 
 
 //Wrapper methods:
-PyObject * convertTeamDistanceToBall(double* teamDistance){
+/*
+//TODO: Finish distance function
+PyObject * distance(PyObject * self,PyObject* args)
+{
+    //TODO: figure out how to accept two python list objects and input them to c++ vectors
+    //should accept 2 1d arrays of (x,y) coordinate float value pairs.
 
+    vector<float> pos1;
+    vector<float> pos2;
     
-    int size = sizeof(teamDistance) / sizeof(teamDistance[0]);
-    PyObject * distance = PyList_New(size);
-    PyObject * pyValue;
+    int n;
 
-    for(int i = 0;i<size;i++)
+    if(!PyArg_ParseTuple(args,"i",&n))
     {
-        double value = teamDistance[i];
-        pyValue = Py_BuildValue("i",value);
-        PyList_SetItem(distance,i,pyValue);
+        return NULL;
     }
+    worldmodelWrap worldmodel = testWorldModel();
+    
+    //TODO: initialise pos1 & pos2
 
-    return distance;
+    return worldmodel.getDistance(pos1,pos2);
+
 }
-
+*/
 
 PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 {
@@ -127,19 +114,128 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
         return NULL;
     }
 
-    PyObject* teamDistanceFromBall;
+    
     worldmodelWrap worldmodel = testWorldModel();
-    int NUM_AGENTS = worldmodel.getNUMAGENTS();
+    vector<vector<float>> teamPosC = worldmodel.getTeammates();
+    vector<float> ballPosC = worldmodel.getBall();
+    PyObject * teamPosPy = PyList_New(teamPosC.size());
+    PyObject * value;
+    for(int i =0; i<teamPosC.size();++i){
+        float distance = worldmodel.getDistance(teamPosC[i], ballPosC ) ;
+        value = Py_BuildValue("f",distance);
+        PyList_SetItem(teamPosPy,i,value);
+        
+        
+    }
+    
+    return teamPosPy;
+}
 
-    double* _teamMateDistances = new double_t[NUM_AGENTS];
-    int _playerNumber = worldmodel.getUNum();
+PyObject * sendBallPos(PyObject * self,PyObject* args)
+{
+    int n;
+
+    if(!PyArg_ParseTuple(args,"i",&n))
+    {
+        return NULL;
+    }
 
     
-    DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
-
-    teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
-    return teamDistanceFromBall;
+    worldmodelWrap worldmodel = testWorldModel();
+    vector<float> ballPosC = worldmodel.getBall();
+    PyObject * ballPosPy = PyList_New(ballPosC.size());
+    PyObject * pyValue;
+    for(int i =0; i<ballPosC.size();++i){
+        double value = ballPosC[i];
+        pyValue = Py_BuildValue("f",value);
+        PyList_SetItem(ballPosPy,i,pyValue);
+    }
+    
+    return ballPosPy;
 }
+
+PyObject * sendMyPos(PyObject * self,PyObject* args)
+{
+    int n;
+
+    if(!PyArg_ParseTuple(args,"i",&n))
+    {
+        return NULL;
+    }
+
+    
+    worldmodelWrap worldmodel = testWorldModel();
+    vector<float> ballPosC = worldmodel.getMyPosition();
+    PyObject * ballPosPy = PyList_New(ballPosC.size());
+    PyObject * pyValue;
+    for(int i =0; i<ballPosC.size();++i){
+        double value = ballPosC[i];
+        pyValue = Py_BuildValue("f",value);
+        PyList_SetItem(ballPosPy,i,pyValue);
+    }
+    
+    return ballPosPy;
+}
+
+PyObject * sendTeamPos(PyObject * self,PyObject* args)
+{
+    int n;
+
+    if(!PyArg_ParseTuple(args,"i",&n))
+    {
+        return NULL;
+    }
+
+    
+    worldmodelWrap worldmodel = testWorldModel();
+    vector<vector<float>> teamPosC = worldmodel.getTeammates();
+    PyObject * teamPosPy = PyList_New(teamPosC.size());
+    PyObject * row;
+    PyObject * value;
+    for(int i =0; i<teamPosC.size();++i){
+        row = PyList_New(teamPosC[i].size());
+        for(int j = 0; j < teamPosC[i].size();++j){
+            value = Py_BuildValue("f",teamPosC[i][j]);
+            PyList_SetItem(row,j,value);
+        }
+        
+        PyList_SetItem(teamPosPy,i,row);
+    }
+    
+    return teamPosPy;
+}
+
+
+PyObject * sendUNum(PyObject * self,PyObject* args)
+{
+    int n;
+
+    if(!PyArg_ParseTuple(args,"i",&n))
+    {
+        return NULL;
+    }
+
+    worldmodelWrap worldmodel = testWorldModel();
+    int UNumC = worldmodel.getUNum();
+    return Py_BuildValue("i",UNumC);
+}
+
+PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
+{
+    int n;
+
+    if(!PyArg_ParseTuple(args,"i",&n))
+    {
+        return NULL;
+    }
+
+    worldmodelWrap worldmodel = testWorldModel();
+    int NUMAGENTS = worldmodel.getNUMAGENTS();
+    return Py_BuildValue("i",NUMAGENTS);
+}
+
+
+
 
 /*
 TODO
@@ -168,6 +264,12 @@ void selectSkill(worldmodelWrap worldmodel) {
 
 static PyMethodDef myMethods[] = {
     {"sendTeamDistanceToBall",sendTeamDistanceToBall,METH_VARARGS,"sends team distance to ball"},
+    {"sendBallPos",sendBallPos,METH_VARARGS,"sends ball coordinates"},
+    {"sendMyPos",sendMyPos,METH_VARARGS,"sends this player's coordinates"},
+    {"sendTeamPos",sendTeamPos,METH_VARARGS,"sends team coordinates"},
+    {"sendUNum",sendUNum,METH_VARARGS,"sends this player's number "},
+    {"sendNUMAGENTS",sendNUMAGENTS,METH_VARARGS,"sends this number of players"},
+
     {NULL,NULL,0,NULL}
 };
 
