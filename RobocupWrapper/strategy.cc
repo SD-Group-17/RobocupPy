@@ -241,18 +241,20 @@ PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
     return Py_BuildValue("i",NUMAGENTS);
 }
 
+
+//Calls python function selectSkill() in strategy.py and prints the output
 void selectSkill(){
     CPyInstance hInstance;
 
-	CPyObject pName = PyUnicode_FromString("strategy");
+	CPyObject pName = PyUnicode_FromString("strategy"); //name of python file
 	CPyObject pModule = PyImport_Import(pName);
 
 	if(pModule)
 	{
-		CPyObject pFunc = PyObject_GetAttrString(pModule, "selectSkill");
+		CPyObject pFunc = PyObject_GetAttrString(pModule, "selectSkill"); //name of python function
 		if(pFunc && PyCallable_Check(pFunc))
 		{
-			CPyObject pValue = PyObject_CallObject(pFunc, NULL);
+			CPyObject pValue = PyObject_CallObject(pFunc, NULL); //output of python function as c++ object
 
 			printf_s("C: selectSkill() = %ld\n", PyLong_AsLong(pValue));
 		}
@@ -319,6 +321,12 @@ static struct PyModuleDef RobocupWrapper = {
 PyMODINIT_FUNC PyInit_RobocupWrapper(void)
 {
     return PyModule_Create(&RobocupWrapper);
+}
+
+int main(){
+    selectSkill();
+    
+    return 0;
 }
 
 
