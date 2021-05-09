@@ -1,6 +1,8 @@
 #include <vector>
 #include <cmath>
+#include <stdio.h>
 #include <Python.h>
+#include <pyhelper.hpp>
 #define PY_SSIZE_T_CLEAN
 
 using namespace std;
@@ -237,6 +239,33 @@ PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
     worldmodelWrap worldmodel = testWorldModel();
     int NUMAGENTS = worldmodel.getNUMAGENTS();
     return Py_BuildValue("i",NUMAGENTS);
+}
+
+void selectSkill(){
+    CPyInstance hInstance;
+
+	CPyObject pName = PyUnicode_FromString("strategy");
+	CPyObject pModule = PyImport_Import(pName);
+
+	if(pModule)
+	{
+		CPyObject pFunc = PyObject_GetAttrString(pModule, "selectSkill");
+		if(pFunc && PyCallable_Check(pFunc))
+		{
+			CPyObject pValue = PyObject_CallObject(pFunc, NULL);
+
+			printf_s("C: selectSkill() = %ld\n", PyLong_AsLong(pValue));
+		}
+		else
+		{
+			printf("ERROR: function selectSkill()\n");
+		}
+
+	}
+	else
+	{
+		printf_s("ERROR: Module not imported\n");
+	}
 }
 
 
