@@ -132,4 +132,4 @@ In Luis Almeida, Jianmin Ji, Gerald Steinbauer, and Sean Luke, editors, RoboCup-
 
 Patrick MacAlpine (patmac@cs.utexas.edu)
 
-Peter Stone (pstone@cs.utexas.edu)
+Peter Stone (pstone@cs.utexas.edu).
