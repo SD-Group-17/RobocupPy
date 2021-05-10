@@ -12,7 +12,7 @@ install:
 
 script: 
   - cd RobocupWrapper 
-  - ls
+  - gcc --version
   - pip install /home/travis/build/SD-Group-17/RobocupPy/RobocupWrapper
   - python3 setup.py build_ext --inplace
   - python -m pytest test.py # run tests
