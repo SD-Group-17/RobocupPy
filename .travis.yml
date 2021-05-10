@@ -1,7 +1,9 @@
 language: python
 python:
   - 3.6
+  
 before_install:
+  - pwd
   - pip install -U pytest
   - pip install codecov
 install:
