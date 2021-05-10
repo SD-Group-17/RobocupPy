@@ -3,7 +3,7 @@ python:
   - 3.6
   
 before_install:
-  - pwd
+  - std = c++11
   - pip install -U pytest
   - pip install codecov
 install:
@@ -13,7 +13,7 @@ install:
   - pip install --upgrade setuptools
 
 script: 
-  - std = c++11
+  
   - cd RobocupWrapper 
   - gcc --version
   - pip3 install -e .
