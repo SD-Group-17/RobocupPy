@@ -50,7 +50,7 @@ class worldmodelWrap{
         return UNum;
     }
 
-    vector<vector<float>> getTeammates(){
+    vector< vector<float> > getTeammates(){
         return teammates;
     }
     int getNUMAGENTS(){
