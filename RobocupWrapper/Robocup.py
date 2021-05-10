@@ -12,12 +12,14 @@ class Robocup:
         self.myPos = RobocupWrapper.sendMyPos(0)
         self.UNum = RobocupWrapper.sendUNum(0)
         self.NUMAGENTS = RobocupWrapper.sendNUMAGENTS(0)
-
+        
     def Update(self,teamDistanceToBall):
         self.teamDistanceToBall = RobocupWrapper.sendTeamDistanceToBall(0)
 
     def playerDistanceToBall(self,playernum):
-        return self.teamDistanceToBall[playernum]   
+        #return self.teamDistanceToBall[playernum]   
+        return self.teamDistanceToBall
+
 
     def ballCoordinates(self):
         return self.ballPos
