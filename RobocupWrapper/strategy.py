@@ -1,5 +1,3 @@
-def selectSkill() {
-    int skill = 0;
-
+def selectSkill():
+    skill = 0
     return skill
-}
