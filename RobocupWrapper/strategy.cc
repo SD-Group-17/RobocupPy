@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <Python.h>
 #include <pyhelper.hpp>
+#include <iostream>
 #define PY_SSIZE_T_CLEAN
 
 using namespace std;
@@ -256,17 +257,17 @@ void selectSkill(){
 		{
 			CPyObject pValue = PyObject_CallObject(pFunc, NULL); //output of python function as c++ object
 
-			printf_s("C: selectSkill() = %ld\n", PyLong_AsLong(pValue));
+			cout << "C: selectSkill() = " << PyLong_AsLong(pValue);
 		}
 		else
 		{
-			printf("ERROR: function selectSkill()\n");
+			cout << "ERROR: function selectSkill()\n";
 		}
 
 	}
 	else
 	{
-		printf_s("ERROR: Module not imported\n");
+		cout << "ERROR: Module not imported\n";
 	}
 }
 
