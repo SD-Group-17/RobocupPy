@@ -3,7 +3,6 @@ python:
   - 3.6
   
 before_install:
-  - std = c++11
   - pip install -U pytest
   - pip install codecov
 install:
