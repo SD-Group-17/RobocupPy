@@ -253,6 +253,8 @@ void selectSkill(){
     PyObject* myResult = PyObject_CallObject(myFunction,args);
 
     int result = (int) PyLong_AsLong(myResult);
+
+    cout << result;
 }
 
 //Calls python function selectSkill() in strategy.py and prints the output
