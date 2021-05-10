@@ -242,9 +242,21 @@ PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
     return Py_BuildValue("i",NUMAGENTS);
 }
 
+void selectSkill(){
+    PyObject* myModuleString = PyUnicode_FromString((char*)"strategy");
+    PyObject* myModule = PyImport_Import(myModuleString);
+
+    PyObject* myFunction = PyObject_GetAttrString(myModule,(char*)"selectSkill");
+    //arguments:
+    PyObject* args = PyTuple_Pack(1,PyFloat_FromDouble(2.0));
+
+    PyObject* myResult = PyObject_CallObject(myFunction,args);
+
+    int result = (int) PyLong_AsLong(myResult);
+}
 
 //Calls python function selectSkill() in strategy.py and prints the output
-void selectSkill(){
+void selectSkill2(){
     CPyInstance hInstance;
 
 	CPyObject pName = PyUnicode_FromString("strategy"); //name of python file
@@ -329,6 +341,3 @@ int main(){
     
     return 0;
 }
-
-
-    

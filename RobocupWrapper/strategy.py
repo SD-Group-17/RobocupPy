@@ -1,4 +1,3 @@
-def selectSkill():
+def selectSkill(skill):
     print('Python function selectSkill() called')
-    skill = 0
     return skill
