@@ -243,7 +243,7 @@ PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
 }
 
 //Calls python function selectSkill() in strategy.py and prints the output
-void selectSkill(){
+int selectSkill(){
     CPyInstance hInstance;
 
 	CPyObject pName = PyUnicode_FromString("strategy"); //name of python file
@@ -256,17 +256,19 @@ void selectSkill(){
 		{
 			CPyObject pValue = PyObject_CallObject(pFunc, NULL); //output of python function as c++ object
 
-			cout << "C: selectSkill() = " << PyLong_AsLong(pValue);
+			return (int) PyLong_AsLong(pValue);
 		}
 		else
 		{
 			cout << "ERROR: function selectSkill()\n";
+            return -1;
 		}
 
 	}
 	else
 	{
 		cout << "ERROR: Module not imported\n";
+        return -1;
 	}
 }
 
@@ -324,7 +326,8 @@ PyMODINIT_FUNC PyInit_RobocupWrapper(void)
 }
 
 int main(){
-    selectSkill();
+    int val = selectSkill();
+    cout << val;
     
     return 0;
 }
