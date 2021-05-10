@@ -130,6 +130,6 @@ In Luis Almeida, Jianmin Ji, Gerald Steinbauer, and Sean Luke, editors, RoboCup-
 
 ### UT Austin Villa team contacts:
 
-Patrick MacAlpine (patmac@cs.utexas.edu)
+Patrick MacAlpine (patmac@cs.utexas.edu).
 
 Peter Stone (pstone@cs.utexas.edu).
