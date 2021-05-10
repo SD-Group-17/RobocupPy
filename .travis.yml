@@ -11,6 +11,7 @@ install:
   - pip install --upgrade setuptools
 
 script: 
+  - std = c++11
   - cd RobocupWrapper 
   - gcc --version
   - pip3 install -e .
