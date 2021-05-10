@@ -25,14 +25,14 @@ using namespace std;
 class worldmodelWrap{
 
     
-    vector<vector<float>> teammates;
+    vector< vector<float> > teammates;
     vector<float> myPosition;
     vector<float> ball;
     int UNum;
     int NUMAGENTS;
     
     public:
-    worldmodelWrap(vector<vector<float>> teammatesIN,  vector<float> ballIN,  int UNumIN, int NUMAGENTSIN){
+    worldmodelWrap(vector< vector<float> > teammatesIN,  vector<float> ballIN,  int UNumIN, int NUMAGENTSIN){
         teammates = teammatesIN;
         myPosition =teammatesIN[UNumIN];
         ball = ballIN;
@@ -112,7 +112,7 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 
      //instance features
     vector<float> playersPos;
-    vector<vector<float>> teamMatesIn;
+    vector< vector<float> > teamMatesIn;
     vector<float> ballIn;
     int uNumIn = 0;
     int NumAgentsIn = 11;
@@ -144,7 +144,7 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
     PyObject *teamDisTotal = PyList_New(eachInstance.size());
 
     for (unsigned k=0; k < eachInstance.size(); k++){
-        vector<vector<float>> teamPosC = eachInstance[k].getTeammates(); //[[2.0,1.0]]
+        vector< vector<float> > teamPosC = eachInstance[k].getTeammates(); //[[2.0,1.0]]
         vector<float> ballPosC = eachInstance[k].getBall();
         //PyObject * teamPosPy = PyList_New(teamPosC.size());
         PyObject * value;
@@ -171,7 +171,7 @@ PyObject * sendBallPos(PyObject * self,PyObject* args)
     }
 
     //instance features
-    vector<vector<float>> teamMatesIn;
+    vector<vector< float> > teamMatesIn;
     vector<float> ballIn;
     int uNumIn;
     int NumAgentsIn;
@@ -236,7 +236,7 @@ PyObject * sendMyPos(PyObject * self,PyObject* args)
 
     //instance features
     vector<float> playersPos; 
-    vector<vector<float>> teamMatesIn;
+    vector<vector< float> > teamMatesIn;
     vector<float> ballIn = {1.0, 1.0};
     int uNumIn;
     int NumAgentsIn = 11;
@@ -298,7 +298,7 @@ PyObject * sendTeamPos(PyObject * self,PyObject* args)
 
     //instance features
     vector<float> playersPos;
-    vector<vector<float>> teamMatesIn;
+    vector<vector< float> > teamMatesIn;
     vector<float> ballIn = {1.0, 1.0};
     int uNumIn = 0;
     int NumAgentsIn = 11;
@@ -329,7 +329,7 @@ PyObject * sendTeamPos(PyObject * self,PyObject* args)
     for(unsigned k = 0; k < eachInstance.size(); k++ ){
         
         worldmodelWrap wmw = eachInstance[k];
-        vector<vector<float>> teamPosC = wmw.getTeammates(); //teamPosC has 1 value
+        vector<vector< float> > teamPosC = wmw.getTeammates(); //teamPosC has 1 value
         PyObject * teamPosPy = PyList_New(teamPosC.size()); //teamPosPy has 1 value
         PyObject * row;
         PyObject * value;
@@ -360,7 +360,7 @@ PyObject * sendUNum(PyObject * self,PyObject* args)
 
     //instance features
     vector<float> playersPos = {2.0,1.0};
-    vector<vector<float>> teamMatesIn = {11, playersPos};
+    vector< vector<float> > teamMatesIn = {11, playersPos};
     vector<float> ballIn = {1.0, 1.0};
     int uNumIn;
     int NumAgentsIn = 11;
@@ -405,7 +405,7 @@ PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
     int n;
 
     //instance features
-    vector<vector<float>> teamMatesIn;
+    vector<vector< float> > teamMatesIn;
     vector<float> ballIn;
     int uNumIn;
     int NumAgentsIn;
