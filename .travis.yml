@@ -1,19 +1,22 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
-  - "3.6"      # current default Python on Travis CI
-  - "3.7"
-  - "3.8"
-  - "3.9"
-  - "3.9-dev"  # 3.9 development branch
-  - "nightly"  # nightly build
-# command to install dependencies
+  - 3.6
+before_install:
+  - pip install -U pytest
+  - pip install codecov
 install:
- # - pip install -r requirements.txt
-# command to run tests
-script:
-  - pytest
-env:
-  - ca31d2d8-5c7c-4b32-8695-808e1d22e365
+  - pip install -r requirements.txt 
+  - pip install coverage
+  - pip install pytest-cov==2.11.1 
+
+script: 
+  - cd Robocupwrapper 
+  - pip3 install .
+  - python setup01.py build
+  - python -m pytest test.py # run tests
+  - py.test test.py --cov=.
+
+
+after_success:
+  #- codecov 
+  - bash <(curl -s https://codecov.io/bash)
