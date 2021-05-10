@@ -112,7 +112,7 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 
      //instance features
     vector<float> playersPos;
-    vector< vector<float> > teamMatesIn;
+    
     vector<float> ballIn;
     int uNumIn = 0;
     int NumAgentsIn = 11;
@@ -120,7 +120,7 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 
     //Team =(2.0,1.0), ball = (13.0,15.0)
     playersPos = {2.0,1.0};
-    teamMatesIn = {{2.0,1.0}};
+    vector< vector<float> > teamMatesIn(1, playerPos);
     ballIn = {13.0, 15.0};
     worldmodelWrap wm1 = worldmodelWrap(teamMatesIn,ballIn, uNumIn, NumAgentsIn);
     eachInstance.push_back(wm1);
@@ -128,7 +128,7 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 
     //Team = (20.0,20.0), ball = (10.0,5.0)
     playersPos = {20.0, 20.0};
-    teamMatesIn = {{2.0,1.0}};
+    vector< vector<float> > teamMatesIn(1, playerPos);
     ballIn = {10.0, 5.0};
     worldmodelWrap wm2 = worldmodelWrap(teamMatesIn,ballIn, uNumIn, NumAgentsIn);
     eachInstance.push_back(wm2);
@@ -136,7 +136,7 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 
     //Team = (5.0,18.0), ball = (0.0,20.0)
     playersPos = {5.0, 18.0};
-    teamMatesIn = {{2.0,1.0}};
+    vector< vector<float> > teamMatesIn(1, playerPos);
     ballIn = {0.0, 20.0};
     worldmodelWrap wm3 = worldmodelWrap(teamMatesIn,ballIn, uNumIn, NumAgentsIn);
     eachInstance.push_back(wm3);
