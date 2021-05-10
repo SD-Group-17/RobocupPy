@@ -5,13 +5,13 @@ before_install:
   - pip install -U pytest
   - pip install codecov
 install:
-  - ADD requirements.txt 
   - pip install -r requirements.txt 
   - pip install coverage
   - pip install pytest-cov==2.11.1 
 
 script: 
   - cd RobocupWrapper 
+  - pwd
   - pip install .
   - python3 setup01.py build_ext --inplace
   - python -m pytest test.py # run tests
