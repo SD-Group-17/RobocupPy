@@ -1,3 +1,0 @@
-C:/Users/evan_/Documents/GitHub/RobocupPy/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/evan_/Documents/GitHub/RobocupPy/cmake-build-debug/CMakeFiles/RobocupPy.dir
-C:/Users/evan_/Documents/GitHub/RobocupPy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
