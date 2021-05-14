@@ -2,7 +2,6 @@
 #include <cmath>
 #include <stdio.h>
 #include <Python.h>
-#include "pyhelper.hpp"
 #define PY_SSIZE_T_CLEAN
 
 using namespace std;
@@ -239,35 +238,6 @@ PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
     return Py_BuildValue("i",NUMAGENTS);
 }
 
-//Python -> C++
-
-//Calls python function selectSkill() in strategy.py and prints the output
-void selectSkill(){
-    CPyInstance hInstance;
-
-	CPyObject pName = PyUnicode_FromString("strategy"); //name of python file
-	CPyObject pModule = PyImport_Import(pName);
-
-	if(pModule)
-	{
-		CPyObject pFunc = PyObject_GetAttrString(pModule, "selectSkill"); //name of python function
-		if(pFunc && PyCallable_Check(pFunc))
-		{
-			CPyObject pValue = PyObject_CallObject(pFunc, NULL); //output of python function as c++ object
-
-			//printf_s("C: selectSkill() = %ld\n", PyLong_AsLong(pValue));
-		}
-		else
-		{
-			// printf("ERROR: function selectSkill()\n");
-		}
-
-	}
-	else
-	{
-		// printf_s("ERROR: Module not imported\n");
-	}
-}
 
 
 
@@ -321,12 +291,5 @@ PyMODINIT_FUNC PyInit_RobocupWrapper(void)
 {
     return PyModule_Create(&RobocupWrapper);
 }
-
-int main(){
-    selectSkill();
-    
-    return 0;
-}
-
 
     
