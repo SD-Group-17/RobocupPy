@@ -2,7 +2,7 @@
 #include <cmath>
 #include <stdio.h>
 #include <Python.h>
-#include <pyhelper.hpp>
+#include "pyhelper.hpp"
 #include <iostream>
 #define PY_SSIZE_T_CLEAN
 
