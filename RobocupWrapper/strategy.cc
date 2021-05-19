@@ -182,7 +182,7 @@ PyObject * sendBallPos(PyObject * self,PyObject* args)
     //(2,0)
     vector<float> playersPos(2,0.0);
     playersPos[0] = 2; playersPos[1] = 0.0;
-    vector< vector<float> > teamMatesIn1(11, playersPos)
+    vector< vector<float> > teamMatesIn1(11, playersPos);
     vector<float> ballIn1{2.0,0.0};
     uNumIn = 0;
     NumAgentsIn = 11;
