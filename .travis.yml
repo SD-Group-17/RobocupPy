@@ -23,7 +23,7 @@ script:
   #- (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)
   - cd RobocupWrapper 
   - pip3 install -e.
-  - CC=g++-4.8 python3 setup001.py build_ext --inplace
+  - python3 setup001.py build_ext --inplace
   - python -m pytest test.py # run tests
   - py.test test.py --cov=.
 
