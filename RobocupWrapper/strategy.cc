@@ -149,7 +149,7 @@ PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
         //PyObject * teamPosPy = PyList_New(teamPosC.size());
         PyObject * value;
         for(unsigned i =0; i<teamPosC.size();++i){
-            float distance = eachInstance[k].getDistance(teamPosC[i], ballPosC);
+            double distance = eachInstance[k].getDistance(teamPosC[i], ballPosC);
            // ceil(distance)
             value = Py_BuildValue("f",distance);
 

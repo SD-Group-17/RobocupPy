@@ -2,7 +2,7 @@ Set up:
 1)Navigate to RobocupWrapper folder through terminal
 
 2) Run:
-python3 setup01.py  build_ext --inplace
+python3 setup001.py  build_ext --inplace
 
 3) Run:
 Python3 test.py
