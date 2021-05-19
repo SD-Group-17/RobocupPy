@@ -67,7 +67,7 @@ class worldmodelWrap{
 
 }; 
 
-
+/*
 //Strategy cc classes:
 
 //Wrapper methods:
@@ -100,6 +100,7 @@ class worldmodelWrap{
 
 // }
 
+*/
 
 PyObject * sendTeamDistanceToBall(PyObject * self,PyObject* args)
 {
