@@ -13,7 +13,7 @@ before_install:
   - pip install setuptools
 
 install:
-  - sudo apt-get install -qq gcc-7.0 g++-7.0
+  - sudo apt-get install -qq gcc-7.4 g++-7.4
   #- CC=g++-4.8 python setup.py install
   #- sudo apt-get -r requirements.txt 
   - pip install coverage
