@@ -15,8 +15,8 @@ install:
   - sudo apt-get install -qq gcc-4.8 g++-4.8
   #- CC=g++-4.8 python setup.py install
   #- sudo apt-get -r requirements.txt 
-  - sudo apt-get coverage
-  - sudo apt-get pytest-cov==2.11.1 
+  - pip install coverage
+  - pip install pytest-cov==2.11.1 
 
 script:
   #- python setup.py test
