@@ -182,23 +182,23 @@ PyObject * sendBallPos(PyObject * self,PyObject* args)
     //(2,0)
     vector<float> playersPos(2,0.0);
     playersPos[0] = 2; playersPos[1] = 0.0;
-    teamMatesIn = {11, playersPos};
-    ballIn = {2.0,0.0};
+    vector< vector<float> > teamMatesIn1(11, playersPos)
+    vector<float> ballIn1{2.0,0.0};
     uNumIn = 0;
     NumAgentsIn = 11;
-    worldmodelWrap worldmodel = worldmodelWrap(teamMatesIn,ballIn, uNumIn, NumAgentsIn);
+    worldmodelWrap worldmodel = worldmodelWrap(teamMatesIn1,ballIn1, uNumIn, NumAgentsIn);
     
     eachInstance.push_back(worldmodel);
 
     //(0,0)
-    ballIn = {0.0,0.0};
-    worldmodelWrap worldmodel2 = worldmodelWrap(teamMatesIn,ballIn, uNumIn, NumAgentsIn);
+    vector<float> ballIn2{0.0,0.0};
+    worldmodelWrap worldmodel2 = worldmodelWrap(teamMatesIn1,ballIn2, uNumIn, NumAgentsIn);
     eachInstance.push_back(worldmodel2);
 
 
     //(0,2)
-    ballIn = {0.0,2.0};
-    worldmodelWrap worldmodel3 = worldmodelWrap(teamMatesIn,ballIn, uNumIn, NumAgentsIn);
+    vector<float> ballIn3{0.0,2.0};
+    worldmodelWrap worldmodel3 = worldmodelWrap(teamMatesIn1,ballIn3, uNumIn, NumAgentsIn);
     eachInstance.push_back(worldmodel3);
     
     PyObject *ballPosPyTotal = PyList_New(3);
