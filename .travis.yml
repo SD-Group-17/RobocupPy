@@ -9,13 +9,11 @@ install:
   - pip install -r requirements.txt 
   - pip install coverage
   - pip install pytest-cov==2.11.1 
-  - pip install --upgrade setuptools
 
 script: 
-  
+#
   - cd RobocupWrapper 
-  - gcc --version
-  - pip3 install -e .
+  - pip3 install -e.
   - python3 setup001.py build_ext --inplace
   - python -m pytest test.py # run tests
   - py.test test.py --cov=.
