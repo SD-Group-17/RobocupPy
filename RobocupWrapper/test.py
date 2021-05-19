@@ -19,8 +19,7 @@ def testTeamCoord():
 
     wanted_result = [[2.0,1.0],[8.0,9.0],[20.0,10.0]]
     test_result = robocup.teamCoordinates()
-    print("Wanted:",wanted_result)
-    print("Test:",test_result)
+    print(wanted_result == test_result)
     assert(wanted_result == test_result), "Test Failed"
 
 # Test cases which check the current player's number
@@ -28,6 +27,7 @@ def testTeamCoord():
 def testPlayerNum():
     wanted_result = [0,5,10]
     test_result = robocup.playerNumber()
+    print(wanted_result == test_result)
     assert(wanted_result == test_result), "Test Failed"
 
 # Test cases which check the coordinates of the current player
@@ -35,6 +35,7 @@ def testPlayerNum():
 def testThisPlayerCoord():
     wanted_result = [[2.0, 1.0], [5.0, 10.0], [12.0, 4.0]]
     test_result = robocup.thisPlayerCoordinates()
+    print(wanted_result == test_result)
     assert(wanted_result == test_result), "Test Failed"
 
 # Test cases which check the total number of agents in a team on the field
@@ -42,6 +43,7 @@ def testThisPlayerCoord():
 def testNumAgents():
     wanted_result = [11,5,1]
     test_result = robocup.num_agents()
+    print(wanted_result == test_result)
     assert(wanted_result == test_result), "Test Failed"
 
 # Test cases which check the distance between the current player and the ball 
@@ -49,6 +51,7 @@ def testNumAgents():
 def testPlayerDistanceToBall():
     wanted_result = [17.804492950439453, 18.027755737304688, 5.385164737701416]
     test_result = robocup.playerDistanceToBall(0)
+    print(wanted_result == test_result)
     assert(wanted_result == test_result), "Test Failed"
 
 
