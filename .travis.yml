@@ -16,17 +16,18 @@ install:
   - sudo apt install software-properties-common
   - sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
   # - sudo apt-get install -qq gcc-4.8 g++-4.8
-  #- CC=g++-4.8 python setup.py install
+  - CC=g++-7 python setup001.py install
   #- sudo apt-get -r requirements.txt 
   - pip install coverage
   - pip install pytest-cov==2.11.1 
 
 script:
-  #- python setup.py test
+  
   #- (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)
   - cd RobocupWrapper 
   - pip3 install -e.
-  - python3 setup001.py build_ext --inplace
+  #- python3 setup001.py build_ext --inplace
+  #- python setup001.py test
   - python -m pytest test.py # run tests
   - py.test test.py --cov=.
 
