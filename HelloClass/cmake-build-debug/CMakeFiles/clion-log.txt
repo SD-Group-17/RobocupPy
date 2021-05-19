@@ -1,1 +1,0 @@
-CMakeLists.txt not found in C:\Users\evan_\Documents\GitHub\RobocupPy\HelloClass Select CMakeLists.txt
