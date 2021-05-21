@@ -34,9 +34,10 @@ script:
   - cpp -v /dev/null -o /dev/null
   - cd /
   - ls
+  - cd /usr
+  - ls
   #- dpkg -L python-dev-tools
-  - g++ test.cc -o test -I/travis/virualenv/python3.7.1/include/python3.7 -lpython3.7 
-
+  - g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt
   - ./test
   - #python -m pytest test.py # run tests
   - #py.test test.py --cov=.
