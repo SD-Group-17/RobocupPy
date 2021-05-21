@@ -28,7 +28,7 @@ script:
   - CC=g++-7 python setup01.py install
   - ls
   - which python
-  - g++ test.cc -o test -I/usr/include/python3.7 -lpython3.7 
+  - g++ test.cc -o test -I/travis/virualenv/include/python3.7 -lpython3.7 
 
   - ./test
   - #python -m pytest test.py # run tests
