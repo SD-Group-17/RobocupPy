@@ -19,7 +19,6 @@ install:
   - pip install coverage
   - pip install pytest-cov==2.11.1 
   - pip install python-dev-tools
-  - pip install python3-dev-tools
 
 script:
   
