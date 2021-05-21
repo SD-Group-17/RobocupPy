@@ -29,15 +29,15 @@ script:
   - cd RobocupWrapper 
   - pip3 install -e.
   - CC=g++-7 python setup01.py install
+  - g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt
+  - ./test
   - ls
   - which python
   - cpp -v /dev/null -o /dev/null
   - cd /
-  - ls
   - cd /usr
+  - cd include
   - ls
-  #- dpkg -L python-dev-tools
-  - g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt
-  - ./test
+  #- dpkg -L python-dev-tools  
   - #python -m pytest test.py # run tests
   - #py.test test.py --cov=.
