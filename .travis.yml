@@ -29,7 +29,8 @@ script:
   - ls
   - which python
   - cpp -v /dev/null -o /dev/null
-  - dpkg -L python-dev-tools
+  - which include
+  #- dpkg -L python-dev-tools
   - g++ test.cc -o test -I/travis/virualenv/python3.7.1/include/python3.7 -lpython3.7 
 
   - ./test
