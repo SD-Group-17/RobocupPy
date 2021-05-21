@@ -1,4 +1,5 @@
 #include <vector>
+#include <string>
 #include <cmath>
 #include <stdio.h>
 #include <Python.h>
@@ -47,17 +48,19 @@ TEST_GROUP(FirstTestGroup)
 
 TEST(FirstTestGroup, FirstTest)
 {
-   FAIL("Fail me!");
+	
+	STRCMP_EQUAL(to_string(selectSkill()).c_str(), "0");
 }
 
 TEST(FirstTestGroup, SecondTest)
-{
+{ 
+	//hello world equivalent for testing
     STRCMP_EQUAL("hello", "hello");
 }
 
 int main(int ac, char** av){
-    int val = selectSkill();
-    cout << "Selected skill: "<<val<<endl;
+    //int val = selectSkill();
+    //cout << "Selected skill: "<<val<<endl;
 
     return CommandLineTestRunner::RunAllTests(ac, av);
 }
