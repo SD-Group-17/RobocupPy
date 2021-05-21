@@ -30,7 +30,10 @@ script:
   #- python3 setup001.py build_ext --inplace
   #- python setup001.py test
   - python -m pytest test.py # run tests
-  - pytest test.py --cov=.
+  #- pytest test.py --cov=.
+  
+ after_success:
+  - codecov
 
 ###############################################################3
 
