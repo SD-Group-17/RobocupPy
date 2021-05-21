@@ -325,9 +325,10 @@ PyMODINIT_FUNC PyInit_RobocupWrapper(void)
     return PyModule_Create(&RobocupWrapper);
 }
 
+
 int main(){
     int val = selectSkill();
     cout << "Selected skill: "<<val<<endl;
-    
+
     return 0;
 }

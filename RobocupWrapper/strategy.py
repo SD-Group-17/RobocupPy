@@ -12,5 +12,8 @@ def calculateSkill():
 
     print('Calculating next skill...')
     #calculations here
+    
     skill = robocup.playerNumber()
+
     return skill
+    

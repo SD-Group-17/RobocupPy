@@ -13,7 +13,8 @@ Bi-directional:
 
 Linux:
 For python3.8 systems:
-g++ strategy.cc -o program -I/usr/include/python3.8  -lpython3.8
+g++ strategy.cc -o program -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt
+g++ strategy.cc -o program -I/usr/include/python3.8 -lpython3.8 
 
 For other versions:
 g++ strategy.cc -o program -I/usr/include/python3.<your version>  -lpython3.<your version>
@@ -25,6 +26,11 @@ figure out how to run on windows
 
 2) Run: 
 ./program
+___________________________________________________________
+Testing:
+
+g++ test.cc -o program -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt
+
 ___________________________________________________________
 
 To use robocup library, import robocup class and initialise it by adding these lines to your python file:
