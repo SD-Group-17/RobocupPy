@@ -18,6 +18,8 @@ install:
   - sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
   - pip install coverage
   - pip install pytest-cov==2.11.1 
+  - pip install python-dev-tools
+  - pip install python3-dev-tools
 
 script:
   
