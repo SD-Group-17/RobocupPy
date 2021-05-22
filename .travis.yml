@@ -1,3 +1,6 @@
+env:
+ - CODECOV_TOKEN='ca31d2d8-5c7c-4b32-8695-808e1d22e365'
+ 
 language: python
 
 python:
@@ -33,8 +36,8 @@ script:
   #- pytest test.py --cov=.
   
  after_success:
-  - codecov
-
+  - bash <(curl -s https://codecov.io/bash)
+  
 ############################################################
 
 #   before_install:
