@@ -13,7 +13,6 @@ Bi-directional:
 
 Linux:
 For python3.8 systems:
-g++ strategy.cc -o program -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt
 g++ strategy.cc -o program -I/usr/include/python3.8 -lpython3.8 
 
 For other versions:
