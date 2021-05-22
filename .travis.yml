@@ -1,5 +1,7 @@
 os: linux
 dist: focal
+env:
+ - CODECOV_TOKEN='ca31d2d8-5c7c-4b32-8695-808e1d22e365'
 
 language: python
 
