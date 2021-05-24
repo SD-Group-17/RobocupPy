@@ -49,7 +49,7 @@ TEST_GROUP(FirstTestGroup)
 TEST(FirstTestGroup, FirstTest)
 {
 	
-	STRCMP_EQUAL(to_string(selectSkill()).c_str(), "1");
+	STRCMP_EQUAL(to_string(selectSkill()).c_str(), "0");
 }
 
 TEST(FirstTestGroup, SecondTest)
