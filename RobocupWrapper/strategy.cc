@@ -2,6 +2,8 @@
 #include <cmath>
 #include <stdio.h>
 #include <Python.h>
+#include "pyhelper.hpp"
+#include <iostream>
 #define PY_SSIZE_T_CLEAN
 
 using namespace std;
@@ -10,11 +12,9 @@ using namespace std;
  
 // PyObject* world;
 // PyObject* teamDistanceFromBall;
-
 //calling python code
 //PyObject* myModuleString = PyString_FromString((char*)"robopy");
 //PyObject* myModule = PyImport_Import(myModuleString);
-
 //PyObject* myFunction = PyObject_GetAttrString(myModule,(char*)"hello");
 */
 
@@ -76,9 +76,11 @@ worldmodelWrap testWorldModel(){
     return instance;
 }
 
-//Wrapper methods:
+//Strategy cc classes:
 
-//C++ -> Python
+
+
+//Wrapper methods:
 
 PyObject * distance(PyObject * self,PyObject* args)
 {   
@@ -238,6 +240,35 @@ PyObject * sendNUMAGENTS(PyObject * self,PyObject* args)
     return Py_BuildValue("i",NUMAGENTS);
 }
 
+//Calls python function selectSkill() in strategy.py and prints the output
+int selectSkill(){
+    CPyInstance hInstance;
+
+	CPyObject pName = PyUnicode_FromString("strategy"); //name of python file
+	CPyObject pModule = PyImport_Import(pName);
+
+	if(pModule)
+	{
+		CPyObject pFunc = PyObject_GetAttrString(pModule, "selectSkill"); //name of python function
+		if(pFunc && PyCallable_Check(pFunc))
+		{
+			CPyObject pValue = PyObject_CallObject(pFunc, NULL); //output of python function as c++ object
+
+			return (int) PyLong_AsLong(pValue);
+		}
+		else
+		{
+			cout << "ERROR: function selectSkill()\n";
+            return -1;
+		}
+
+	}
+	else
+	{
+		cout << "ERROR: Module not imported\n";
+        return -1;
+	}
+}
 
 
 
@@ -247,18 +278,12 @@ TODO
 figure out how to make this function be called on
 EDIT: this function is no longer called upon
 void selectSkill(worldmodelWrap worldmodel) {
-
     NUMAGENTS = worldModel->getNUMAGENTS();
-
     int _playerNumber = worldModel->getUNum();
-
     double* _teamMateDistances = NULL;
     double* _opponentDistances = NULL;
-
     _teamMateDistances = (double *) malloc(sizeof(double) * NUM_AGENTS);
-
     DistanceToBallArrayTeammates(_playerNumber,_teamMateDistances, worldmodel); 
-
     //Python Objects
     teamDistanceFromBall =  convertTeamDistanceToBall(_teamMateDistances);
     

@@ -6,8 +6,31 @@ python3 setup01.py  build_ext --inplace
 
 3) Run:
 Python3 test.py
+___________________________________________________________
+Bi-directional:
 
-________________________________________________________
+1) Compile:
+
+Linux:
+For python3.8 systems:
+g++ strategy.cc -o program -I/usr/include/python3.8 -lpython3.8 
+
+For other versions:
+g++ strategy.cc -o program -I/usr/include/python3.<your version>  -lpython3.<your version>
+NB Must use python3.7^
+
+Windows:
+TODO:
+figure out how to run on windows
+
+2) Run: 
+./program
+___________________________________________________________
+Testing:
+
+g++ test.cc -o program -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt
+
+___________________________________________________________
 
 To use robocup library, import robocup class and initialise it by adding these lines to your python file:
 
