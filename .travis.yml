@@ -30,4 +30,6 @@ script:
   - ./build.sh
   - ./travis_qmake_gcc_cpp11_gcov
   - ./get_code_cov.sh 
+  #- python -m pytest test.py # run tests
+  #- pytest --cov=./
 
