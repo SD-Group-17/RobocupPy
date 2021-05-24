@@ -32,6 +32,7 @@ script:
   #- ./get_code_cov.sh 
   - python -m pytest test.py # run tests
   #- pytest --cov=./
+  - py.test  --cov-report term --cov=app/test/
   
 after_success:
   - codecov
