@@ -41,10 +41,10 @@ def testNumAgents():
 
 # Test cases which check the distance between the current player and the ball 
 
-def testPlayerDistanceToBall():
-    wanted_result = [17.804493814764857, 18.027756377319946, 5.385164807134504]
-    test_result = robocup.playerDistanceToBall(0)    
-    assert(wanted_result == test_result), "Test Failed"
+# def testPlayerDistanceToBall():
+#     wanted_result = [17.804493814764857, 18.027756377319946, 5.385164807134504]
+#     test_result = robocup.playerDistanceToBall(0)    
+#     assert(wanted_result == test_result), "Test Failed"
 
 
 
@@ -54,7 +54,7 @@ def runTests():
     testTeamCoord()
     testPlayerNum()
     testThisPlayerCoord()
-    testPlayerDistanceToBall()
+    #testPlayerDistanceToBall()
 
 
 runTests()
