@@ -32,4 +32,9 @@ script:
   #- ./get_code_cov.sh 
   - python -m pytest test.py # run tests
   #- pytest --cov=./
+  
+after_success:
+  - codecov
+  
+  
 
