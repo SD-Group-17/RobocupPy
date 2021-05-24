@@ -20,13 +20,13 @@ install:
   - pip install coverage
   - pip install pytest-cov==2.11.1 
   - pip install python-dev-tools
-
-script:
-  
-  #- (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)
   - cd RobocupWrapper 
   - pip3 install -e.
   - CC=g++-7 python setup01.py install
+
+script:
+  
+  #- (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)  
   - g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt -Wall
   - ./test
   #- ./get_code_cov.sh 
