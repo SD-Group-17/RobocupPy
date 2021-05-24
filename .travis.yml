@@ -33,7 +33,7 @@ script:
   - g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt -Wall
   - ./test
   #- ./get_code_cov.sh 
-  - python -m pytest test.py # run tests
+  - coverage run -m pytest test.py # run tests
   #- pytest --cov=./
   #- py.test  --cov-report term --cov=app/test/
   - coverage report -m
