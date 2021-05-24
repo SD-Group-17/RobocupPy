@@ -530,7 +530,7 @@ static PyMethodDef myMethods[] = {
     {"sendTeamPos",sendTeamPos,METH_VARARGS,"sends team coordinates"},
     {"sendUNum",sendUNum,METH_VARARGS,"sends this player's number "},
     {"sendNUMAGENTS",sendNUMAGENTS,METH_VARARGS,"sends this number of players"},
-    {"distance",distance,METH_VARARGS,"returns the float distance between two points"},
+    //{"distance",distance,METH_VARARGS,"returns the float distance between two points"},
 
     {NULL,NULL,0,NULL}
 };
