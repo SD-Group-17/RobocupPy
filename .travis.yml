@@ -1,6 +1,6 @@
 language: python
 python:
-  - 3.6
+  - 3.8
 
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
@@ -30,7 +30,6 @@ script:
   - ./build.sh
   - ./travis_qmake_gcc_cpp11_gcov
   - ./get_code_cov.sh 
+  #- python -m pytest test.py # run tests
+  #- pytest --cov=./
 
-after_success:
-  #- codecov 
-  - bash <(curl -s https://codecov.io/bash)
