@@ -29,7 +29,7 @@ script:
   - CC=g++-7 python setup01.py install
   - g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt -Wall
   - ./test
-  - ./get_code_cov.sh 
-  #- python -m pytest test.py # run tests
+  #- ./get_code_cov.sh 
+  - python -m pytest test.py # run tests
   #- pytest --cov=./
 
