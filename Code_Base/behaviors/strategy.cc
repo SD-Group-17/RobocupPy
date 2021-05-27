@@ -1,7 +1,6 @@
 #include "naobehavior.h"
 #include <Python.h>
 #include<chrono>
-#include "pyhelper.hpp"
 #include "../rvdraw/rvdraw.h"
 
 
