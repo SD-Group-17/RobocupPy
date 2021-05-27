@@ -1,0 +1,3 @@
+/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/rebuild_cache.dir
+/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/agentspark.dir
+/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/edit_cache.dir
