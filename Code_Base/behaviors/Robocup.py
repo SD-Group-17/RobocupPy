@@ -1,6 +1,6 @@
 class Robocup():
 
-    def __init__(world_data):
+    def __init__(self, world_data):
 
                 
         #World Model Data:
@@ -50,4 +50,20 @@ class Robocup():
 
     def oppDistBall(self):
         return self.opp_dist_ball 
-        
+
+
+    #SKILLS:
+    def STAND():
+        return [0,[0,0]]
+    
+    def GO_TO_POSITION(x,y):
+        return [1, [x,y]]
+    
+    def DRIBBLE(x,y):
+        return [2, [x,y]]
+    
+    def SOFT_KICK(x,y):
+        return [3, [x,y]]
+    
+    def HARD_KICK(x,y):
+        return [4, [x,y]]

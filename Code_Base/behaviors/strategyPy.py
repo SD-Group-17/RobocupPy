@@ -1,4 +1,3 @@
-
 import Robocup as RC
 
 def selectSkill(world_data):

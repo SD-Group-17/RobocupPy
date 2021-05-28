@@ -271,8 +271,8 @@ protected:
     vector<vector<pair<double,int > > > GeneratePreferenceArrayForTeam(int _playerNumber, vector<VecPosition> ImportantPositions);
     
     //python wrapper utility functions:
-    vector<tuple<VecPosition, int > > NaoBehavior::teamPositions(int _playerNumber);
-    vector<tuple<VecPosition, int > > NaoBehavior::opponentPositions();
+    vector<pair<VecPosition, int > >  NaoBehavior::teamPositions(int _playerNumber);
+    vector<pair<VecPosition, int > >  NaoBehavior::opponentPositions();
 
 
 public:

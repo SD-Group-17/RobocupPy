@@ -372,7 +372,7 @@ int pyFunction(PyObject * world_data)
 		if(pFunc && PyCallable_Check(pFunc))
 		{
             //TODO, below function should not take "i", should take something else representing a PyList
-            PyObject * pValue = PyObject_CallFunction(pFunc,"o",world_data);
+            PyObject * pValue = PyObject_CallFunction(pFunc,"O",world_data);
             int x = (int) PyLong_AsLong(pValue);
 			return x;
 		}
@@ -396,9 +396,9 @@ int pyFunction(PyObject * world_data)
 
 //C++ utility functions for python wrapper:
 ////////////////////////////////////////////////////////////////////////////////////////////
-vector<tuple<VecPosition, int > > NaoBehavior::teamPositions(int _playerNumber){
+vector<pair<VecPosition, int > > NaoBehavior::teamPositions(int _playerNumber){
 
-    vector<tuple<VecPosition, int > > positions;
+    vector<pair<VecPosition, int > > positions;
     
     for(int i = WO_TEAMMATE1; i<WO_TEAMMATE1+NUM_AGENTS;i++){ //OUR PLAYERS
         WorldObject* teammate = worldModel->getWorldObject(i);
@@ -420,9 +420,9 @@ vector<tuple<VecPosition, int > > NaoBehavior::teamPositions(int _playerNumber){
         coordinates.push_back(temp.getY);
         coordinates.push_back(temp.getZ);
         */
-        tuple<vector<double>, int > position;
-
-        position = make_tuple( temp , i);
+        pair<VecPosition, int > position;
+        position.first = temp;
+        position.second = i;
 
         positions.push_back(position);
     }
@@ -430,9 +430,9 @@ vector<tuple<VecPosition, int > > NaoBehavior::teamPositions(int _playerNumber){
     return positions;
 }
 
-vector<tuple<VecPosition, int > > NaoBehavior::opponentPositions(){
+vector<pair<VecPosition, int > > NaoBehavior::opponentPositions(){
 
-    vector<tuple<VecPosition, int > > positions;
+    vector<pair<VecPosition, int > > positions;
 
     for(int i = WO_OPPONENT1; i<WO_OPPONENT1+NUM_AGENTS;i++){ //OUR PLAYERS
         WorldObject* opponent = worldModel->getWorldObject(i);
@@ -447,9 +447,9 @@ vector<tuple<VecPosition, int > > NaoBehavior::opponentPositions(){
         coordinates.push_back(temp.getY);
         coordinates.push_back(temp.getZ);
         */
-        tuple<vector<double>, int > position;
-
-        position = make_tuple( temp , i);
+        pair<VecPosition, int > position;
+        position.first = temp;
+        position.second = i;
 
         positions.push_back(position);
         
