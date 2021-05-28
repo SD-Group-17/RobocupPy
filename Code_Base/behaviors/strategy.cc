@@ -354,8 +354,9 @@ vector<VecPosition> NaoBehavior::GenerateImportantPositions(int _playMode, int _
  * 
  */
 
-int pyFunction(int num)
+int pyFunction(PyObject * world_data)
 {
+    //TODO: Edit this function to pass a PyList over to python
     Py_Initialize();
     PyRun_SimpleString("import sys");
     PyRun_SimpleString("import os");
@@ -370,7 +371,8 @@ int pyFunction(int num)
 		PyObject * pFunc = PyObject_GetAttrString(pModule, "selectSkill"); 
 		if(pFunc && PyCallable_Check(pFunc))
 		{
-            PyObject * pValue = PyObject_CallFunction(pFunc,"i",num);
+            //TODO, below function should not take "i", should take something else representing a PyList
+            PyObject * pValue = PyObject_CallFunction(pFunc,"o",world_data);
             int x = (int) PyLong_AsLong(pValue);
 			return x;
 		}
@@ -391,16 +393,196 @@ int pyFunction(int num)
 
 }
 
+
+//C++ utility functions for python wrapper:
+////////////////////////////////////////////////////////////////////////////////////////////
+vector<tuple<VecPosition, int > > NaoBehavior::teamPositions(int _playerNumber){
+
+    vector<tuple<VecPosition, int > > positions;
+    
+    for(int i = WO_TEAMMATE1; i<WO_TEAMMATE1+NUM_AGENTS;i++){ //OUR PLAYERS
+        WorldObject* teammate = worldModel->getWorldObject(i);
+        VecPosition temp;
+        
+
+        if(i == _playerNumber){
+            temp = worldModel->getMyPosition();
+        }
+        else{
+            temp = teammate->pos;
+        }
+        temp.setZ(0);
+        /*
+        //Converts VecPosition to vector containing x,y,x coordinates
+        vector<double> coordinates;
+
+        coordinates.push_back(temp.getX);
+        coordinates.push_back(temp.getY);
+        coordinates.push_back(temp.getZ);
+        */
+        tuple<vector<double>, int > position;
+
+        position = make_tuple( temp , i);
+
+        positions.push_back(position);
+    }
+    
+    return positions;
+}
+
+vector<tuple<VecPosition, int > > NaoBehavior::opponentPositions(){
+
+    vector<tuple<VecPosition, int > > positions;
+
+    for(int i = WO_OPPONENT1; i<WO_OPPONENT1+NUM_AGENTS;i++){ //OUR PLAYERS
+        WorldObject* opponent = worldModel->getWorldObject(i);
+        VecPosition temp;
+        temp = opponent->pos;
+        temp.setZ(0);
+
+        /*
+        vector<double> coordinates;
+
+        coordinates.push_back(temp.getX);
+        coordinates.push_back(temp.getY);
+        coordinates.push_back(temp.getZ);
+        */
+        tuple<vector<double>, int > position;
+
+        position = make_tuple( temp , i);
+
+        positions.push_back(position);
+        
+    }
+
+    return positions;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//python wrapper PyObject utility functions:
+PyObject * convertVecPos(VecPosition pos)
+{
+    PyObject * posPy = PyList_New(3);
+
+    //wrapping x
+    PyObject * temp = Py_BuildValue("f",pos.getX());
+    PyList_SetItem(posPy,0,temp);
+
+    //wrapping y
+    temp = Py_BuildValue("f",pos.getY());
+    PyList_SetItem(posPy,1,temp);
+
+    //wrapping z
+    temp = Py_BuildValue("f",pos.getZ());
+    PyList_SetItem(posPy,2,temp);
+
+
+    return posPy;
+}
+
+PyObject * distToball(vector<pair<double,int>> list)
+{
+    int n = list.size();
+    pair<double,int> object;
+    PyObject * pyList;
+    PyObject* temp;
+    PyObject * v1;
+    PyObject * v2;
+
+    pyList = PyList_New(n);
+
+    for(int i =0;i<n;i++)
+    {
+        temp = PyList_New(2);
+        object = list[i];
+
+        //value 1
+        v1 = Py_BuildValue("f",object.first);
+        PyList_SetItem(temp,0,v1);
+
+        //value2
+        v2 = Py_BuildValue("i",object.second);
+        PyList_SetItem(temp,1,v2);
+
+        //updating list
+        PyList_SetItem(pyList,i,temp);
+    }
+
+    return pyList;
+}
+
+PyObject * convertPlayerPositions(vector<tuple<VecPosition, int > > positions)
+{
+    int n = positions.size();
+    tuple<VecPosition, int >  vecPos_num;
+    VecPosition vecPos;
+    int num;
+    PyObject * pyList;
+    PyObject* tuplePy;
+    PyObject * vecPosPy;
+    PyObject * numPy;
+
+    pyList = PyList_New(n);
+
+    for(int i =0;i<n;i++)
+    {
+        tuplePy = PyList_New(2);
+        vecPos_num = positions[i];
+        vecPos = vecPos_num.get(0)
+        num = vecPos_num.get(1)
+
+        //Convert vector position to pyobject, add to tuple
+        vecPosPy = convertVecPos(vecPos);
+        PyList_SetItem(tuplePy,0,vecPosPy);
+
+        //Convert int player number to pyobject, add to tuple
+        numPy = Py_BuildValue("i",num);
+        PyList_SetItem(tuplePy,1,numPy);
+
+        //append to list
+        PyList_SetItem(pyList,i,tuplePy);
+    }
+
+    return pyList;
+}
+
+PyObject * worldData(PyObject *  _playerNumber,PyObject * _playMode,PyObject * _side,PyObject * posPy,PyObject * ballPy,PyObject *  teamPositionsPy,PyObject *  oppPositionsPy,PyObject * teamDistToBallPy,PyObject * OppDistToBallPy){
+    
+    //This mirrors constructor for Robocup class in Robocup.py
+    
+    PyObject * pyList;
+    pyList = PyList_New(9);
+    PyList_SetItem(pyList,0,_playerNumber);
+    PyList_SetItem(pyList,1,_playMode);
+    PyList_SetItem(pyList,2,_side);
+    PyList_SetItem(pyList,3,posPy);    
+    PyList_SetItem(pyList,4,ballPy);
+    PyList_SetItem(pyList,5,teamPositionsPy);
+    PyList_SetItem(pyList,6,oppPositionsPy);
+
+    PyList_SetItem(pyList,7,teamDistToBallPy);
+    PyList_SetItem(pyList,8,OppDistToBallPy);
+
+
+
+    return pyList;
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 SkillType NaoBehavior::selectSkill() {
 
     using namespace std::chrono;
     int n = 0;
 
    
-    worldModel->getRVSender()->clear();
+    // worldModel->getRVSender()->clear();
 
     int _playerNumber = worldModel->getUNum();
-    /*std::string SpNum = std::to_string(_playerNumber);
+    std::string SpNum = std::to_string(_playerNumber);
     int _playMode = worldModel->getPlayMode();
     WorldObject* _gameObject = worldModel->getWorldObject(_playerNumber);
     VecPosition _myPos = worldModel->getMyPosition();
@@ -411,22 +593,28 @@ SkillType NaoBehavior::selectSkill() {
     int regionX = getXFieldRegion(ball);
     int regionY = getYFieldRegion(ball);
 
-    
+
     vector<VecPosition> ImportantPositions;
     ImportantPositions = GenerateImportantPositions(_playMode, _side, _playerNumber, regionX, regionY);
     vector<vector<pair<double,int > > > PreferenceToPointArray = GeneratePreferenceArrayForTeam(_playerNumber,ImportantPositions);
-    vector<int> PointPreferences = stableMarriage(PreferenceToPointArray);*/
+    vector<int> PointPreferences = stableMarriage(PreferenceToPointArray);
     
     
+    //PYTHON LOGIC//
+    //===================================================================================================================================================//
+    PyObject * posPy = convertVecPos(_myPos);
+    PyObject * ballPy = convertVecPos(ball);
+    PyObject * teamDistToBallPy = distToball(TeamDistToBall);
+    PyObject * OppDistToBallPy = distToball(OppDistToBall);
+    PyObject * teamPositionsPy = convertPlayerPositions(teamPositions(_playerNumber));
+    PyObject * oppPositionsPy = convertPlayerPositions(opponentPositions());
+    PyObject * world_data = worldData(_playerNumber,_playMode,_side,posPy,ballPy, teamPositionsPy, oppPositionsPy ,teamDistToBallPy,OppDistToBallPy);
 
-	n = pyFunction(_playerNumber);
+    //vector returnPos = nullptr;
+	n = pyFunction(world_data);
+    //==================================================================================================================================================//
 
-    cout<<n<<endl;
 
-
-   
-    
-    
     int skillNum = n;                       // hardcoded for now ,later include and call method =selectskill();
      if (skillNum == 2)
      {                    //choose skill by skillNum
@@ -449,7 +637,7 @@ SkillType NaoBehavior::selectSkill() {
 
    
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////
 
 bool NaoBehavior::isClosestTeam(int _playerNumber, vector<pair<double,int > > TeamDistToBall){
 
