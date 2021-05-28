@@ -615,24 +615,39 @@ SkillType NaoBehavior::selectSkill() {
     //==================================================================================================================================================//
 
 
-    int skillNum = n;                       // hardcoded for now ,later include and call method =selectskill();
-     if (skillNum == 2)
-     {                    //choose skill by skillNum
-        if(_playerNumber == 2)
-        {
-            return kickBall(KICK_IK, VecPosition(1, 3, 0));
-        }
-        else
-        {
-            return SKILL_STAND;
-        }
-     }
-     else{
-        // Demo behavior where players form a rotating circle and kick the ball
-            // back and forth
-            //return demoKickingCircle();
-            return SKILL_STAND;
-        }
+    int skillNum = n; 
+    VecPosition target;
+	/////////////////////////////VecPosition tmp hardcoded ///////////////////////////////////////////////////////
+	
+    switch(n) {
+      case 1: 
+       return SKILL_STAND;
+	 break;
+      case 2: 
+	// Dribble ball toward opponent's goal
+       return kickBall(KICK_DRIBBLE, VecPosition(HALF_FIELD_X, 0, 0));
+	 break;
+      case 3: 
+	// Kick ball toward opponent's goal
+       return kickBall(KICK_FORWARD, VecPosition(HALF_FIELD_X, 0, 0));
+	 break; // Basic kick Small
+      case 4: 
+	// Kick ball toward opponent's goal
+        return kickBall(KICK_IK, VecPosition(HALF_FIELD_X, 0, 0));
+	 break;	// IK kick
+      case 5: 
+         // Walk to the ball
+    	 return goToTarget(ball);
+	  break;
+
+      case 6: 
+         // Walk in different directions
+   	 return goToTargetRelative(VecPosition(1,0,0), 0);
+	  break; // Forward
+			    
+      default: 
+        break;
+   }
     
 
    
