@@ -7,6 +7,6 @@ def selectSkill(world_data):
         return robocup.STAND()
     else:
         if robocup.gameSide() == 0:
-            return robocup.HARD_KICK(robocup.HALF_FIELD_X +0.1,robocup.HALF_FIELD_Y)
+            return robocup.HARD_KICK(robocup.GOAL_LEFT_CENTRE_X +0.1,robocup.GOAL_LEFT_CENTRE_Y)
         else:
-            return robocup.HARD_KICK(- (robocup.HALF_FIELD_X +0.1),robocup.HALF_FIELD_Y)
+            return robocup.HARD_KICK(robocup.GOAL_RIGHT_CENTRE_X -0.1,robocup.GOAL_RIGHT_CENTRE_Y)

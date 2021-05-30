@@ -12,6 +12,11 @@ class Robocup():
     FIELD_CENTER_X = 0.0
     FIELD_CENTER_Y = 0.0
 
+    GOAL_LEFT_CENTRE_X = -HALF_FIELD_X
+    GOAL_LEFT_CENTRE_Y = HALF_FIELD_Y
+    GOAL_RIGHT_CENTRE_X = HALF_FIELD_X
+    GOAL_RIGHT_CENTRE_Y = HALF_FIELD_Y
+
     def __init__(self, world_data):
 
                 
