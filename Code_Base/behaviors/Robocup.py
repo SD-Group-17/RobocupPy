@@ -1,5 +1,17 @@
 class Robocup():
 
+    #Field Constants
+    FIELD_Y=20.0
+    FIELD_X=30.0
+    HALF_FIELD_Y = FIELD_Y/2.0
+    HALF_FIELD_X = FIELD_X/2.0
+    GOAL_Y = 2.1
+    GOAL_X = 0.6
+    GOAL_Z = 0.8
+    HALF_GOAL_Y = GOAL_Y / 2.0
+    FIELD_CENTER_X = 0.0
+    FIELD_CENTER_Y = 0.0
+
     def __init__(self, world_data):
 
                 
