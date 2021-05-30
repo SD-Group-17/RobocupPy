@@ -323,15 +323,15 @@ vector<VecPosition> NaoBehavior::GenerateImportantPositions(int _playMode, int _
     Pos6 = ValidateFieldPos(Pos6);
     Pos7 = ValidateFieldPos(Pos7);
 
-    worldModel->getRVSender()->drawCircle(SpNum,Pos1.getX(), Pos1.getY(),0.2,1,1,1); //WHITE
-    worldModel->getRVSender()->drawCircle(SpNum,Pos2.getX(), Pos2.getY(),0.2,1,1,1); //WHITE
-    worldModel->getRVSender()->drawCircle(SpNum,Pos3.getX(), Pos3.getY(),0.2,1,1,1); //WHITE
-    worldModel->getRVSender()->drawCircle(SpNum,Pos4.getX(), Pos4.getY(),0.2,1,1,1); //WHITE
-    worldModel->getRVSender()->drawCircle(SpNum,Pos5.getX(), Pos5.getY(),0.2,1,1,1); //WHITE
-    worldModel->getRVSender()->drawCircle(SpNum,Pos6.getX(), Pos6.getY(),0.2,1,1,1); //WHITE
-    worldModel->getRVSender()->drawCircle(SpNum,Pos7.getX(), Pos7.getY(),0.2,1,1,1); //WHITE
+    // worldModel->getRVSender()->drawCircle(SpNum,Pos1.getX(), Pos1.getY(),0.2,1,1,1); //WHITE
+    // worldModel->getRVSender()->drawCircle(SpNum,Pos2.getX(), Pos2.getY(),0.2,1,1,1); //WHITE
+    // worldModel->getRVSender()->drawCircle(SpNum,Pos3.getX(), Pos3.getY(),0.2,1,1,1); //WHITE
+    // worldModel->getRVSender()->drawCircle(SpNum,Pos4.getX(), Pos4.getY(),0.2,1,1,1); //WHITE
+    // worldModel->getRVSender()->drawCircle(SpNum,Pos5.getX(), Pos5.getY(),0.2,1,1,1); //WHITE
+    // worldModel->getRVSender()->drawCircle(SpNum,Pos6.getX(), Pos6.getY(),0.2,1,1,1); //WHITE
+    // worldModel->getRVSender()->drawCircle(SpNum,Pos7.getX(), Pos7.getY(),0.2,1,1,1); //WHITE
 
-    worldModel->getRVSender()->drawCircle(SpNum,offsetPos.getX(),offsetPos.getY(),0.2,1,0,1); //PINK
+    //worldModel->getRVSender()->drawCircle(SpNum,offsetPos.getX(),offsetPos.getY(),0.2,1,0,1); //PINK
 
     ImportantPositions.push_back(Pos1);
     ImportantPositions.push_back(Pos2);
@@ -354,26 +354,37 @@ vector<VecPosition> NaoBehavior::GenerateImportantPositions(int _playMode, int _
  * 
  */
 
-int pyFunction(PyObject * world_data)
+int pyFunction(PyObject * world_data, VecPosition &pos)
 {
     //TODO: Edit this function to pass a PyList over to python
-    Py_Initialize();
     PyRun_SimpleString("import sys");
     PyRun_SimpleString("import os");
     PyRun_SimpleString("sys.path.append(\".\")");
     PyRun_SimpleString("sys.path.append(os.path.abspath(os.getcwd()) + \"/behaviors\")");
-
 	PyObject *  pName = PyUnicode_FromString("strategyPy");
 	PyObject * pModule = PyImport_Import(pName);
 
 	if(pModule)
 	{
 		PyObject * pFunc = PyObject_GetAttrString(pModule, "selectSkill"); 
+       
 		if(pFunc && PyCallable_Check(pFunc))
 		{
             //TODO, below function should not take "i", should take something else representing a PyList
-            PyObject * pValue = PyObject_CallFunction(pFunc,"O",world_data);
-            int x = (int) PyLong_AsLong(pValue);
+            PyObject * pReturn = PyObject_CallFunction(pFunc,"O",world_data);
+            PyObject * pSkill = PyList_GetItem(pReturn, 0);
+
+            //convert postion to vector position
+            PyObject * pyPos = PyList_GetItem(pReturn, 1);
+
+            PyObject * xPy = PyList_GetItem(pyPos,0);
+            PyObject * yPy = PyList_GetItem(pyPos,1);
+
+            double x_coord  = PyFloat_AsDouble(xPy);
+            double y_coord  = PyFloat_AsDouble(yPy);
+
+            pos = VecPosition(x_coord,y_coord,0);
+            int x = (int) PyLong_AsLong(pSkill);
 			return x;
 		}
 		else
@@ -513,10 +524,10 @@ PyObject * distToball(vector<pair<double,int>> list)
     return pyList;
 }
 
-PyObject * convertPlayerPositions(vector<tuple<VecPosition, int > > positions)
+PyObject * convertPlayerPositions(vector<pair<VecPosition, int > > positions)
 {
     int n = positions.size();
-    tuple<VecPosition, int >  vecPos_num;
+    pair<VecPosition, int >  vecPos_num;
     VecPosition vecPos;
     int num;
     PyObject * pyList;
@@ -530,8 +541,8 @@ PyObject * convertPlayerPositions(vector<tuple<VecPosition, int > > positions)
     {
         tuplePy = PyList_New(2);
         vecPos_num = positions[i];
-        vecPos = vecPos_num.get(0)
-        num = vecPos_num.get(1)
+        vecPos = vecPos_num.first;
+        num = vecPos_num.second;
 
         //Convert vector position to pyobject, add to tuple
         vecPosPy = convertVecPos(vecPos);
@@ -599,45 +610,78 @@ SkillType NaoBehavior::selectSkill() {
     vector<vector<pair<double,int > > > PreferenceToPointArray = GeneratePreferenceArrayForTeam(_playerNumber,ImportantPositions);
     vector<int> PointPreferences = stableMarriage(PreferenceToPointArray);
     
+
+  
     
     //PYTHON LOGIC//
     //===================================================================================================================================================//
+    Py_Initialize();
+    PyObject * playerNumPy = Py_BuildValue("i",_playerNumber);
+    PyObject * playModePy = Py_BuildValue("i",_playMode);
+    PyObject * sidePy = Py_BuildValue("i",_side);
     PyObject * posPy = convertVecPos(_myPos);
     PyObject * ballPy = convertVecPos(ball);
     PyObject * teamDistToBallPy = distToball(TeamDistToBall);
     PyObject * OppDistToBallPy = distToball(OppDistToBall);
     PyObject * teamPositionsPy = convertPlayerPositions(teamPositions(_playerNumber));
     PyObject * oppPositionsPy = convertPlayerPositions(opponentPositions());
-    PyObject * world_data = worldData(_playerNumber,_playMode,_side,posPy,ballPy, teamPositionsPy, oppPositionsPy ,teamDistToBallPy,OppDistToBallPy);
-
-    //vector returnPos = nullptr;
-	n = pyFunction(world_data);
+    PyObject * world_data = worldData(playerNumPy,playModePy,sidePy,posPy,ballPy, teamPositionsPy, oppPositionsPy ,teamDistToBallPy,OppDistToBallPy);
+    VecPosition pos;
+	n = pyFunction(world_data,pos);
     //==================================================================================================================================================//
 
 
-    int skillNum = n;                       // hardcoded for now ,later include and call method =selectskill();
-     if (skillNum == 2)
-     {                    //choose skill by skillNum
-        if(_playerNumber == 2)
-        {
-            return kickBall(KICK_IK, VecPosition(1, 3, 0));
-        }
-        else
-        {
+    ///////////////////////////////////////C++ INTERFACE///////////////////////////////////////
+
+    switch(n)
+    {
+        case 0:
             return SKILL_STAND;
-        }
-     }
-     else{
-        // Demo behavior where players form a rotating circle and kick the ball
-            // back and forth
-            //return demoKickingCircle();
-            return SKILL_STAND;
-        }
+        break;
+
+        case 1:
+            return goToTarget(pos);
+        break;
+
+        case 2:
+            return kickBall(KICK_DRIBBLE,pos);
+        break;
+
+        case 3:
+            return kickBall(KICK_FORWARD,pos);
+        break;
+
+        case 4:
+            return kickBall(KICK_IK,pos);
+        break;
+    }
+
+
+    // int skillNum = n;  
+    // cout<<n<<endl;                     // hardcoded for now ,later include and call method =selectskill();
+    //  if (skillNum == 0)
+    //  {                    //choose skill by skillNum
+    //     if(_playerNumber == 2)
+    //     {
+    //         return kickBall(KICK_IK, VecPosition(1, 3, 0));
+    //     }
+    //     else
+    //     {
+    //         return SKILL_STAND;
+    //     }
+    //  }
+    //  else{
+    //     // Demo behavior where players form a rotating circle and kick the ball
+    //         // back and forth
+    //         //return demoKickingCircle();
+    //         return SKILL_STAND;
+    //     }
     
 
    
 }
 /////////////////////////////////////////////////////////////////////////////////////////
+
 
 bool NaoBehavior::isClosestTeam(int _playerNumber, vector<pair<double,int > > TeamDistToBall){
 
@@ -654,20 +698,20 @@ SkillType NaoBehavior::DetermineAppropriateKick(VecPosition _mypos, vector<pair<
     VecPosition ClosestOppPos = worldModel->getWorldObject(ClosestOppId)->pos;
 
     if(minOppDis <0.5){
-        worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,0.5,1); //blue
+        //worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,0.5,1); //blue
         return kickBall(KICK_IK, target);
     }
     else if(minOppDis >4.2){
-        worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,1,1); //light blue
+        //worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,1,1); //light blue
         return kickBall(KICK_FORWARD, target);
     }
     else{
         if(ClosestOppPos.getX() > _mypos.getX()){
-            worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,0.5,1); //blue
+            //worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,0.5,1); //blue
             return kickBall(KICK_IK, target);
         }
         else{
-            worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,0,1); //dark blue
+            //worldModel->getRVSender()->drawCircle("KICK",target.getX(), target.getY(),0.1,0,0,1); //dark blue
             return kickBall(KICK_DRIBBLE, target);
         }
         
@@ -955,7 +999,7 @@ VecPosition NaoBehavior::GetDesiredTargetAdvanced(int pNum, VecPosition mypos, i
 
 
         VecPosition partner = getClosestTeammatePos(pNum,TeamDistToBall);
-        worldModel->getRVSender()->drawCircle("PASS Partner x3",partner.getX(), partner.getY(),0.7,1,1,0); //Yellow
+        //worldModel->getRVSender()->drawCircle("PASS Partner x3",partner.getX(), partner.getY(),0.7,1,1,0); //Yellow
 
         float dist = VecPosition(5,10,0).getDistanceTo(ball);
         if(dist < 0.2){
@@ -972,7 +1016,7 @@ VecPosition NaoBehavior::GetDesiredTargetAdvanced(int pNum, VecPosition mypos, i
     }
     else{
         VecPosition partner = getClosestTeammatePos(pNum,TeamDistToBall);
-        worldModel->getRVSender()->drawCircle("PASS Partner x4",partner.getX(), partner.getY(),0.7,1,1,0); //Yellow
+        //worldModel->getRVSender()->drawCircle("PASS Partner x4",partner.getX(), partner.getY(),0.7,1,1,0); //Yellow
 
         if(partner.getX()> mypos.getX()+2 && mypos.getDistanceTo(partner) < 5){
             return VecPosition(partner.getX()+1, partner.getY(), 0);

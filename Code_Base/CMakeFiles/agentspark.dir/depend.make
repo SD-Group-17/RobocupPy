@@ -6418,7 +6418,6 @@ CMakeFiles/agentspark.dir/behaviors/pkbehaviors.cc.o: utwalk/memory/WalkRequestB
 
 CMakeFiles/agentspark.dir/behaviors/strategy.cc.o: behaviors/behavior.h
 CMakeFiles/agentspark.dir/behaviors/strategy.cc.o: behaviors/naobehavior.h
-CMakeFiles/agentspark.dir/behaviors/strategy.cc.o: behaviors/pyhelper.hpp
 CMakeFiles/agentspark.dir/behaviors/strategy.cc.o: behaviors/strategy.cc
 CMakeFiles/agentspark.dir/behaviors/strategy.cc.o: bodymodel/bodymodel.h
 CMakeFiles/agentspark.dir/behaviors/strategy.cc.o: headers/Field.h

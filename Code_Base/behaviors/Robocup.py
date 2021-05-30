@@ -53,17 +53,17 @@ class Robocup():
 
 
     #SKILLS:
-    def STAND():
+    def STAND(self):
         return [0,[0,0]]
     
-    def GO_TO_POSITION(x,y):
+    def GO_TO_POSITION(self,x,y):
         return [1, [x,y]]
     
-    def DRIBBLE(x,y):
+    def DRIBBLE(self,x,y):
         return [2, [x,y]]
     
-    def SOFT_KICK(x,y):
+    def SOFT_KICK(self,x,y):
         return [3, [x,y]]
     
-    def HARD_KICK(x,y):
+    def HARD_KICK(self,x,y):
         return [4, [x,y]]

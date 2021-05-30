@@ -1,8 +1,9 @@
 import Robocup as RC
 
 def selectSkill(world_data):
-    RC.Robocup(world_data)
-    #print("Python works")
-    #print("My number is:",num)
+    robocup = RC.Robocup(world_data)
 
-    return 2
+    if robocup.playerNumber() == 1:
+        return robocup.STAND()
+    else:
+        return robocup.HARD_KICK(1.0,3.0)

@@ -118,12 +118,6 @@ pkbehaviors.h
 naobehavior.h
 /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/behaviors/naobehavior.h
 
-/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/behaviors/pyhelper.hpp
-Python.h
--
-chrono
--
-
 /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/behaviors/strategy.cc
 naobehavior.h
 /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/behaviors/naobehavior.h
@@ -131,8 +125,6 @@ Python.h
 -
 chrono
 -
-pyhelper.hpp
-/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/behaviors/pyhelper.hpp
 ../rvdraw/rvdraw.h
 /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/rvdraw/rvdraw.h
 
