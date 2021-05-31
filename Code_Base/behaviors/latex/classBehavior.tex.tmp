@@ -1,0 +1,54 @@
+\hypertarget{classBehavior}{}\doxysection{Behavior Class Reference}
+\label{classBehavior}\index{Behavior@{Behavior}}
+
+
+Inheritance diagram for Behavior\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classBehavior_a72eb5c67d43143e4decb0905e8739c28}{Init}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classBehavior_a6e46bdb0344dae08be6ef2aaccc3de7d}{Think}} (const std\+::string \&message)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classBehavior_aacfa7a8bb99833ccf3ea4c0a337b00ea}{get\+Mon\+Message}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBehavior_aacfa7a8bb99833ccf3ea4c0a337b00ea}\label{classBehavior_aacfa7a8bb99833ccf3ea4c0a337b00ea}} 
+\index{Behavior@{Behavior}!getMonMessage@{getMonMessage}}
+\index{getMonMessage@{getMonMessage}!Behavior@{Behavior}}
+\doxysubsubsection{\texorpdfstring{getMonMessage()}{getMonMessage()}}
+{\footnotesize\ttfamily virtual std\+::string Behavior\+::get\+Mon\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get message for sending to the server through the monitor port 
+
+Implemented in \mbox{\hyperlink{classNaoBehavior_a313ec3ac2c168a7bbbc0263411b0e276}{Nao\+Behavior}}.
+
+\mbox{\Hypertarget{classBehavior_a72eb5c67d43143e4decb0905e8739c28}\label{classBehavior_a72eb5c67d43143e4decb0905e8739c28}} 
+\index{Behavior@{Behavior}!Init@{Init}}
+\index{Init@{Init}!Behavior@{Behavior}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual std\+::string Behavior\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+called once when the initially connected to the server 
+
+Implemented in \mbox{\hyperlink{classNaoBehavior_aefe280c2f0bbb17856766eac74ba04ab}{Nao\+Behavior}}.
+
+\mbox{\Hypertarget{classBehavior_a6e46bdb0344dae08be6ef2aaccc3de7d}\label{classBehavior_a6e46bdb0344dae08be6ef2aaccc3de7d}} 
+\index{Behavior@{Behavior}!Think@{Think}}
+\index{Think@{Think}!Behavior@{Behavior}}
+\doxysubsubsection{\texorpdfstring{Think()}{Think()}}
+{\footnotesize\ttfamily virtual std\+::string Behavior\+::\+Think (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+called for every message received from the server; should return an action string 
+
+Implemented in \mbox{\hyperlink{classNaoBehavior_a5310125c21cfbda1836b3abb61b0f645}{Nao\+Behavior}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+behavior.\+h\item 
+behavior.\+cc\end{DoxyCompactItemize}

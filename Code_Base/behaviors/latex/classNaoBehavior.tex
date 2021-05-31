@@ -1,0 +1,507 @@
+\hypertarget{classNaoBehavior}{}\doxysection{Nao\+Behavior Class Reference}
+\label{classNaoBehavior}\index{NaoBehavior@{NaoBehavior}}
+
+
+Inheritance diagram for Nao\+Behavior\+:
+% FIG 0
+
+
+Collaboration diagram for Nao\+Behavior\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a25f86584bc546232bbe1a649e3b06c01}\label{classNaoBehavior_a25f86584bc546232bbe1a649e3b06c01}} 
+{\bfseries Nao\+Behavior} (const std\+::string team\+Name, int u\+Num, const map$<$ string, string $>$ \&named\+Params\+\_\+, const string \&rsg\+\_\+)
+\item 
+virtual std\+::string \mbox{\hyperlink{classNaoBehavior_aefe280c2f0bbb17856766eac74ba04ab}{Init}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{classNaoBehavior_a5310125c21cfbda1836b3abb61b0f645}{Think}} (const std\+::string \&message)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a738136d2ba5615603987d13379e14073}\label{classNaoBehavior_a738136d2ba5615603987d13379e14073}} 
+void {\bfseries set\+Mon\+Message} (const std\+::string \&msg)
+\item 
+string \mbox{\hyperlink{classNaoBehavior_a313ec3ac2c168a7bbbc0263411b0e276}{get\+Mon\+Message}} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a44460d8d92f4706ba632c0cdd796bbbf}\label{classNaoBehavior_a44460d8d92f4706ba632c0cdd796bbbf}} 
+Motion\+Core $\ast$ {\bfseries get\+Core} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a450d215cfffa5bb22fb31f9d38f9268c}\label{classNaoBehavior_a450d215cfffa5bb22fb31f9d38f9268c}} 
+void {\bfseries calculate\+Angles} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a2b6861f47a3c354bf211b997b9f457b3}\label{classNaoBehavior_a2b6861f47a3c354bf211b997b9f457b3}} 
+void {\bfseries pre\+Process\+Joints} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aa83b86bde0451146b893bfa111a847e0}\label{classNaoBehavior_aa83b86bde0451146b893bfa111a847e0}} 
+void {\bfseries post\+Process\+Joints} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a489d70a334bee05ea4678cb019b55e05}\label{classNaoBehavior_a489d70a334bee05ea4678cb019b55e05}} 
+string {\bfseries compose\+Action} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a94d439b7cf5565c72ce1df3652303469}\label{classNaoBehavior_a94d439b7cf5565c72ce1df3652303469}} 
+virtual void {\bfseries reset\+Skills} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a472e2d0c2e726b03acdf7880f245749d}\label{classNaoBehavior_a472e2d0c2e726b03acdf7880f245749d}} 
+void {\bfseries reset\+Scales} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a66ff30fab329045c1df40ab6c17e334c}\label{classNaoBehavior_a66ff30fab329045c1df40ab6c17e334c}} 
+void {\bfseries refresh} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a4ba334ea097229a6064a076b1cfe0721}\label{classNaoBehavior_a4ba334ea097229a6064a076b1cfe0721}} 
+void {\bfseries act} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a6c3f27b76f8bf3276cbd57aeb819698e}\label{classNaoBehavior_a6c3f27b76f8bf3276cbd57aeb819698e}} 
+virtual Skill\+Type {\bfseries select\+Skill} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8ab2b1dfe8a7ffd55ba9608306aee800}\label{classNaoBehavior_a8ab2b1dfe8a7ffd55ba9608306aee800}} 
+virtual void {\bfseries beam} (double \&beamX, double \&beamY, double \&beam\+Angle)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a0e4011a63b5f9e98be71bbb48de5622a}\label{classNaoBehavior_a0e4011a63b5f9e98be71bbb48de5622a}} 
+virtual void {\bfseries update\+Fitness} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aa71a69ead5184971f0effa1d74b96f7d}\label{classNaoBehavior_aa71a69ead5184971f0effa1d74b96f7d}} 
+bool {\bfseries checking\+Fall} ()
+\item 
+double \mbox{\hyperlink{classNaoBehavior_a0bf0b1ae6715dd70ed82ceb4b79672ef}{trim}} (const double \&value, const double \&min, const double \&max)
+\item 
+Skill\+Type \mbox{\hyperlink{classNaoBehavior_a91d18f8e9059c312d67a733b7c2b143a}{get\+Walk}} (const double \&direction, const double \&rotation, double speed=1.\+0, bool f\+Allow\+Over180\+Turn=false)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a454b29e7e59a52425b3e28ea67aa505b}\label{classNaoBehavior_a454b29e7e59a52425b3e28ea67aa505b}} 
+Skill\+Type {\bfseries get\+Walk} (Walk\+Request\+Block\+::\+Param\+Set param\+Set, const double \&direction, double rotation, double speed, bool f\+Allow\+Over180\+Turn=false)
+\item 
+Skill\+Type \mbox{\hyperlink{classNaoBehavior_a81d360be247933478d7ec7fdac1fc442}{go\+To\+Target\+Relative}} (const Vec\+Position \&target\+Loc, const double \&target\+Rot, double speed=1, bool f\+Allow\+Over180\+Turn=false, Walk\+Request\+Block\+::\+Param\+Set param\+Set=Walk\+Request\+Block\+::\+P\+A\+R\+A\+M\+S\+\_\+\+D\+E\+F\+A\+U\+LT)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8f775a58ca5c220341deaee07520f18c}\label{classNaoBehavior_a8f775a58ca5c220341deaee07520f18c}} 
+Skill\+Type {\bfseries go\+To\+Target} (const Vec\+Position \&target)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a85039f559c8ce4c6bfb669e6e4bfbda6}\label{classNaoBehavior_a85039f559c8ce4c6bfb669e6e4bfbda6}} 
+Vec\+Position {\bfseries collision\+Avoidance} (bool avoid\+Teammate, bool avoid\+Opponent, bool avoid\+Ball, double P\+R\+O\+X\+I\+M\+I\+T\+Y\+\_\+\+T\+H\+R\+E\+SH, double C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+T\+H\+R\+E\+SH, Vec\+Position target, bool f\+Keep\+Distance=true)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a7194636858264b649c4b2c7f9c387abf}\label{classNaoBehavior_a7194636858264b649c4b2c7f9c387abf}} 
+Vec\+Position {\bfseries collision\+Avoidance\+Correction} (Vec\+Position start, double P\+R\+O\+X\+I\+M\+I\+T\+Y\+\_\+\+T\+H\+R\+E\+SH, double C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+T\+H\+R\+E\+SH, Vec\+Position target, Vec\+Position obstacle)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ae0e0f6701f6f28b5646520510614c273}\label{classNaoBehavior_ae0e0f6701f6f28b5646520510614c273}} 
+Vec\+Position {\bfseries collision\+Avoidance\+Approach} (double P\+R\+O\+X\+I\+M\+I\+T\+Y\+\_\+\+T\+H\+R\+E\+SH, double C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+T\+H\+R\+E\+SH, Vec\+Position target, Vec\+Position obstacle)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_acc32241df6bab1e744842dd429695cdf}\label{classNaoBehavior_acc32241df6bab1e744842dd429695cdf}} 
+Vec\+Position {\bfseries collision\+Avoidance\+Approach} (Vec\+Position start, double P\+R\+O\+X\+I\+M\+I\+T\+Y\+\_\+\+T\+H\+R\+E\+SH, double C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+T\+H\+R\+E\+SH, Vec\+Position target, Vec\+Position obstacle)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a061b1995c54a284703430c12d219e39a}\label{classNaoBehavior_a061b1995c54a284703430c12d219e39a}} 
+Vec\+Position {\bfseries navigate\+Around\+Ball} (Vec\+Position target, double P\+R\+O\+X\+I\+M\+I\+T\+Y\+\_\+\+T\+H\+R\+E\+SH, double C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+T\+H\+R\+E\+SH)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a27f86449e2f3d9ca6c5e2eaf77cd8e15}\label{classNaoBehavior_a27f86449e2f3d9ca6c5e2eaf77cd8e15}} 
+void {\bfseries reset\+Kick\+State} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a3df3875ba726c4f2889ab32b29deb30c}\label{classNaoBehavior_a3df3875ba726c4f2889ab32b29deb30c}} 
+double {\bfseries compute\+Kick\+Cost} (Vec\+Position target, Skill\+Type kick\+Type)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a2864fdf90f8e06f4512e7917e548a413}\label{classNaoBehavior_a2864fdf90f8e06f4512e7917e548a413}} 
+Skill\+Type {\bfseries kick\+Ball} (const int kick\+Type\+To\+Use, const Vec\+Position \&target)
+\item 
+Skill\+Type \mbox{\hyperlink{classNaoBehavior_a019db408ab4d0b696ac546dbca931da2}{kick\+Ball\+At\+Preset\+Target}} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8c653c91ee127f308e136caf289e90fd}\label{classNaoBehavior_a8c653c91ee127f308e136caf289e90fd}} 
+void {\bfseries get\+Target\+Distance\+And\+Angle} (const Vec\+Position \&target, double \&distance, double \&angle)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a05355cdad95b1a659463dee6c97a9fb6}\label{classNaoBehavior_a05355cdad95b1a659463dee6c97a9fb6}} 
+Skill\+Type {\bfseries kick\+Ball\+At\+Target\+Simple\+Positioning} (const Vec\+Position \&target\+To\+Kick\+At, Skill\+Type kick\+\_\+skill, int kick\+Type)
+\item 
+double \mbox{\hyperlink{classNaoBehavior_ad6352e55dd5a809775c5eaea1175ab4c}{get\+Limiting\+Angle\+Forward}} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a7770fa36581a669449906a52401a5b3a}\label{classNaoBehavior_a7770fa36581a669449906a52401a5b3a}} 
+bool {\bfseries beamable\+Play\+Mode} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a43b76c745d841bf49d94916edc490af4}\label{classNaoBehavior_a43b76c745d841bf49d94916edc490af4}} 
+bool {\bfseries improper\+Play\+Mode} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a3249b9fd613d61c4c56978bca5e8683c}\label{classNaoBehavior_a3249b9fd613d61c4c56978bca5e8683c}} 
+bool {\bfseries improper\+Play\+Mode} (int pm)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a70acfb364f7e0d401a3efcb33e449f12}\label{classNaoBehavior_a70acfb364f7e0d401a3efcb33e449f12}} 
+bool {\bfseries kick\+Play\+Mode} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a71a1f279eb2dee6a94f9f993ffd52bd7}\label{classNaoBehavior_a71a1f279eb2dee6a94f9f993ffd52bd7}} 
+bool {\bfseries kick\+Play\+Mode} (int pm, bool either\+Team=false)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ae385671175e6704688dcbd7ad0f6a586}\label{classNaoBehavior_ae385671175e6704688dcbd7ad0f6a586}} 
+bool {\bfseries is\+Indirect\+Kick} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a292ea78d1c19d32edf8445c12e8f3ea6}\label{classNaoBehavior_a292ea78d1c19d32edf8445c12e8f3ea6}} 
+bool {\bfseries is\+Indirect\+Kick} (int pm)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a1943960d2914155119e4bae504f3ace1}\label{classNaoBehavior_a1943960d2914155119e4bae504f3ace1}} 
+void {\bfseries read\+Skills\+From\+File} (const std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_afa65c549aa7b4653c192e94e6900ee7a}\label{classNaoBehavior_afa65c549aa7b4653c192e94e6900ee7a}} 
+bool {\bfseries is\+Right\+Skill} (Skill\+Type skill)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a184c75c4f214c175f6480568e282b78b}\label{classNaoBehavior_a184c75c4f214c175f6480568e282b78b}} 
+bool {\bfseries is\+Left\+Skill} (Skill\+Type skill)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8c88af864cd110cce72aa77ac8e45de0}\label{classNaoBehavior_a8c88af864cd110cce72aa77ac8e45de0}} 
+double {\bfseries get\+Parameter} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_af8359d77757b01593a4fd75dc2d5bb58}\label{classNaoBehavior_af8359d77757b01593a4fd75dc2d5bb58}} 
+double {\bfseries get\+Std\+Name\+Parameter} (const Skill\+Type kick\+\_\+skill, const std\+::string \&parameter)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ae19f2eef5763d9d50ed56fc239b61b1f}\label{classNaoBehavior_ae19f2eef5763d9d50ed56fc239b61b1f}} 
+void {\bfseries get\+Skills\+For\+Kick\+Type} (int kick\+Type, Skill\+Type skills\+For\+Type\mbox{[}$\,$\mbox{]})
+\item 
+vector$<$ Vec\+Position $>$ \mbox{\hyperlink{classNaoBehavior_a54c7b665bbf39f1714e569776016156a}{Generate\+Important\+Positions}} (int \+\_\+play\+Mode, int \+\_\+side, int \+\_\+player\+Number, int regionX, int regionY)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a2776018682a55e7ce8929c108c5d7fab}\label{classNaoBehavior_a2776018682a55e7ce8929c108c5d7fab}} 
+Skill\+Type {\bfseries Face\+Ball} (Vec\+Position mypos)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a7b83a0baf69a0ae99bbf6d1ef6ca59f1}\label{classNaoBehavior_a7b83a0baf69a0ae99bbf6d1ef6ca59f1}} 
+Skill\+Type {\bfseries Face\+Target} (Vec\+Position mypos, Vec\+Position target)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a1f7389f537e6ab7747c358e05de2ff36}\label{classNaoBehavior_a1f7389f537e6ab7747c358e05de2ff36}} 
+Skill\+Type {\bfseries Smart\+Go\+To\+Target} (Vec\+Position target, double proximity)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a4d02316437cb3796f7325f521cb8eabc}\label{classNaoBehavior_a4d02316437cb3796f7325f521cb8eabc}} 
+Skill\+Type {\bfseries Determine\+Appropriate\+Kick} (Vec\+Position \+\_\+mypos, vector$<$ pair$<$ double, int $>$ $>$ Opp\+Dist\+To\+Ball, Vec\+Position target)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_acb31f82ae81466843c4e707d8105bf08}\label{classNaoBehavior_acb31f82ae81466843c4e707d8105bf08}} 
+bool {\bfseries is\+Possesion} (vector$<$ pair$<$ double, int $>$ $>$ Team\+Dist\+To\+Ball, vector$<$ pair$<$ double, int $>$ $>$ Opp\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a4938ebeb2bb260caa56b6c372fcc32c8}\label{classNaoBehavior_a4938ebeb2bb260caa56b6c372fcc32c8}} 
+bool {\bfseries is\+Safe\+To\+Kick} (vector$<$ pair$<$ double, int $>$ $>$ Opp\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_abf7f72e3021a12d2dc0aaf99562485d4}\label{classNaoBehavior_abf7f72e3021a12d2dc0aaf99562485d4}} 
+bool {\bfseries is\+Closest\+Playerto\+Ball} (int \+\_\+player\+Number, vector$<$ pair$<$ double, int $>$ $>$ Team\+Dist\+To\+Ball, vector$<$ pair$<$ double, int $>$ $>$ Opp\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a49891726d4dd0198a8e1d7e70fc5f253}\label{classNaoBehavior_a49891726d4dd0198a8e1d7e70fc5f253}} 
+bool {\bfseries is\+Shooting\+Range} (Vec\+Position \+\_\+player)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_adcf9793a14f9444b6a50c8d146bd6840}\label{classNaoBehavior_adcf9793a14f9444b6a50c8d146bd6840}} 
+bool {\bfseries Ballin\+Goal\+Mouth} ()
+\item 
+\mbox{\Hypertarget{classNaoBehavior_af5f10f56e7fdc78e302847f1d5a2108b}\label{classNaoBehavior_af5f10f56e7fdc78e302847f1d5a2108b}} 
+bool {\bfseries at\+Destination} (Vec\+Position mypos, Vec\+Position target)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8404f3cb1f1477c41a546a75ab1ecfb0}\label{classNaoBehavior_a8404f3cb1f1477c41a546a75ab1ecfb0}} 
+bool {\bfseries is\+In\+Neighbourhood} (Vec\+Position obj, Vec\+Position target, double threshold)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ae3e90fa982e7cfa0e1b854b0a223b69c}\label{classNaoBehavior_ae3e90fa982e7cfa0e1b854b0a223b69c}} 
+bool {\bfseries is\+Any\+Teammate\+In\+Neighbourhood} (int p\+Num, Vec\+Position target, double threshold)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_afb40e782279dfc02d30a81c5bd2b7f77}\label{classNaoBehavior_afb40e782279dfc02d30a81c5bd2b7f77}} 
+bool {\bfseries is\+Between\+Target\+And\+Ball} (Vec\+Position target, Vec\+Position mypos, double threshold)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ab26ee7e483be2546cd0797e856edd096}\label{classNaoBehavior_ab26ee7e483be2546cd0797e856edd096}} 
+bool {\bfseries is\+Closest\+Team} (int \+\_\+player, vector$<$ pair$<$ double, int $>$ $>$ Team\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_af9bbaf3cc278d7240984a023ab7d7a26}\label{classNaoBehavior_af9bbaf3cc278d7240984a023ab7d7a26}} 
+bool {\bfseries Danger\+Close} (vector$<$ pair$<$ double, int $>$ $>$ Opp\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a1be731c2acb1661b7bf1c849282e5c87}\label{classNaoBehavior_a1be731c2acb1661b7bf1c849282e5c87}} 
+bool {\bfseries is\+Offensive\+Strat} (int p\+Num, vector$<$ pair$<$ double, int $>$ $>$ Team\+Dist\+To\+Ball, vector$<$ pair$<$ double, int $>$ $>$ Opp\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aef07e7d89c113f44b2cd74c2b59dcbfc}\label{classNaoBehavior_aef07e7d89c113f44b2cd74c2b59dcbfc}} 
+bool {\bfseries Am\+I\+The\+Nth\+Closest\+Teammate\+To\+Ball} (vector$<$ pair$<$ double, int $>$ $>$ Team\+Dist\+To\+Ball, int \+\_\+player\+Number, int position)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a450c6bbfa8d9df2b29544bc55ec57d46}\label{classNaoBehavior_a450c6bbfa8d9df2b29544bc55ec57d46}} 
+int {\bfseries get\+X\+Field\+Region} (Vec\+Position mypos)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a05885bf6469dea46231145390553f873}\label{classNaoBehavior_a05885bf6469dea46231145390553f873}} 
+int {\bfseries get\+Y\+Field\+Region} (Vec\+Position objpos)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a952f71f32149e040ab2a164c33202b4a}\label{classNaoBehavior_a952f71f32149e040ab2a164c33202b4a}} 
+vector$<$ pair$<$ double, int $>$ $>$ {\bfseries Generate\+Team\+To\+Target\+Distance\+Vector} (int \+\_\+playernumber, Vec\+Position target)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aebee96e94d27514d59882ee7ca4349cc}\label{classNaoBehavior_aebee96e94d27514d59882ee7ca4349cc}} 
+vector$<$ pair$<$ double, int $>$ $>$ {\bfseries Generate\+Opp\+To\+Target\+Distance\+Vector} (Vec\+Position target)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aab5390791e513c1f7adf49a72ffc2af6}\label{classNaoBehavior_aab5390791e513c1f7adf49a72ffc2af6}} 
+Vec\+Position {\bfseries get\+Closest\+Teammate\+Pos} (int \+\_\+player\+Number, vector$<$ pair$<$ double, int $>$ $>$ Team\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a1fb388ce440cc9813503fa36322fca9b}\label{classNaoBehavior_a1fb388ce440cc9813503fa36322fca9b}} 
+Vec\+Position {\bfseries Validate\+Field\+Pos} (Vec\+Position target)
+\item 
+Vec\+Position \mbox{\hyperlink{classNaoBehavior_a828698a2f15c7087ceac671ebe50d7e0}{Get\+Desired\+Target\+Advanced}} (int p\+Num, Vec\+Position mypos, int regionX, int regionY, vector$<$ pair$<$ double, int $>$ $>$ Team\+Dist\+To\+Ball)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ae5ee99607f40890a4709fd35aaef607a}\label{classNaoBehavior_ae5ee99607f40890a4709fd35aaef607a}} 
+double {\bfseries Map\+Value\+In\+Range\+To} (double input, double input\+\_\+start, double input\+\_\+end, double output\+\_\+start, double output\+\_\+end)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac4f807c6047afc8f28c4f024b9ebeb7d}\label{classNaoBehavior_ac4f807c6047afc8f28c4f024b9ebeb7d}} 
+vector$<$ int $>$ {\bfseries stable\+Marriage} (vector$<$ vector$<$ pair$<$ double, int $>$ $>$ $>$ Preference\+To\+Point\+Array)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac6f3b08b8fe40ced504b663aec445977}\label{classNaoBehavior_ac6f3b08b8fe40ced504b663aec445977}} 
+bool {\bfseries w\+Prefers\+M1\+OverM} (int prefer\mbox{[}2 $\ast$N\+U\+M\+\_\+\+A\+G\+E\+N\+TS\mbox{]}\mbox{[}N\+U\+M\+\_\+\+A\+G\+E\+N\+TS\mbox{]}, int w, int m, int m1)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a04ffd4c4d4c679a6acc4d5d71d7a3701}\label{classNaoBehavior_a04ffd4c4d4c679a6acc4d5d71d7a3701}} 
+vector$<$ pair$<$ double, int $>$ $>$ {\bfseries sort\+Arr} (vector$<$ pair$<$ double, double $>$ $>$ arr, int n, pair$<$ double, double $>$ p)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ab84c6472473c2429ecfa6dda2c86d7a8}\label{classNaoBehavior_ab84c6472473c2429ecfa6dda2c86d7a8}} 
+vector$<$ pair$<$ double, int $>$ $>$ {\bfseries Generate\+Preference\+Array\+For\+An\+Agent} (vector$<$ Vec\+Position $>$ Important\+Positions, Vec\+Position playerpos)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac20f7adadcf9fb32773ccdd6e5180d51}\label{classNaoBehavior_ac20f7adadcf9fb32773ccdd6e5180d51}} 
+vector$<$ vector$<$ pair$<$ double, int $>$ $>$ $>$ {\bfseries Generate\+Preference\+Array\+For\+Team} (int \+\_\+player\+Number, vector$<$ Vec\+Position $>$ Important\+Positions)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a75cfc6c573709ffbe5f20ce4a29f7edc}\label{classNaoBehavior_a75cfc6c573709ffbe5f20ce4a29f7edc}} 
+vector$<$ pair$<$ Vec\+Position, int $>$ $>$ {\bfseries team\+Positions} (int \+\_\+player\+Number)
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a60ba8c53b71d3d4b0572d1b1b1d6fc1d}\label{classNaoBehavior_a60ba8c53b71d3d4b0572d1b1b1d6fc1d}} 
+vector$<$ pair$<$ Vec\+Position, int $>$ $>$ {\bfseries opponent\+Positions} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ad6c6074e2a58d8368970720d61168ed1}\label{classNaoBehavior_ad6c6074e2a58d8368970720d61168ed1}} 
+double {\bfseries current\+Fall\+State\+Start\+Time}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac9dda999b304f9a622dd5cd1fe328e86}\label{classNaoBehavior_ac9dda999b304f9a622dd5cd1fe328e86}} 
+string {\bfseries classname}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a85ea773a143290648617066c73636e06}\label{classNaoBehavior_a85ea773a143290648617066c73636e06}} 
+map$<$ Skill\+Type, boost\+::shared\+\_\+ptr$<$ Skill $>$ $>$ {\bfseries skills}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a252c6cdc52364023270379d810d62c81}\label{classNaoBehavior_a252c6cdc52364023270379d810d62c81}} 
+const map$<$ string, string $>$ \& {\bfseries named\+Params}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_afcfcdd7a5e935e428fa417c5ca3114b5}\label{classNaoBehavior_afcfcdd7a5e935e428fa417c5ca3114b5}} 
+string {\bfseries rsg}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a657ca9a94440bbc2d6a2f29db6165b5a}\label{classNaoBehavior_a657ca9a94440bbc2d6a2f29db6165b5a}} 
+std\+::string {\bfseries agent\+Team\+Name}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a9e2870331dd0c312b2317efaeb0ab314}\label{classNaoBehavior_a9e2870331dd0c312b2317efaeb0ab314}} 
+int {\bfseries agent\+U\+Num}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_acc7e6f8a721ba7a4ff18612f44f0ab73}\label{classNaoBehavior_acc7e6f8a721ba7a4ff18612f44f0ab73}} 
+Parser $\ast$ {\bfseries parser}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac8a74dbe4ffed1afc245b518e6e4bf4b}\label{classNaoBehavior_ac8a74dbe4ffed1afc245b518e6e4bf4b}} 
+World\+Model $\ast$ {\bfseries world\+Model}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a5a2513dafdc0baeb7ab1bb2966ab5ecb}\label{classNaoBehavior_a5a2513dafdc0baeb7ab1bb2966ab5ecb}} 
+Body\+Model $\ast$ {\bfseries body\+Model}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ad78cb8fcaf48f6806472ec9d0bd42150}\label{classNaoBehavior_ad78cb8fcaf48f6806472ec9d0bd42150}} 
+P\+F\+Localization $\ast$ {\bfseries particle\+Filter}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a66173222676774499a18acd37b695558}\label{classNaoBehavior_a66173222676774499a18acd37b695558}} 
+Motion\+Core $\ast$ {\bfseries core}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_acab060af0226d6425b53fd14c1761867}\label{classNaoBehavior_acab060af0226d6425b53fd14c1761867}} 
+Memory $\ast$ {\bfseries memory\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ad2916b56fa6e72805c87868baac898b9}\label{classNaoBehavior_ad2916b56fa6e72805c87868baac898b9}} 
+Frame\+Info\+Block $\ast$ {\bfseries frame\+\_\+info\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a0b13cdd98acc5666e1f968a164858fa6}\label{classNaoBehavior_a0b13cdd98acc5666e1f968a164858fa6}} 
+Frame\+Info\+Block $\ast$ {\bfseries vision\+\_\+frame\+\_\+info\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a5cd8b8b679ca3256621a79b47598af1f}\label{classNaoBehavior_a5cd8b8b679ca3256621a79b47598af1f}} 
+Sensor\+Block $\ast$ {\bfseries raw\+\_\+sensors\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a3c8151c1375ae0de933f076ca9e93806}\label{classNaoBehavior_a3c8151c1375ae0de933f076ca9e93806}} 
+Joint\+Block $\ast$ {\bfseries raw\+\_\+joint\+\_\+angles\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aa527464d20b2ce0b686d1c676a808488}\label{classNaoBehavior_aa527464d20b2ce0b686d1c676a808488}} 
+Joint\+Command\+Block $\ast$ {\bfseries raw\+\_\+joint\+\_\+commands\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_abb112a08545d6975952c83b905f5009f}\label{classNaoBehavior_abb112a08545d6975952c83b905f5009f}} 
+Joint\+Block $\ast$ {\bfseries processed\+\_\+joint\+\_\+angles\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aacc599fd6a6470d9795510ae5381c7b6}\label{classNaoBehavior_aacc599fd6a6470d9795510ae5381c7b6}} 
+Joint\+Command\+Block $\ast$ {\bfseries processed\+\_\+joint\+\_\+commands\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a53b97b66f80761caee876e686734a4af}\label{classNaoBehavior_a53b97b66f80761caee876e686734a4af}} 
+Sim\+Effector\+Block $\ast$ {\bfseries sim\+\_\+effectors\+\_\+}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac46e814f21d3e129caf24c9f1f25c0a6}\label{classNaoBehavior_ac46e814f21d3e129caf24c9f1f25c0a6}} 
+\mbox{\hyperlink{structWalkVelocity}{Walk\+Velocity}} {\bfseries velocity}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a9bf9b8e6787927089c61db40567c0145}\label{classNaoBehavior_a9bf9b8e6787927089c61db40567c0145}} 
+double {\bfseries hover\+Time}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a257306ae35750f5a9f2a91ecc39c3542}\label{classNaoBehavior_a257306ae35750f5a9f2a91ecc39c3542}} 
+bool {\bfseries m\+Init}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a6df54b6927604a6c5b44d50cfe1f8812}\label{classNaoBehavior_a6df54b6927604a6c5b44d50cfe1f8812}} 
+bool {\bfseries init\+Beamed}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a781910047b0ec736b4de121be80b8611}\label{classNaoBehavior_a781910047b0ec736b4de121be80b8611}} 
+double {\bfseries beam\+Time}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a0db97c25f0555c6677cc28c331580c52}\label{classNaoBehavior_a0db97c25f0555c6677cc28c331580c52}} 
+bool {\bfseries initialized}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aa723c650b2d5ed3ae550707df6815133}\label{classNaoBehavior_aa723c650b2d5ed3ae550707df6815133}} 
+Skill\+Type {\bfseries skill}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ad0763fda901909a758b878abe4641319}\label{classNaoBehavior_ad0763fda901909a758b878abe4641319}} 
+int {\bfseries skill\+State}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8c2aac3ea71116eb7c501ebe46472f0b}\label{classNaoBehavior_a8c2aac3ea71116eb7c501ebe46472f0b}} 
+int {\bfseries fall\+State}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a150be6402658afe31a487f90a60ac48c}\label{classNaoBehavior_a150be6402658afe31a487f90a60ac48c}} 
+bool {\bfseries fallen\+Left}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac9a7009022fac4158d9b1d6b425abcf3}\label{classNaoBehavior_ac9a7009022fac4158d9b1d6b425abcf3}} 
+bool {\bfseries fallen\+Right}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a9d3dfb482274cc74bd3e16a98749be6b}\label{classNaoBehavior_a9d3dfb482274cc74bd3e16a98749be6b}} 
+bool {\bfseries fallen\+Down}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_acffbf1b827da890860e5340c32723bf2}\label{classNaoBehavior_acffbf1b827da890860e5340c32723bf2}} 
+bool {\bfseries fallen\+Up}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a47ecee4533642dc22796043dba5617da}\label{classNaoBehavior_a47ecee4533642dc22796043dba5617da}} 
+double {\bfseries fall\+Time\+Stamp}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a3dbc02ce3a77cb7cf43f7b215d9b6dda}\label{classNaoBehavior_a3dbc02ce3a77cb7cf43f7b215d9b6dda}} 
+double {\bfseries fall\+Time\+Wait}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_af7c399ac409e320645773d72f612b5fc}\label{classNaoBehavior_af7c399ac409e320645773d72f612b5fc}} 
+Vec\+Position {\bfseries kick\+Direction}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ae82bda343643cc5fc277a1b65a7df290}\label{classNaoBehavior_ae82bda343643cc5fc277a1b65a7df290}} 
+int {\bfseries kick\+Type}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a41c2bf28159a697ae1ad765721fcc02c}\label{classNaoBehavior_a41c2bf28159a697ae1ad765721fcc02c}} 
+Vec\+Position {\bfseries kick\+Target}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_af104ea7d7cbc9faa81306651beef5bfc}\label{classNaoBehavior_af104ea7d7cbc9faa81306651beef5bfc}} 
+double {\bfseries last\+Getup\+Recovery\+Time}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a6e04dab045f203508de3da4030069808}\label{classNaoBehavior_a6e04dab045f203508de3da4030069808}} 
+Skill\+Type {\bfseries current\+Kick}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_aa8fae182e61ea5e7b30960102ba9d568}\label{classNaoBehavior_aa8fae182e61ea5e7b30960102ba9d568}} 
+int {\bfseries current\+Kick\+Type}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8379db68f92e915b82347bd9b0e59791}\label{classNaoBehavior_a8379db68f92e915b82347bd9b0e59791}} 
+Vec\+Position {\bfseries me}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a129963c89a5b6df0affbe062500edd72}\label{classNaoBehavior_a129963c89a5b6df0affbe062500edd72}} 
+Vec\+Position {\bfseries my\+X\+Direction}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a1daf2e5534b2e1aa7752423ef4d189e9}\label{classNaoBehavior_a1daf2e5534b2e1aa7752423ef4d189e9}} 
+Vec\+Position {\bfseries my\+Y\+Direction}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ad548eb6dc3eed32457a5627cbb186ecc}\label{classNaoBehavior_ad548eb6dc3eed32457a5627cbb186ecc}} 
+Vec\+Position {\bfseries my\+Z\+Direction}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_afe8efbe7546520a18904f18af54c0ef7}\label{classNaoBehavior_afe8efbe7546520a18904f18af54c0ef7}} 
+Vec\+Position {\bfseries ball}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a8836ae552aaa7b523ed00e0882e1f69a}\label{classNaoBehavior_a8836ae552aaa7b523ed00e0882e1f69a}} 
+int {\bfseries score\+Me}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a675b229a64fa2b2d676ac299d242e57b}\label{classNaoBehavior_a675b229a64fa2b2d676ac299d242e57b}} 
+int {\bfseries score\+Opp}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ad815f9e96dde28362cc2be71d1fbf1fe}\label{classNaoBehavior_ad815f9e96dde28362cc2be71d1fbf1fe}} 
+string {\bfseries mon\+Msg}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_a1d468de7797d5514ad3ea244f0cef642}\label{classNaoBehavior_a1d468de7797d5514ad3ea244f0cef642}} 
+bool {\bfseries f\+Parsed\+Vision}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNaoBehavior_ac5489cc653026aee6f36d05ff912fe2f}\label{classNaoBehavior_ac5489cc653026aee6f36d05ff912fe2f}} 
+class {\bfseries Kick\+Classifier}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNaoBehavior_a54c7b665bbf39f1714e569776016156a}\label{classNaoBehavior_a54c7b665bbf39f1714e569776016156a}} 
+\index{NaoBehavior@{NaoBehavior}!GenerateImportantPositions@{GenerateImportantPositions}}
+\index{GenerateImportantPositions@{GenerateImportantPositions}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{GenerateImportantPositions()}{GenerateImportantPositions()}}
+{\footnotesize\ttfamily vector$<$ Vec\+Position $>$ Nao\+Behavior\+::\+Generate\+Important\+Positions (\begin{DoxyParamCaption}\item[{int}]{\+\_\+play\+Mode,  }\item[{int}]{\+\_\+side,  }\item[{int}]{\+\_\+player\+Number,  }\item[{int}]{regionX,  }\item[{int}]{regionY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+play downwards
+
+play upwards\mbox{\Hypertarget{classNaoBehavior_a828698a2f15c7087ceac671ebe50d7e0}\label{classNaoBehavior_a828698a2f15c7087ceac671ebe50d7e0}} 
+\index{NaoBehavior@{NaoBehavior}!GetDesiredTargetAdvanced@{GetDesiredTargetAdvanced}}
+\index{GetDesiredTargetAdvanced@{GetDesiredTargetAdvanced}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{GetDesiredTargetAdvanced()}{GetDesiredTargetAdvanced()}}
+{\footnotesize\ttfamily Vec\+Position Nao\+Behavior\+::\+Get\+Desired\+Target\+Advanced (\begin{DoxyParamCaption}\item[{int}]{p\+Num,  }\item[{Vec\+Position}]{mypos,  }\item[{int}]{regionX,  }\item[{int}]{regionY,  }\item[{vector$<$ pair$<$ double, int $>$ $>$}]{Team\+Dist\+To\+Ball }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+play downwards
+
+play upwards\mbox{\Hypertarget{classNaoBehavior_ad6352e55dd5a809775c5eaea1175ab4c}\label{classNaoBehavior_ad6352e55dd5a809775c5eaea1175ab4c}} 
+\index{NaoBehavior@{NaoBehavior}!getLimitingAngleForward@{getLimitingAngleForward}}
+\index{getLimitingAngleForward@{getLimitingAngleForward}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{getLimitingAngleForward()}{getLimitingAngleForward()}}
+{\footnotesize\ttfamily double Nao\+Behavior\+::get\+Limiting\+Angle\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns the maximum direction at which we can walk and still maintain maximum forward speed. In other words, returns the angle theta such that if we walk in any direction in \mbox{[}-\/theta, theta\mbox{]}, our forward translation will be the maximum that the walk engine will allow. \mbox{\Hypertarget{classNaoBehavior_a313ec3ac2c168a7bbbc0263411b0e276}\label{classNaoBehavior_a313ec3ac2c168a7bbbc0263411b0e276}} 
+\index{NaoBehavior@{NaoBehavior}!getMonMessage@{getMonMessage}}
+\index{getMonMessage@{getMonMessage}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{getMonMessage()}{getMonMessage()}}
+{\footnotesize\ttfamily string Nao\+Behavior\+::get\+Mon\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get message for sending to the server through the monitor port 
+
+Implements \mbox{\hyperlink{classBehavior_aacfa7a8bb99833ccf3ea4c0a337b00ea}{Behavior}}.
+
+\mbox{\Hypertarget{classNaoBehavior_a91d18f8e9059c312d67a733b7c2b143a}\label{classNaoBehavior_a91d18f8e9059c312d67a733b7c2b143a}} 
+\index{NaoBehavior@{NaoBehavior}!getWalk@{getWalk}}
+\index{getWalk@{getWalk}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{getWalk()}{getWalk()}}
+{\footnotesize\ttfamily Skill\+Type Nao\+Behavior\+::get\+Walk (\begin{DoxyParamCaption}\item[{const double \&}]{direction,  }\item[{const double \&}]{rotation,  }\item[{double}]{speed = {\ttfamily 1.0},  }\item[{bool}]{f\+Allow\+Over180\+Turn = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns the skill that will best approximate the desired walk direction and rotation using the currently implemented walk. This function was designed for use by select\+Skill(). It allows for a more general implementation of select\+Skill() that does not depend (as much) on the currently implemented walk. This function delivers the fastest possible speed, so it is not appropriate for alignment/fine-\/tuning.
+
+For the purpose of this implementation, rotation = 0 is not the same as 360 is not the same as -\/360. 0 means no rotation, 360 means rotate to the left, while -\/360 means rotate to the right.
+
+direction -\/ The angle to walk in degrees relative to the direction the robot is facing. rotation -\/ The angle in degrees to turn the robot. speed -\/ The percentage of maximum walk speed to use. Should be a value between 0 and 1. Default 1. This argument does not affect turn speed. f\+Allow\+Over180\+Turn -\/ allow for turns greater than abs(180) instead of mapping them to their complement \mbox{\Hypertarget{classNaoBehavior_a81d360be247933478d7ec7fdac1fc442}\label{classNaoBehavior_a81d360be247933478d7ec7fdac1fc442}} 
+\index{NaoBehavior@{NaoBehavior}!goToTargetRelative@{goToTargetRelative}}
+\index{goToTargetRelative@{goToTargetRelative}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{goToTargetRelative()}{goToTargetRelative()}}
+{\footnotesize\ttfamily Skill\+Type Nao\+Behavior\+::go\+To\+Target\+Relative (\begin{DoxyParamCaption}\item[{const Vec\+Position \&}]{target\+Loc,  }\item[{const double \&}]{target\+Rot,  }\item[{double}]{speed = {\ttfamily 1},  }\item[{bool}]{f\+Allow\+Over180\+Turn = {\ttfamily false},  }\item[{Walk\+Request\+Block\+::\+Param\+Set}]{param\+Set = {\ttfamily WalkRequestBlock\+:\+:PARAMS\+\_\+DEFAULT} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns the skill that\textquotesingle{}s needed to get to the target location facing the target rotation. All targets are offsets relative to the robot\textquotesingle{}s current location and orientation. Note that something like (global\+Target -\/ me) is N\+OT the correct local target. g2l(global\+Target) should be used instead. \mbox{\Hypertarget{classNaoBehavior_aefe280c2f0bbb17856766eac74ba04ab}\label{classNaoBehavior_aefe280c2f0bbb17856766eac74ba04ab}} 
+\index{NaoBehavior@{NaoBehavior}!Init@{Init}}
+\index{Init@{Init}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily string Nao\+Behavior\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+called once when the initially connected to the server 
+
+Implements \mbox{\hyperlink{classBehavior_a72eb5c67d43143e4decb0905e8739c28}{Behavior}}.
+
+\mbox{\Hypertarget{classNaoBehavior_a019db408ab4d0b696ac546dbca931da2}\label{classNaoBehavior_a019db408ab4d0b696ac546dbca931da2}} 
+\index{NaoBehavior@{NaoBehavior}!kickBallAtPresetTarget@{kickBallAtPresetTarget}}
+\index{kickBallAtPresetTarget@{kickBallAtPresetTarget}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{kickBallAtPresetTarget()}{kickBallAtPresetTarget()}}
+{\footnotesize\ttfamily Skill\+Type Nao\+Behavior\+::kick\+Ball\+At\+Preset\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Positions the agent so as to kick the ball as parameterized by this-\/$>$kick\+Target and this-\/$>$kick\+Type.
+
+After positioning, executes kick. \mbox{\Hypertarget{classNaoBehavior_a5310125c21cfbda1836b3abb61b0f645}\label{classNaoBehavior_a5310125c21cfbda1836b3abb61b0f645}} 
+\index{NaoBehavior@{NaoBehavior}!Think@{Think}}
+\index{Think@{Think}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{Think()}{Think()}}
+{\footnotesize\ttfamily string Nao\+Behavior\+::\+Think (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+called for every message received from the server; should return an action string 
+
+Implements \mbox{\hyperlink{classBehavior_a6e46bdb0344dae08be6ef2aaccc3de7d}{Behavior}}.
+
+\mbox{\Hypertarget{classNaoBehavior_a0bf0b1ae6715dd70ed82ceb4b79672ef}\label{classNaoBehavior_a0bf0b1ae6715dd70ed82ceb4b79672ef}} 
+\index{NaoBehavior@{NaoBehavior}!trim@{trim}}
+\index{trim@{trim}!NaoBehavior@{NaoBehavior}}
+\doxysubsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily double Nao\+Behavior\+::trim (\begin{DoxyParamCaption}\item[{const double \&}]{value,  }\item[{const double \&}]{min,  }\item[{const double \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Trims the value to within \mbox{[}min, max\mbox{]}.
+
+value -\/ The value to trim. min -\/ The minimum that the value can be. max -\/ The maximum that the value can be. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+naobehavior.\+h\item 
+checkfall.\+cc\item 
+kicking.\+cc\item 
+naobehavior.\+cc\item 
+strategy.\+cc\end{DoxyCompactItemize}
