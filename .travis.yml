@@ -16,20 +16,29 @@ before_install:
 
 install:
   - sudo apt install software-properties-common
-  #- sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
+  - sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
   - pip install coverage
   - pip install pytest-cov==2.11.1 
   - pip install pytest-cov pytest
   - pip install codecov
   - pip install python-dev-tools
-  - cd RobocupWrapper 
-  - pip3 install -e.
-  
-script:
   - cd Code_Base
   - cd behaviors
-  - coverage run -m pytest test.py
+  - pip3 install -e.
+  #- pip install -r requirements.txt
+
+script:
+  
+  #- (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)  
+  #- g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt -Wall
+  - ./test
+  #- ./get_code_cov.sh 
+  - coverage run -m pytest test.py # run tests
+  #- pytest --cov=./
+  #- py.test  --cov-report term --cov=app/test/
   - coverage report -m
   
-  after_success:
-    - codecov
+after_success:
+  - codecov
+  
+  
