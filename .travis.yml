@@ -16,7 +16,7 @@ before_install:
 
 install:
   - sudo apt install software-properties-common
-  - sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
+  #- sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
   - pip install coverage
   - pip install pytest-cov==2.11.1 
   - pip install pytest-cov pytest
@@ -24,13 +24,10 @@ install:
   - pip install python-dev-tools
   - cd RobocupWrapper 
   - pip3 install -e.
-  - CC=g++-7 python setup01.py install
   
 script:
-  
   - cd Code_Base
   - cd behaviors
-  - pip3 install -e.
   - coverage run -m pytest test.py
   - coverage report -m
   
