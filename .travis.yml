@@ -31,7 +31,7 @@ script:
   
   #- (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)  
   #- g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt -Wall
-  - ./test
+  #- ./test
   #- ./get_code_cov.sh 
   - coverage run -m pytest test.py # run tests
   #- pytest --cov=./
