@@ -25,21 +25,14 @@ install:
   - cd RobocupWrapper 
   - pip3 install -e.
   - CC=g++-7 python setup01.py install
-  #- pip install -r requirements.txt
-
+  
 script:
   
-  #- (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)  
-  - g++ test.cc -o test -I/usr/include/python3.8 -I/usr/include/CppUTest -I/usr/include/CppUTestExt  -lpython3.8 -lCppUTest -lCppUTestExt -Wall
-  - ./test
-  #- ./get_code_cov.sh 
-  - coverage run -m pytest test.py # run tests
-  #- pytest --cov=./
-  #- py.test  --cov-report term --cov=app/test/
+  - cd Code_Base
+  - cd behaviors
+  - pip3 install -e.
+  - coverage run -m pytest test.py
   - coverage report -m
   
-after_success:
-  - codecov
-  
-  
-
+  after_success:
+    - codecov
