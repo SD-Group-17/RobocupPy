@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['strategypy_210',['strategyPy',['../namespacestrategyPy.html',1,'']]]
+  ['strategypy_188',['strategyPy',['../namespacestrategyPy.html',1,'']]]
 ];

@@ -15,3 +15,11 @@
 {\ttfamily \#include $<$memory/\+Sim\+Effector\+Block.\+h$>$}\newline
 {\ttfamily \#include $<$memory/\+Walk\+Request\+Block.\+h$>$}\newline
 This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structWalkVelocity}{Walk\+Velocity}}
+\item 
+class \mbox{\hyperlink{classNaoBehavior}{Nao\+Behavior}}
+\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['naobehavior_206',['NaoBehavior',['../classNaoBehavior.html',1,'']]]
+  ['walkvelocity_186',['WalkVelocity',['../structWalkVelocity.html',1,'']]]
 ];

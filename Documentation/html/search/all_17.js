@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7ebehavior_202',['~Behavior',['../classBehavior.html#a428a3d31a5711e5b46f2adcc02b10a52',1,'Behavior']]],
-  ['_7enaobehavior_203',['~NaoBehavior',['../classNaoBehavior.html#a61f498fdcaf7d836133ec617841a30d3',1,'NaoBehavior']]]
+  ['_7enaobehavior_183',['~NaoBehavior',['../classNaoBehavior.html#a6133d0b23c7f925fdafd510f1da73b6b',1,'NaoBehavior']]]
 ];

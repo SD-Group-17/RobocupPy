@@ -17,11 +17,11 @@ Collaboration diagram for Nao\+Behavior\+:
 \item 
 \mbox{\hyperlink{classNaoBehavior_a25f86584bc546232bbe1a649e3b06c01}{Nao\+Behavior}} (const std\+::string team\+Name, int u\+Num, const map$<$ string, string $>$ \&named\+Params\+\_\+, const string \&rsg\+\_\+)
 \item 
-virtual \mbox{\hyperlink{classNaoBehavior_a61f498fdcaf7d836133ec617841a30d3}{$\sim$\+Nao\+Behavior}} ()
+virtual \mbox{\hyperlink{classNaoBehavior_a6133d0b23c7f925fdafd510f1da73b6b}{$\sim$\+Nao\+Behavior}} ()
 \item 
-virtual std\+::string \mbox{\hyperlink{classNaoBehavior_aefe280c2f0bbb17856766eac74ba04ab}{Init}} ()
+virtual std\+::string \mbox{\hyperlink{classNaoBehavior_a2023104c22bc61b82ec5923ead3ff162}{Init}} ()
 \item 
-virtual std\+::string \mbox{\hyperlink{classNaoBehavior_a5310125c21cfbda1836b3abb61b0f645}{Think}} (const std\+::string \&message)
+virtual std\+::string \mbox{\hyperlink{classNaoBehavior_aba2daf7dbcc34c883fbe5d07342defe4}{Think}} (const std\+::string \&message)
 \item 
 void \mbox{\hyperlink{classNaoBehavior_a738136d2ba5615603987d13379e14073}{set\+Mon\+Message}} (const std\+::string \&msg)
 \item 
@@ -40,7 +40,7 @@ void \mbox{\hyperlink{classNaoBehavior_aa83b86bde0451146b893bfa111a847e0}{post\+
 \item 
 string \mbox{\hyperlink{classNaoBehavior_a489d70a334bee05ea4678cb019b55e05}{compose\+Action}} ()
 \item 
-virtual void \mbox{\hyperlink{classNaoBehavior_a94d439b7cf5565c72ce1df3652303469}{reset\+Skills}} ()
+virtual void \mbox{\hyperlink{classNaoBehavior_ab176c128812c839eaf39605ab14bacd2}{reset\+Skills}} ()
 \item 
 void \mbox{\hyperlink{classNaoBehavior_a472e2d0c2e726b03acdf7880f245749d}{reset\+Scales}} ()
 \item 
@@ -301,11 +301,11 @@ class \mbox{\hyperlink{classNaoBehavior_ac5489cc653026aee6f36d05ff912fe2f}{Kick\
 \doxysubsubsection{\texorpdfstring{NaoBehavior()}{NaoBehavior()}}
 {\footnotesize\ttfamily Nao\+Behavior\+::\+Nao\+Behavior (\begin{DoxyParamCaption}\item[{const std\+::string}]{team\+Name,  }\item[{int}]{u\+Num,  }\item[{const map$<$ string, string $>$ \&}]{named\+Params\+\_\+,  }\item[{const string \&}]{rsg\+\_\+ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classNaoBehavior_a61f498fdcaf7d836133ec617841a30d3}\label{classNaoBehavior_a61f498fdcaf7d836133ec617841a30d3}} 
+\mbox{\Hypertarget{classNaoBehavior_a6133d0b23c7f925fdafd510f1da73b6b}\label{classNaoBehavior_a6133d0b23c7f925fdafd510f1da73b6b}} 
 \index{NaoBehavior@{NaoBehavior}!````~NaoBehavior@{$\sim$NaoBehavior}}
 \index{````~NaoBehavior@{$\sim$NaoBehavior}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{$\sim$NaoBehavior()}{~NaoBehavior()}}
-{\footnotesize\ttfamily Nao\+Behavior\+::$\sim$\+Nao\+Behavior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual Nao\+Behavior\+::$\sim$\+Nao\+Behavior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -339,10 +339,6 @@ class \mbox{\hyperlink{classNaoBehavior_ac5489cc653026aee6f36d05ff912fe2f}{Kick\
 \index{beam@{beam}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{beam()}{beam()}}
 {\footnotesize\ttfamily void Nao\+Behavior\+::beam (\begin{DoxyParamCaption}\item[{double \&}]{beamX,  }\item[{double \&}]{beamY,  }\item[{double \&}]{beam\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
-
-
-
-Reimplemented in \mbox{\hyperlink{classGazeboBehavior_a3db524fd655a4d000e4aab34d52d1d06}{Gazebo\+Behavior}}.
 
 \mbox{\Hypertarget{classNaoBehavior_a7770fa36581a669449906a52401a5b3a}\label{classNaoBehavior_a7770fa36581a669449906a52401a5b3a}} 
 \index{NaoBehavior@{NaoBehavior}!beamablePlayMode@{beamablePlayMode}}
@@ -484,11 +480,7 @@ Returns the maximum direction at which we can walk and still maintain maximum fo
 \index{NaoBehavior@{NaoBehavior}!getMonMessage@{getMonMessage}}
 \index{getMonMessage@{getMonMessage}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{getMonMessage()}{getMonMessage()}}
-{\footnotesize\ttfamily string Nao\+Behavior\+::get\+Mon\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-Get message for sending to the server through the monitor port 
-
-Implements \mbox{\hyperlink{classBehavior_aacfa7a8bb99833ccf3ea4c0a337b00ea}{Behavior}}.
+{\footnotesize\ttfamily string Nao\+Behavior\+::get\+Mon\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classNaoBehavior_a8c88af864cd110cce72aa77ac8e45de0}\label{classNaoBehavior_a8c88af864cd110cce72aa77ac8e45de0}} 
 \index{NaoBehavior@{NaoBehavior}!getParameter@{getParameter}}
@@ -566,15 +558,11 @@ Returns the skill that\textquotesingle{}s needed to get to the target location f
 \doxysubsubsection{\texorpdfstring{improperPlayMode()}{improperPlayMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Nao\+Behavior\+::improper\+Play\+Mode (\begin{DoxyParamCaption}\item[{int}]{pm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classNaoBehavior_aefe280c2f0bbb17856766eac74ba04ab}\label{classNaoBehavior_aefe280c2f0bbb17856766eac74ba04ab}} 
+\mbox{\Hypertarget{classNaoBehavior_a2023104c22bc61b82ec5923ead3ff162}\label{classNaoBehavior_a2023104c22bc61b82ec5923ead3ff162}} 
 \index{NaoBehavior@{NaoBehavior}!Init@{Init}}
 \index{Init@{Init}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily string Nao\+Behavior\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-called once when the initially connected to the server 
-
-Implements \mbox{\hyperlink{classBehavior_a72eb5c67d43143e4decb0905e8739c28}{Behavior}}.
+{\footnotesize\ttfamily virtual std\+::string Nao\+Behavior\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 \mbox{\Hypertarget{classNaoBehavior_ae3e90fa982e7cfa0e1b854b0a223b69c}\label{classNaoBehavior_ae3e90fa982e7cfa0e1b854b0a223b69c}} 
 \index{NaoBehavior@{NaoBehavior}!isAnyTeammateInNeighbourhood@{isAnyTeammateInNeighbourhood}}
@@ -666,9 +654,7 @@ Implements \mbox{\hyperlink{classBehavior_a72eb5c67d43143e4decb0905e8739c28}{Beh
 \doxysubsubsection{\texorpdfstring{kickBallAtPresetTarget()}{kickBallAtPresetTarget()}}
 {\footnotesize\ttfamily Skill\+Type Nao\+Behavior\+::kick\+Ball\+At\+Preset\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Positions the agent so as to kick the ball as parameterized by this-\/$>$kick\+Target and this-\/$>$kick\+Type.
-
-After positioning, executes kick. \mbox{\Hypertarget{classNaoBehavior_a05355cdad95b1a659463dee6c97a9fb6}\label{classNaoBehavior_a05355cdad95b1a659463dee6c97a9fb6}} 
+\mbox{\Hypertarget{classNaoBehavior_a05355cdad95b1a659463dee6c97a9fb6}\label{classNaoBehavior_a05355cdad95b1a659463dee6c97a9fb6}} 
 \index{NaoBehavior@{NaoBehavior}!kickBallAtTargetSimplePositioning@{kickBallAtTargetSimplePositioning}}
 \index{kickBallAtTargetSimplePositioning@{kickBallAtTargetSimplePositioning}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{kickBallAtTargetSimplePositioning()}{kickBallAtTargetSimplePositioning()}}
@@ -740,21 +726,17 @@ After positioning, executes kick. \mbox{\Hypertarget{classNaoBehavior_a05355cdad
 \doxysubsubsection{\texorpdfstring{resetScales()}{resetScales()}}
 {\footnotesize\ttfamily void Nao\+Behavior\+::reset\+Scales (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classNaoBehavior_a94d439b7cf5565c72ce1df3652303469}\label{classNaoBehavior_a94d439b7cf5565c72ce1df3652303469}} 
+\mbox{\Hypertarget{classNaoBehavior_ab176c128812c839eaf39605ab14bacd2}\label{classNaoBehavior_ab176c128812c839eaf39605ab14bacd2}} 
 \index{NaoBehavior@{NaoBehavior}!resetSkills@{resetSkills}}
 \index{resetSkills@{resetSkills}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{resetSkills()}{resetSkills()}}
-{\footnotesize\ttfamily void Nao\+Behavior\+::reset\+Skills (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void Nao\+Behavior\+::reset\+Skills (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 \mbox{\Hypertarget{classNaoBehavior_a6c3f27b76f8bf3276cbd57aeb819698e}\label{classNaoBehavior_a6c3f27b76f8bf3276cbd57aeb819698e}} 
 \index{NaoBehavior@{NaoBehavior}!selectSkill@{selectSkill}}
 \index{selectSkill@{selectSkill}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{selectSkill()}{selectSkill()}}
 {\footnotesize\ttfamily Skill\+Type Nao\+Behavior\+::select\+Skill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
-
-
-
-Reimplemented in \mbox{\hyperlink{classGazeboBehavior_a93fb7a0c63ad75aff974ef450a8a3883}{Gazebo\+Behavior}}.
 
 \mbox{\Hypertarget{classNaoBehavior_a738136d2ba5615603987d13379e14073}\label{classNaoBehavior_a738136d2ba5615603987d13379e14073}} 
 \index{NaoBehavior@{NaoBehavior}!setMonMessage@{setMonMessage}}
@@ -786,15 +768,11 @@ Reimplemented in \mbox{\hyperlink{classGazeboBehavior_a93fb7a0c63ad75aff974ef450
 \doxysubsubsection{\texorpdfstring{teamPositions()}{teamPositions()}}
 {\footnotesize\ttfamily vector$<$ pair$<$ Vec\+Position, int $>$ $>$ Nao\+Behavior\+::team\+Positions (\begin{DoxyParamCaption}\item[{int}]{\+\_\+player\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classNaoBehavior_a5310125c21cfbda1836b3abb61b0f645}\label{classNaoBehavior_a5310125c21cfbda1836b3abb61b0f645}} 
+\mbox{\Hypertarget{classNaoBehavior_aba2daf7dbcc34c883fbe5d07342defe4}\label{classNaoBehavior_aba2daf7dbcc34c883fbe5d07342defe4}} 
 \index{NaoBehavior@{NaoBehavior}!Think@{Think}}
 \index{Think@{Think}!NaoBehavior@{NaoBehavior}}
 \doxysubsubsection{\texorpdfstring{Think()}{Think()}}
-{\footnotesize\ttfamily string Nao\+Behavior\+::\+Think (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-called for every message received from the server; should return an action string 
-
-Implements \mbox{\hyperlink{classBehavior_a6e46bdb0344dae08be6ef2aaccc3de7d}{Behavior}}.
+{\footnotesize\ttfamily virtual std\+::string Nao\+Behavior\+::\+Think (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 \mbox{\Hypertarget{classNaoBehavior_a0bf0b1ae6715dd70ed82ceb4b79672ef}\label{classNaoBehavior_a0bf0b1ae6715dd70ed82ceb4b79672ef}} 
 \index{NaoBehavior@{NaoBehavior}!trim@{trim}}
@@ -1145,7 +1123,4 @@ value -\/ The value to trim. min -\/ The minimum that the value can be. max -\/ 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{naobehavior_8h}{naobehavior.\+h}}\item 
-\mbox{\hyperlink{checkfall_8cc}{checkfall.\+cc}}\item 
-\mbox{\hyperlink{kicking_8cc}{kicking.\+cc}}\item 
-\mbox{\hyperlink{naobehavior_8cc}{naobehavior.\+cc}}\item 
 \mbox{\hyperlink{strategy_8cc}{strategy.\+cc}}\end{DoxyCompactItemize}

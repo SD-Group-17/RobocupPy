@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['agentbodytype_323',['agentBodyType',['../kicking_8cc.html#aeb041e62102d02ea2049f174f5783803',1,'agentBodyType():&#160;kicking.cc'],['../naobehavior_8cc.html#aeb041e62102d02ea2049f174f5783803',1,'agentBodyType():&#160;naobehavior.cc'],['../strategy_8cc.html#aeb041e62102d02ea2049f174f5783803',1,'agentBodyType():&#160;strategy.cc']]],
-  ['agentteamname_324',['agentTeamName',['../classNaoBehavior.html#a657ca9a94440bbc2d6a2f29db6165b5a',1,'NaoBehavior']]],
-  ['agentunum_325',['agentUNum',['../classNaoBehavior.html#a9e2870331dd0c312b2317efaeb0ab314',1,'NaoBehavior']]],
-  ['angle_326',['ANGLE',['../kicking_8cc.html#ae4d1e60bc29badc8149c038dc77237ee',1,'kicking.cc']]]
+  ['agentbodytype_290',['agentBodyType',['../strategy_8cc.html#aeb041e62102d02ea2049f174f5783803',1,'strategy.cc']]],
+  ['agentteamname_291',['agentTeamName',['../classNaoBehavior.html#a657ca9a94440bbc2d6a2f29db6165b5a',1,'NaoBehavior']]],
+  ['agentunum_292',['agentUNum',['../classNaoBehavior.html#a9e2870331dd0c312b2317efaeb0ab314',1,'NaoBehavior']]]
 ];
