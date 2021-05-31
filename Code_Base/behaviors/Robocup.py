@@ -1,5 +1,6 @@
 class Robocup():
 
+
     #Field Constants
     FIELD_Y=20.0
     FIELD_X=30.0
@@ -12,10 +13,11 @@ class Robocup():
     FIELD_CENTER_X = 0.0
     FIELD_CENTER_Y = 0.0
 
-    GOAL_LEFT_CENTRE_X = -HALF_FIELD_X
-    GOAL_LEFT_CENTRE_Y = HALF_FIELD_Y
-    GOAL_RIGHT_CENTRE_X = HALF_FIELD_X
-    GOAL_RIGHT_CENTRE_Y = HALF_FIELD_Y
+    GOAL_LEFT_CENTRE_X = HALF_FIELD_X
+    GOAL_LEFT_CENTRE_Y = 0
+    GOAL_RIGHT_CENTRE_X = -HALF_FIELD_X
+    GOAL_RIGHT_CENTRE_Y = 0
+
 
     def __init__(self, world_data):
 
@@ -84,3 +86,6 @@ class Robocup():
     
     def HARD_KICK(self,x,y):
         return [4, [x,y]]
+
+    def SMART_GO_TO_POSITION(self,x,y):
+        return [5, [x,y]]

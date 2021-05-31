@@ -1,4 +1,4 @@
-# Install script for directory: /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2
+# Install script for directory: /home/gideon/Documents/GitHub/RobocupPy/Code_Base
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gideon/Documents/GitHub/RobocupPy/Code_Base/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

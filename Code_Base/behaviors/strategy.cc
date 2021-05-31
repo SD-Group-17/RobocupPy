@@ -654,10 +654,34 @@ SkillType NaoBehavior::selectSkill() {
         case 4:
             return kickBall(KICK_IK,pos);
         break;
+
+        case 5:
+            return SmartGoToTarget(pos);
+        break;
+
+        
     }
 
 
-    
+    // int skillNum = n;  
+    // cout<<n<<endl;                     // hardcoded for now ,later include and call method =selectskill();
+    //  if (skillNum == 0)
+    //  {                    //choose skill by skillNum
+    //     if(_playerNumber == 2)
+    //     {
+    //         return kickBall(KICK_IK, VecPosition(1, 3, 0));
+    //     }
+    //     else
+    //     {
+    //         return SKILL_STAND;
+    //     }
+    //  }
+    //  else{
+    //     // Demo behavior where players form a rotating circle and kick the ball
+    //         // back and forth
+    //         //return demoKickingCircle();
+    //         return SKILL_STAND;
+    //     }
     
 
    

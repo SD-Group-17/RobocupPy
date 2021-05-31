@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -Wextra -Wno-unused -O3 -DNDEBUG
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
 
-CXX_INCLUDES = -I/usr/include/python3.6m -I/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/utwalk -I/usr/local/include/simspark -isystem /home/gideon/anaconda3/include 
+CXX_INCLUDES = -I/usr/include/python3.6m -I/home/gideon/Documents/GitHub/RobocupPy/Code_Base/utwalk -I/usr/local/include/simspark -isystem /home/gideon/anaconda3/include 
 
