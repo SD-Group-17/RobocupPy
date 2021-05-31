@@ -19,9 +19,5 @@ digraph "behavior.h"
   Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 [label="naobehavior.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$naobehavior_8cc.html",tooltip=" "];
   Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="pkbehaviors.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkbehaviors_8h.html",tooltip=" "];
-  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="pkbehaviors.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkbehaviors_8cc.html",tooltip=" "];
-  Node3 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="strategy.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$strategy_8cc.html",tooltip=" "];
+  Node9 [label="strategy.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$strategy_8cc.html",tooltip=" "];
 }
