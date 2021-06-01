@@ -9,9 +9,9 @@ side = 0
 player_pos = [-7,0,0]       
 ball_pos = [0,0,0]
 team_positions = [[[-10,0,0],1],[[-7,0,0],2]]
-opponent_positions = [[[10,0,0],1],[[7,0,0],2]]
+opponent_positions = [[[10,0,0],12],[[7,0,0],13]]
 team_dist_ball = [[10,1],[7,2]]
-opp_dist_ball = [[10,1],[7,2]]
+opp_dist_ball = [[10,12],[7,13]]
 
 world_data = [player_number,play_mode,side,player_pos,ball_pos,team_positions,opponent_positions,team_dist_ball,opp_dist_ball]
 
@@ -70,7 +70,7 @@ def test_teammateLocation():
 
 def test_opponentLocation():
     wanted_result = [10,0,0]
-    test_result = robocup.teammateLocation(1)
+    test_result = robocup.opponentLocation(12)
     assert(wanted_result == test_result), "Test Failed"
 
 def test_teammateDistBall():
@@ -80,7 +80,7 @@ def test_teammateDistBall():
 
 def test_opponentDistBall():
     wanted_result = 10
-    test_result = robocup.opponentDistBall(1)
+    test_result = robocup.opponentDistBall(12)
     assert(wanted_result == test_result), "Test Failed"
 
 def test_STAND():
@@ -133,7 +133,6 @@ def runTests():
     test_teamDistBall()
     test_oppDistBall()
     test_teammateLocation()
-    test_opponentLocation()
     test_teammateDistBall()
     test_opponentDistBall()
     test_STAND()
@@ -142,5 +141,7 @@ def runTests():
     test_SOFT_KICK()
     test_HARD_KICK()
     test_SMART_GO_TO_POSITION()
+    test_opponentLocation()
+
 
 runTests()
