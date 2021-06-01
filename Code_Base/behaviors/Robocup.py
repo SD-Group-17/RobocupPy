@@ -23,52 +23,117 @@ class Robocup():
 
                 
         #World Model Data:
-        self.player_number=world_data[0]
-        self.play_mode=world_data[1]
-        self.side = world_data[2]
-        self.player_pos = world_data[3]        
-        self.ball_pos = world_data[4]
-        self.team_positions = world_data[5]
-        self.opponent_positions = world_data[6]
+        self.__player_number=world_data[0]
+        self.__play_mode=world_data[1]
+        self.__side = world_data[2]
+        self.__player_pos = world_data[3]        
+        self.__ball_pos = world_data[4]
+        self.__team_positions = world_data[5]
+        self.__opponent_positions = world_data[6]
 
         #Wrapped C++ Functions:
-        self.team_dist_ball = world_data[7]
-        self.opp_dist_ball = world_data[8]
+        self.__team_dist_ball = world_data[7]
+        self.__opp_dist_ball = world_data[8]
     
     #getters (for world model data):
 
     def playerNumber(self):
-        return self.player_number
+        return self.__player_number
 
     def playMode(self):
-        return self.play_mode
+        return self.__play_mode
 
     def playerPos(self):
-        return self.player_pos
+        return self.__player_pos
 
     def gameSide(self):
-        return self.side 
+        return self.__side 
           
       
     def ballPos(self):
-        return self.ball_pos 
+        return self.__ball_pos 
        
 
     def teamPositions(self):
-        return self.team_positions 
+        return self.__team_positions 
         
 
     def opponentPositions(self):
-        return self.opponent_positions 
+        return self.__opponent_positions 
 
     # getters for Wrapped C++ functions:
 
     def teamDistBall(self):
-        return self.team_dist_ball 
+        return self.__team_dist_ball 
       
 
-    def oppDistBall(self):
-        return self.opp_dist_ball 
+    def oppsDistBall(self):
+        return self.__opp_dist_ball 
+
+    def teammateLocation(self, n):
+        if not type(n) is int:
+            raise TypeError("Only integers are allowed")
+
+        elif n > len(self.__team_positions):
+            raise Exception("Player not in team (player number must be less than number of teammates)")
+        
+        elif n <= 0:
+            raise Exception("Player not in team (player number must be > 0)")
+
+        for playerpos in self.__team_positions:
+            if playerpos[1] == n:
+                return playerpos[0]
+
+        raise Exception("Player not in team (player number not found in list of teammates)")
+    
+    def opponentLocation(self, n):
+        if not type(n) is int:
+            raise TypeError("Only integers are allowed")
+
+        elif n >= len(self.__opponent_positions)+12:
+            raise Exception("Player not in opponent team (player number must be less than or equal to number of opponenets + 12 )")
+        
+        elif n < 12:
+            raise Exception("Player not in opponent team (player number must be >= 12)")
+
+        for playerpos in self.__opponent_positions:
+            if playerpos[1] == n:
+                return playerpos[0]
+
+        raise Exception("Player not in opponent team (player number not found in list of opponents)")
+        
+    def teammateDistBall(self, n):
+        if not type(n) is int:
+            raise TypeError("Only integers are allowed")
+
+        elif n > len(self.__team_dist_ball):
+            raise Exception("Player not in team (player number must be less than number of teammates)")
+        
+        elif n <= 0:
+            raise Exception("Player not in team (player number must be > 0)")
+
+        for playerdist in self.__team_dist_ball:
+            if playerdist[1] == n:
+                return playerdist[0]
+
+        raise Exception("Player not in team (player number not found in list of teammates)")
+    
+    def opponentDistBall(self, n):
+        if not type(n) is int:
+            raise TypeError("Only integers are allowed")
+
+        elif n >= len(self.__opp_dist_ball)+12:
+            raise Exception("Player not in opponent team (player number must be less than or equal to number of opponenets + 12 )")
+        
+        elif n < 12:
+            raise Exception("Player not in opponent team (player number must be >= 12)")
+
+        for playerdist in self.__opp_dist_ball:
+            if playerdist[1] == n:
+                return playerdist[0]
+
+        raise Exception("Player not in opponent team (player number not found in list of opponents)")
+        
 
 
     #SKILLS:
