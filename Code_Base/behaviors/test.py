@@ -78,6 +78,10 @@ def test_teammateDistBall():
     test_result = robocup.teammateDistBall(2)
     assert(wanted_result == test_result), "Test Failed"
 
+def test_teammateDistBall_exception():
+    with pytest.raises(Exception):
+        robocup.teammateDistBall(-1)
+
 def test_opponentDistBall():
     wanted_result = 10
     test_result = robocup.opponentDistBall(12)
@@ -142,6 +146,8 @@ def runTests():
     test_HARD_KICK()
     test_SMART_GO_TO_POSITION()
     test_opponentLocation()
+
+    test_teammateDistBall_exception()
 
 
 runTests()
