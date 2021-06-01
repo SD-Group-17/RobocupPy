@@ -60,7 +60,7 @@ def test_teamDistBall():
 
 def test_oppDistBall():
     wanted_result = opp_dist_ball
-    test_result = robocup.oppDistBall()
+    test_result = robocup.oppsDistBall()
     assert(wanted_result == test_result), "Test Failed"
 
 def test_STAND():
