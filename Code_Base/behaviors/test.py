@@ -6,12 +6,12 @@ import os
 player_number=2
 play_mode=0
 side = 0
-player_pos = [-7,0]       
-ball_pos = [0,0]
-team_positions = [[-10,0],[-7,0]]
-opponent_positions = [[10,0],[7,0]]
-team_dist_ball = [10,7]
-opp_dist_ball = [10,7]
+player_pos = [-7,0,0]       
+ball_pos = [0,0,0]
+team_positions = [[[-10,0,0],1],[[-7,0,0],2]]
+opponent_positions = [[[10,0,0],1],[[7,0,0],2]]
+team_dist_ball = [[10,1],[7,2]]
+opp_dist_ball = [[10,1],[7,2]]
 
 world_data = [player_number,play_mode,side,player_pos,ball_pos,team_positions,opponent_positions,team_dist_ball,opp_dist_ball]
 
@@ -63,6 +63,26 @@ def test_oppDistBall():
     test_result = robocup.oppsDistBall()
     assert(wanted_result == test_result), "Test Failed"
 
+def test_teammateLocation():
+    wanted_result = [-7,0,0]
+    test_result = robocup.teammateLocation(2)
+    assert(wanted_result == test_result), "Test Failed"
+
+def test_opponentLocation():
+    wanted_result = [10,0,0]
+    test_result = robocup.teammateLocation(1)
+    assert(wanted_result == test_result), "Test Failed"
+
+def test_teammateDistBall():
+    wanted_result = 7
+    test_result = robocup.teammateDistBall(2)
+    assert(wanted_result == test_result), "Test Failed"
+
+def test_opponentDistBall():
+    wanted_result = 10
+    test_result = robocup.opponentDistBall(1)
+    assert(wanted_result == test_result), "Test Failed"
+
 def test_STAND():
     wanted_result = [0,[0,0]]
     test_result = robocup.STAND()
@@ -112,6 +132,10 @@ def runTests():
     test_opponentPositions()
     test_teamDistBall()
     test_oppDistBall()
+    test_teammateLocation()
+    test_opponentLocation()
+    test_teammateDistBall()
+    test_opponentDistBall()
     test_STAND()
     test_GO_TO_POSITION()
     test_DRIBBLE()
