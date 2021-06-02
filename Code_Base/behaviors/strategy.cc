@@ -656,7 +656,7 @@ SkillType NaoBehavior::selectSkill() {
         break;
 
         case 5:
-            return SmartGoToTarget(pos);
+            return SmartGoToTarget(pos, 0.5);
         break;
 
         
