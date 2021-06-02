@@ -210,6 +210,24 @@ def test_SKILL_exceptions():
     with pytest.raises(Exception):
         robocup.SMART_GO_TO_POSITION([1],2)
 
+def test_other_exceptions():
+    team_positions_exception = [[[-10,0,0],1],[[-7,0,0],3]]
+    opponent_positions_exception = [[[10,0,0],12],[[7,0,0],14]]
+    team_dist_ball_exception = [[10,1],[7,3]]
+    opp_dist_ball_exception = [[10,12],[7,14]]
+    world_data_exception = [player_number,play_mode,side,player_pos,ball_pos,team_positions_exception,opponent_positions_exception,team_dist_ball_exception,opp_dist_ball_exception]
+    robocup_exception = RC.Robocup(world_data_exception)
+
+    with pytest.raises(Exception):
+        robocup_exception.teammateLocation(2)    
+    with pytest.raises(Exception):
+        robocup_exception.opponentLocation(13)    
+    with pytest.raises(Exception):
+        robocup_exception.teammateDistBall(2)    
+    with pytest.raises(Exception):
+        robocup_exception.opponentDistBall(13)
+
+
 
 def runTests():
     test_playerNumber()
@@ -238,6 +256,7 @@ def runTests():
     test_opponentDistBall_exception()
 
     test_SKILL_exceptions()
+    test_other_exceptions()
 
 
 
