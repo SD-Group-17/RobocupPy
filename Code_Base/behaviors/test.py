@@ -78,9 +78,47 @@ def test_teammateDistBall():
     test_result = robocup.teammateDistBall(2)
     assert(wanted_result == test_result), "Test Failed"
 
+def test_teammateLocation_exception():
+    with pytest.raises(Exception):
+        robocup.teammateLocation(-1)
+    with pytest.raises(Exception):
+        robocup.teammateLocation(12)
+    with pytest.raises(TypeError):
+        robocup.teammateLocation("not integer")
+    with pytest.raises(Exception):
+        robocup.teammateLocation(3)
+
+def test_opponentLocation_exception():
+    with pytest.raises(Exception):
+        robocup.opponentLocation(-1)
+    with pytest.raises(Exception):
+        robocup.opponentLocation(15)
+    with pytest.raises(TypeError):
+        robocup.opponentLocation("not integer")
+    with pytest.raises(Exception):
+        robocup.opponentLocation(3)
+
 def test_teammateDistBall_exception():
     with pytest.raises(Exception):
         robocup.teammateDistBall(-1)
+    with pytest.raises(Exception):
+        robocup.teammateDistBall(12)
+    with pytest.raises(TypeError):
+        robocup.teammateDistBall("not integer")
+    with pytest.raises(Exception):
+        robocup.teammateDistBall(3)
+
+def test_opponentDistBall_exception():
+    with pytest.raises(Exception):
+        robocup.opponentDistBall(-1)
+    with pytest.raises(Exception):
+        robocup.opponentDistBall(15)
+    with pytest.raises(TypeError):
+        robocup.opponentDistBall("not integer")
+    with pytest.raises(Exception):
+        robocup.opponentDistBall(3)
+    
+
 
 def test_opponentDistBall():
     wanted_result = 10
@@ -147,7 +185,11 @@ def runTests():
     test_SMART_GO_TO_POSITION()
     test_opponentLocation()
 
+    test_teammateLocation_exception()
     test_teammateDistBall_exception()
+    test_opponentLocation_exception()
+    test_opponentDistBall_exception()
+
 
 
 runTests()
