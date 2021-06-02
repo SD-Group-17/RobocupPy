@@ -253,6 +253,13 @@ class Robocup():
         ----------
         [float]
         list of x,y,z coordinates for teammate with player number n
+
+        Raises
+        ----------
+        TypeError
+            Only integer input is acceptable
+        Exception
+            Range for n should be: 0< n <= (number of agents in team)
         """
 
         if not type(n) is int:
@@ -276,6 +283,13 @@ class Robocup():
         ----------
         [float]
         list of x,y,z coordinates for opponent with player number n
+
+        Raises
+        ----------
+        TypeError
+            Only integer input is acceptable
+        Exception
+            Range for n should be: 12<= n < 12+ (number of agents in team)
         """
 
         if not type(n) is int:
@@ -323,6 +337,13 @@ class Robocup():
         ----------
         float
         distance of teammate with player number n to ball
+
+        Raises
+        ----------
+        TypeError
+            Only integer input is acceptable
+        Exception
+            Range for n should be: 0< n <= (number of agents in team)
         """
 
         if not type(n) is int:
@@ -346,6 +367,13 @@ class Robocup():
         ----------
         float
         distance of opponent with player number n to ball
+
+        Raises
+        ----------
+        TypeError
+            Only integer input is acceptable
+        Exception
+            Range for n should be: 12<= n < 12+ (number of agents in team)
         """
 
         if not type(n) is int:
@@ -371,7 +399,7 @@ class Robocup():
         Returns
         ----------
         SKILL
-        STAND in Doucmentation (player stands still)
+        STAND in Documentation (player stands still)
         """
 
         return [0,[0,0]]
@@ -382,6 +410,11 @@ class Robocup():
         ----------
         SKILL
         GOTO in Documentation, with target coordinate (x,y,0)
+
+        Raises
+        ----------
+        TypeError
+            Only number input is acceptable
         """
 
         if not isinstance(x, Number) or not isinstance(y, Number):
@@ -394,6 +427,11 @@ class Robocup():
         ----------
         SKILL
         DRIBBLE in Documentation, with target coordinate (x,y,0)
+
+        Raises
+        ----------
+        TypeError
+            Only number input is acceptable
         """
 
         if not isinstance(x, Number) or not isinstance(y, Number):
@@ -406,6 +444,11 @@ class Robocup():
         ----------
         SKILL
         KICK in Documentation, with target coordinate (x,y,0)
+        
+        Raises
+        ----------
+        TypeError
+            Only number input is acceptable
         """
 
         if not isinstance(x, Number) or not isinstance(y, Number):
@@ -418,6 +461,11 @@ class Robocup():
         ----------
         SKILL
         KICK_IK in Documentation, with target coordinate (x,y,0)
+        
+        Raises
+        ----------
+        TypeError
+            Only number input is acceptable
         """
 
         if not isinstance(x, Number) or not isinstance(y, Number):
@@ -430,6 +478,11 @@ class Robocup():
         ----------
         SKILL
         SMART_GO_TO_TARGET in Documentation, with target coordinate (x,y,0)
+        
+        Raises
+        ----------
+        TypeError
+            Only number input is acceptable
         """
 
         if not isinstance(x, Number) or not isinstance(y, Number):
