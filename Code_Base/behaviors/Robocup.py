@@ -1,3 +1,5 @@
+from numbers import Number
+
 class Robocup():
 
 
@@ -141,16 +143,26 @@ class Robocup():
         return [0,[0,0]]
     
     def GO_TO_POSITION(self,x,y):
+        if not isinstance(x, Number) or not isinstance(y, Number):
+            raise TypeError("Only numbers are allowed for x and y")
         return [1, [x,y]]
     
     def DRIBBLE(self,x,y):
+        if not isinstance(x, Number) or not isinstance(y, Number):
+            raise TypeError("Only numbers are allowed for x and y")
         return [2, [x,y]]
     
     def SOFT_KICK(self,x,y):
+        if not isinstance(x, Number) or not isinstance(y, Number):
+            raise TypeError("Only numbers are allowed for x and y")
         return [3, [x,y]]
     
     def HARD_KICK(self,x,y):
+        if not isinstance(x, Number) or not isinstance(y, Number):
+            raise TypeError("Only numbers are allowed for x and y")
         return [4, [x,y]]
 
     def SMART_GO_TO_POSITION(self,x,y):
+        if not isinstance(x, Number) or not isinstance(y, Number):
+            raise TypeError("Only numbers are allowed for x and y")
         return [5, [x,y]]

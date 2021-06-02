@@ -164,6 +164,53 @@ def test_SMART_GO_TO_POSITION():
     test_result = robocup.SMART_GO_TO_POSITION(x,y)
     assert(wanted_result == test_result), "Test Failed"
 
+def test_SKILL_exceptions():
+    with pytest.raises(Exception):
+        robocup.GO_TO_POSITION("x","y")    
+    with pytest.raises(Exception):
+        robocup.GO_TO_POSITION("x",0.1)    
+    with pytest.raises(Exception):
+        robocup.GO_TO_POSITION(0,"y")    
+    with pytest.raises(Exception):
+        robocup.GO_TO_POSITION([1],2)
+
+    with pytest.raises(Exception):
+        robocup.DRIBBLE("x","y")    
+    with pytest.raises(Exception):
+        robocup.DRIBBLE("x",0.1)    
+    with pytest.raises(Exception):
+        robocup.DRIBBLE(0,"y")    
+    with pytest.raises(Exception):
+        robocup.DRIBBLE([1],2)
+
+    with pytest.raises(Exception):
+        robocup.SOFT_KICK("x","y")    
+    with pytest.raises(Exception):
+        robocup.SOFT_KICK("x",0.1)    
+    with pytest.raises(Exception):
+        robocup.SOFT_KICK(0,"y")    
+    with pytest.raises(Exception):
+        robocup.SOFT_KICK([1],2)
+
+    with pytest.raises(Exception):
+        robocup.HARD_KICK("x","y")    
+    with pytest.raises(Exception):
+        robocup.HARD_KICK("x",0.1)    
+    with pytest.raises(Exception):
+        robocup.HARD_KICK(0,"y")    
+    with pytest.raises(Exception):
+        robocup.HARD_KICK([1],2)
+    
+    with pytest.raises(Exception):
+        robocup.SMART_GO_TO_POSITION("x","y")    
+    with pytest.raises(Exception):
+        robocup.SMART_GO_TO_POSITION("x",0.1)    
+    with pytest.raises(Exception):
+        robocup.SMART_GO_TO_POSITION(0,"y")    
+    with pytest.raises(Exception):
+        robocup.SMART_GO_TO_POSITION([1],2)
+
+
 def runTests():
     test_playerNumber()
     test_playMode()
@@ -189,6 +236,8 @@ def runTests():
     test_teammateDistBall_exception()
     test_opponentLocation_exception()
     test_opponentDistBall_exception()
+
+    test_SKILL_exceptions()
 
 
 
