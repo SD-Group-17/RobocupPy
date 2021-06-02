@@ -27,10 +27,10 @@ world_data = [player_number,play_mode,side,player_pos,ball_pos,team_positions,op
 
 skill = strategy.selectSkill(world_data)
 
+
+#The following checks if selectSkill() returns an acceptable object:
 check_list = isinstance(skill, list)
-
 allGood = True
-
 if check_list:
 
     if len(skill) <2:
@@ -68,15 +68,13 @@ if check_list:
         else:
             print("Check_position must be a list")
             allGood = False
-
-
 else:
     print("Error: selectSkill() MUST return a list")
     print("Select skill is returning an object of type: ",type(skill))
     allGood = False
 
-print("selectSkill() returns: ",skill)
-
 if not allGood:
     print("selectSkill() returns incorrect data structures")
     print("selectSkill() must return object of type and shape: [int,[float,float]]")
+
+print("selectSkill() returns: ",skill)
