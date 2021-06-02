@@ -76,5 +76,6 @@ else:
 if not allGood:
     print("selectSkill() returns incorrect data structures")
     print("selectSkill() must return object of type and shape: [int,[float,float]]")
-
+else:
+    print("All looks good!")
 print("selectSkill() returns: ",skill)
