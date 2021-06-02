@@ -1,0 +1,370 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cc18e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cc18e.dir/build.make CMakeFiles/cmTC_cc18e.dir/build
+make[1]: Entering directory '/home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cc18e.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_cc18e.dir/CheckSymbolExists.c.o   -c /home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_cc18e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc18e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_cc18e.dir/CheckSymbolExists.c.o  -o cmTC_cc18e 
+CMakeFiles/cmTC_cc18e.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_cc18e.dir/build.make:97: recipe for target 'cmTC_cc18e' failed
+make[1]: *** [cmTC_cc18e] Error 1
+make[1]: Leaving directory '/home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_cc18e/fast' failed
+make: *** [cmTC_cc18e/fast] Error 2
+
+File /home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e0252/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e0252.dir/build.make CMakeFiles/cmTC_e0252.dir/build
+make[1]: Entering directory '/home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e0252.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e0252.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e0252
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0252.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_e0252.dir/CheckFunctionExists.c.o  -o cmTC_e0252 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e0252.dir/build.make:97: recipe for target 'cmTC_e0252' failed
+make[1]: *** [cmTC_e0252] Error 1
+make[1]: Leaving directory '/home/branden/utaustinvilla3d-master/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e0252/fast' failed
+make: *** [cmTC_e0252/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_96dd8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_96dd8.dir/build.make CMakeFiles/cmTC_96dd8.dir/build
+make[1]: Entering directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_96dd8.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_96dd8.dir/CheckSymbolExists.c.o   -c "/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp/CheckSymbolExists.c"
+Linking C executable cmTC_96dd8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96dd8.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_96dd8.dir/CheckSymbolExists.c.o  -o cmTC_96dd8 
+CMakeFiles/cmTC_96dd8.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_96dd8.dir/build.make:97: recipe for target 'cmTC_96dd8' failed
+make[1]: *** [cmTC_96dd8] Error 1
+make[1]: Leaving directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_96dd8/fast' failed
+make: *** [cmTC_96dd8/fast] Error 2
+
+File /home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c20bb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c20bb.dir/build.make CMakeFiles/cmTC_c20bb.dir/build
+make[1]: Entering directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c20bb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c20bb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c20bb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c20bb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c20bb.dir/CheckFunctionExists.c.o  -o cmTC_c20bb -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c20bb.dir/build.make:97: recipe for target 'cmTC_c20bb' failed
+make[1]: *** [cmTC_c20bb] Error 1
+make[1]: Leaving directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c20bb/fast' failed
+make: *** [cmTC_c20bb/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4033e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4033e.dir/build.make CMakeFiles/cmTC_4033e.dir/build
+make[1]: Entering directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4033e.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4033e.dir/CheckSymbolExists.c.o   -c "/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp/CheckSymbolExists.c"
+Linking C executable cmTC_4033e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4033e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_4033e.dir/CheckSymbolExists.c.o  -o cmTC_4033e 
+CMakeFiles/cmTC_4033e.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_4033e.dir/build.make:97: recipe for target 'cmTC_4033e' failed
+make[1]: *** [cmTC_4033e] Error 1
+make[1]: Leaving directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_4033e/fast' failed
+make: *** [cmTC_4033e/fast] Error 2
+
+File /home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2e5fb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2e5fb.dir/build.make CMakeFiles/cmTC_2e5fb.dir/build
+make[1]: Entering directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e5fb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2e5fb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2e5fb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e5fb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2e5fb.dir/CheckFunctionExists.c.o  -o cmTC_2e5fb -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2e5fb.dir/build.make:97: recipe for target 'cmTC_2e5fb' failed
+make[1]: *** [cmTC_2e5fb] Error 1
+make[1]: Leaving directory '/home/branden/RoboCup_AI_Teams(Branches)/2020/DevGrim_backup/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2e5fb/fast' failed
+make: *** [cmTC_2e5fb/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_98e5c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_98e5c.dir/build.make CMakeFiles/cmTC_98e5c.dir/build
+make[1]: Entering directory '/home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98e5c.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_98e5c.dir/CheckSymbolExists.c.o   -c "/home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp/CheckSymbolExists.c"
+Linking C executable cmTC_98e5c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98e5c.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_98e5c.dir/CheckSymbolExists.c.o  -o cmTC_98e5c 
+CMakeFiles/cmTC_98e5c.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_98e5c.dir/build.make:97: recipe for target 'cmTC_98e5c' failed
+make[1]: *** [cmTC_98e5c] Error 1
+make[1]: Leaving directory '/home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_98e5c/fast' failed
+make: *** [cmTC_98e5c/fast] Error 2
+
+File /home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2e70d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2e70d.dir/build.make CMakeFiles/cmTC_2e70d.dir/build
+make[1]: Entering directory '/home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e70d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2e70d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2e70d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e70d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2e70d.dir/CheckFunctionExists.c.o  -o cmTC_2e70d -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2e70d.dir/build.make:97: recipe for target 'cmTC_2e70d' failed
+make[1]: *** [cmTC_2e70d] Error 1
+make[1]: Leaving directory '/home/branden/RoboCup_AI_Teams(Branches)/2021/DevGrim/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2e70d/fast' failed
+make: *** [cmTC_2e70d/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2a656/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2a656.dir/build.make CMakeFiles/cmTC_2a656.dir/build
+make[1]: Entering directory '/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a656.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2a656.dir/CheckSymbolExists.c.o   -c /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_2a656
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a656.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2a656.dir/CheckSymbolExists.c.o  -o cmTC_2a656 
+CMakeFiles/cmTC_2a656.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2a656.dir/build.make:97: recipe for target 'cmTC_2a656' failed
+make[1]: *** [cmTC_2a656] Error 1
+make[1]: Leaving directory '/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2a656/fast' failed
+make: *** [cmTC_2a656/fast] Error 2
+
+File /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4ff76/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4ff76.dir/build.make CMakeFiles/cmTC_4ff76.dir/build
+make[1]: Entering directory '/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4ff76.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4ff76.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4ff76
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ff76.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_4ff76.dir/CheckFunctionExists.c.o  -o cmTC_4ff76 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_4ff76.dir/build.make:97: recipe for target 'cmTC_4ff76' failed
+make[1]: *** [cmTC_4ff76] Error 1
+make[1]: Leaving directory '/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_4ff76/fast' failed
+make: *** [cmTC_4ff76/fast] Error 2
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8d0d5/fast && /usr/bin/make -f CMakeFiles/cmTC_8d0d5.dir/build.make CMakeFiles/cmTC_8d0d5.dir/build
+make[1]: Entering directory '/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d0d5.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_8d0d5.dir/src.c.o   -c /home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8d0d5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d0d5.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_8d0d5.dir/src.c.o  -o cmTC_8d0d5 
+/usr/bin/ld: CMakeFiles/cmTC_8d0d5.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_8d0d5.dir/build.make:87: cmTC_8d0d5] Error 1
+make[1]: Leaving directory '/home/gideon/Documents/GitHub/RobocupPy/RobocupPy-v2/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_8d0d5/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bccbf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bccbf.dir/build.make CMakeFiles/cmTC_bccbf.dir/build
+make[1]: Entering directory '/home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bccbf.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bccbf.dir/CheckSymbolExists.c.o   -c /home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bccbf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bccbf.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bccbf.dir/CheckSymbolExists.c.o  -o cmTC_bccbf 
+CMakeFiles/cmTC_bccbf.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_bccbf.dir/build.make:97: recipe for target 'cmTC_bccbf' failed
+make[1]: *** [cmTC_bccbf] Error 1
+make[1]: Leaving directory '/home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bccbf/fast' failed
+make: *** [cmTC_bccbf/fast] Error 2
+
+File /home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e2870/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e2870.dir/build.make CMakeFiles/cmTC_e2870.dir/build
+make[1]: Entering directory '/home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e2870.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e2870.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e2870
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2870.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_e2870.dir/CheckFunctionExists.c.o  -o cmTC_e2870 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e2870.dir/build.make:97: recipe for target 'cmTC_e2870' failed
+make[1]: *** [cmTC_e2870] Error 1
+make[1]: Leaving directory '/home/gideon/Documents/GitHub/RobocupPy/Code_Base/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e2870/fast' failed
+make: *** [cmTC_e2870/fast] Error 2
+
+
