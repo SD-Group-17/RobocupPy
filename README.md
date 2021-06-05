@@ -17,7 +17,31 @@ RobocupPy is a wrapper for the UT Austin Villa Codebase that allows you to use p
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
 * the first command that must be run before using or calling python Scripts or PyObjects is Py_Initialize(). this function basically creates a python interpreter to run python commands and files
 * to run a python command use the following command PyRun_SimpleString("import os"). in this example here we are importing the os library to interpreter.
+* this is an example on how you can call on a python file. to check if it has imported you can put pModule in an if statement
 ```C++
-PyObject *  pName = PyUnicode_FromString("strategyPy");
-PyObject * pModule = PyImport_Import(pName);
+if(pModule)
+	{
+		PyObject * pFunc = PyObject_GetAttrString(pModule, "selectSkill"); 
+       
+		if(pFunc && PyCallable_Check(pFunc))
+		{
+            //TODO, below function should not take "i", should take something else representing a PyList
+            PyObject * pReturn = PyObject_CallFunction(pFunc,"O",world_data);
+            int x = (int) PyLong_AsLong(pReturn);
+			return x;
+		}
+		else
+		{
+            
+			cout << "ERROR: function selectSkill()\n"<<endl;
+            return -1;
+		}
+
+	}
+	else
+	{
+        
+		cout << "ERROR: Module not imported"<<endl;
+        return -2;
+	}
 ```
