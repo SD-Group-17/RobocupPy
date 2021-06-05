@@ -107,6 +107,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>converts the player postions into a PyObject </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positions</td><td>: a vector&lt;pair&lt;VecPosition,int&gt;&gt; that will be converted to a PyObject </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pyList : the list of positions as a PyObject </dd></dl>
 
 </div>
 </div>
@@ -125,6 +132,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>converts a postion into a PyObject </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positions</td><td>: a VecPosition that will be converted to a PyObject </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>posPy : the list of positions as a PyObject </dd></dl>
 
 </div>
 </div>
@@ -143,6 +157,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>converts the player postions reletive to the ball into a PyObject </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positions</td><td>: a vector&lt;pair&lt;double,int&gt;&gt; that will be converted to a PyObject </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pyList : the list of positions as a PyObject </dd></dl>
 
 </div>
 </div>
@@ -171,6 +192,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>the function that calls on <a class="el" href="strategyPy_8py.html">strategyPy.py</a> and passes in world data as an argument </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">world_data</td><td>: a vector&lt;pair&lt;VecPosition,int&gt;&gt; that will be converted to a PyObject </td></tr>
+    <tr><td class="paramname">pos</td><td>: a VecPosition that will be updated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int n : the skill that must be performed </dd></dl>
 
 </div>
 </div>
@@ -241,6 +270,22 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>appends the world instance objects which have been converted into PyObjects to 1 list</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_playerNumber</td><td>: the number of the player which has already been converted to a PyObject </td></tr>
+    <tr><td class="paramname">_playMode</td><td>: the state the world instance is currently in converted to a PyObject </td></tr>
+    <tr><td class="paramname">_side</td><td>: the side the player is on which has been converted to a PyObject </td></tr>
+    <tr><td class="paramname">posPy</td><td>: the position of the player converted to a python object </td></tr>
+    <tr><td class="paramname">ballPy</td><td>: the position of the ball as a PyObject </td></tr>
+    <tr><td class="paramname">teamPositionsPy</td><td>: the position of the players teammates as a PyObject </td></tr>
+    <tr><td class="paramname">oppPositionsPy</td><td>: the position of the players opponents as a PyObject </td></tr>
+    <tr><td class="paramname">teamDistToBallPy</td><td>: the position of the players teammates as a PyObject relative to the ball </td></tr>
+    <tr><td class="paramname">OppDistToBallPy</td><td>: the the position of the players opponents as a PyObject relative to the ball </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pyList : the python list containing all the items listed above </dd></dl>
 
 </div>
 </div>
