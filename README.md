@@ -51,8 +51,14 @@ and how to convert from PyObject to c++ you can look [here](https://docs.python.
 
 * an example of converting a c++ data type to a python Object
 ```C++
-/converting an integer to a PyObject
+//converting an integer to a PyObject
 int x = 5
 PyObject * temp;
 temp = Py_BuildValue("i",x);
+```
+* an example of extracting data from a PyObject 
+```C++
+PyObject * objectPy;
+//update objectPy
+int x = (int) PyLong_AsLong(objectPy);
 ```
