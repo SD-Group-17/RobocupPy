@@ -20,22 +20,22 @@ RobocupPy is a wrapper for the UT Austin Villa Codebase that allows you to use p
 * this is an example on how you can call on a python file. to check if it has imported you can put pModule in an if statement
 ```C++
 if(pModule)
-	{
-		PyObject * pFunc = PyObject_GetAttrString(pModule, "selectSkill"); 
+{
+	PyObject * pFunc = PyObject_GetAttrString(pModule, "selectSkill"); 
        
-		if(pFunc && PyCallable_Check(pFunc))
-		{
-            //TODO, below function should not take "i", should take something else representing a PyList
-            PyObject * pReturn = PyObject_CallFunction(pFunc,"O",world_data);
-            int x = (int) PyLong_AsLong(pReturn);
-			return x;
-		}
-		else
-		{
+	if(pFunc && PyCallable_Check(pFunc))
+	{
+           //TODO, below function should not take "i", should take something else representing a PyList
+           PyObject * pReturn = PyObject_CallFunction(pFunc,"O",world_data);
+           int x = (int) PyLong_AsLong(pReturn);
+	   return x;
+	}
+	else
+	{
             
-			cout << "ERROR: function selectSkill()\n"<<endl;
+	    cout << "ERROR: function selectSkill()\n"<<endl;
             return -1;
-		}
+	}
 
 	}
 	else
