@@ -19,9 +19,15 @@ RobocupPy is a wrapper for the UT Austin Villa Codebase that allows you to use p
 * to run a python command use the following command PyRun_SimpleString("import os"). in this example here we are importing the os library to interpreter.
 * this is an example on how you can call on a python file. to check if it has imported you can put pModule in an if statement
 ```C++
+
+//calling on myFile.py 
+PyObject *  pName = PyUnicode_FromString("myFile");
+PyObject * pModule = PyImport_Import(pName);
+
 if(pModule)
 {
-	PyObject * pFunc = PyObject_GetAttrString(pModule, "selectSkill"); 
+	// running the method myFunc in myFile.py
+	PyObject * pFunc = PyObject_GetAttrString(pModule, "myFunc"); 
        
 	if(pFunc && PyCallable_Check(pFunc))
 	{
