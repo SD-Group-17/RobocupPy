@@ -18,8 +18,46 @@ Make sure you are connected to the internet as this will require a once off ~300
 * Open a terminal
 * Type the command and run it
 ```
-wget lamp.ms.wits.ac.za/robocup/setup`
+wget lamp.ms.wits.ac.za/robocup/setup
 ```
+* It may appear to hang, however, I found it was asking for my password. So input your password when/if prompted
+* Once complete if you type ‘ls’ you should see a file called ‘setup’
+* Type the command and run it
+```
+ chmod +x setup
+```
+* Type the command and run it (This process will install quite a few things)
+```
+  ./setup
+```
+* You will be prompted on whether or not you have a graphics card type “Y” or “N”. If you are unsure of if you have one you can run “nvidia-smi”, this will indicate if you have nvidia drivers installed. If it asks to install something then you don’t have nvidia drivers :)
+
+* Based upon which option you chose in Step 7 you will be told which command you require to run the singularity instance.
+
+```
+    - IF no "N" in step 7 run ./robocup-mesa
+    - IF yes "Y" in step 7 run ./robocup-nvidia
+```
+A new terminal should have opened which is within the singularity robocup instance
+
+* In this new terminal you can run the server using the following command
+```
+ rcssserver3d
+```
+This will run the server like we have done in the labs
+* Type “ctrl-shift-t” while the terminal is active(selected) to open a new tab. Remember we need to run each of the server, agent and visualiser in a serperate tab
+* In the new tab run the following command to run the visualiser - which will open the roboviz window
+```
+ /roboviz/roboviz.sh
+```
+
+* Type “ctrl-shift-t” to open a third tab
+* In order to run the agent we must first extract the Code_Base file which can be found in the same directory as you saw “setup”
+* In the original terminal you can type and run (This is the non singularity terminal)
+```
+unzip Code_Base.zip
+```
+
 ## How to wrap more data for python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
 * the first command that must be run before using or calling python Scripts or PyObjects is Py_Initialize(). this function basically creates a python interpreter to run python commands and files
