@@ -25,8 +25,9 @@ if(pModule)
        
 	if(pFunc && PyCallable_Check(pFunc))
 	{
-           //TODO, below function should not take "i", should take something else representing a PyList
+           //here we call on the python function and store the output in a PyObject in this example we are sending in a list so we attach an O before world_data
            PyObject * pReturn = PyObject_CallFunction(pFunc,"O",world_data);
+	   //here we convert the pyobject to the relevent c++ format
            int x = (int) PyLong_AsLong(pReturn);
 	   return x;
 	}
@@ -45,3 +46,5 @@ if(pModule)
         return -2;
 	}
 ```
+for info on how to convert c++ to PyObject look [here](https://docs.python.org/3/c-api/arg.html)
+and how to convert from PyObject to c++ you can look [here](https://docs.python.org/3/c-api/long.html)
