@@ -14,7 +14,7 @@ RobocupPy is a wrapper for the UT Austin Villa Codebase that allows you to use p
 This is a quick instruction guide on how to install the Robocup distribution on your home computer.
 
 Make sure you are connected to the internet as this will require a once off ~300mb download
-this is a setup for debian based systems. to run this on windows download WSL. more info can be found [here](https://docs.microsoft.com/en-us/windows/wsl/about)
+this is a setup for debian based systems. to run this on windows download WSL. more info can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 * Open a terminal
 * Type the command and run it
 ```
@@ -71,6 +71,10 @@ make
 * to add agents to the simulator run the following command
 ```
 ./start.sh
+```
+* if a permission denied message is thrown run the following command and run the above command again
+```
+ chmod 777 start.sh
 ```
 
 
