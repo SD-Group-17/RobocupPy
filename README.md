@@ -57,6 +57,21 @@ This will run the server like we have done in the labs
 ```
 unzip Code_Base.zip
 ```
+Or navigate to that folder and right click unzip to Code_Base.zip
+* In your third singularity terminal tab cd into Code_Base.zip
+Once here the following commands only need to be run once
+
+```
+cmake .
+```
+* type and run (dont forget space afterwards)
+```
+make 
+```
+* to add agents to the simulator run the following command
+```
+./start.sh
+```
 
 ## How to wrap more data for python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
