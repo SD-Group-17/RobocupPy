@@ -48,3 +48,11 @@ if(pModule)
 ```
 for info on how to convert c++ to PyObject look [here](https://docs.python.org/3/c-api/arg.html)
 and how to convert from PyObject to c++ you can look [here](https://docs.python.org/3/c-api/long.html)
+
+* an example of converting a c++ data type to a python Object
+```C++
+/converting an integer to a PyObject
+int x = 5
+PyObject * temp;
+temp = Py_BuildValue("i",x);
+```
