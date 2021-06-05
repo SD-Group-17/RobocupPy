@@ -1,0 +1,126 @@
+\hypertarget{strategy_8cc}{}\doxysection{strategy.\+cc File Reference}
+\label{strategy_8cc}\index{strategy.cc@{strategy.cc}}
+{\ttfamily \#include \char`\"{}naobehavior.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Python.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}../rvdraw/rvdraw.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{strategy_8cc_ac2a3ba220f03e62aa1d8ca59ed8c839a}{py\+Function}} (Py\+Object $\ast$world\+\_\+data, Vec\+Position \&pos)
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{strategy_8cc_a1646bf5ca40ff2feb0a3b4b8bacb7acd}{convert\+Vec\+Pos}} (Vec\+Position pos)
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{strategy_8cc_a2bc860756292b9539d4fdcbe9c45377b}{dist\+Toball}} (vector$<$ pair$<$ double, int $>$$>$ list)
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{strategy_8cc_a938616a95daf1151dacd15bd40559f91}{convert\+Player\+Positions}} (vector$<$ pair$<$ Vec\+Position, int $>$ $>$ positions)
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{strategy_8cc_a909262716db78f93d8c58d35ac691324}{world\+Data}} (Py\+Object $\ast$\+\_\+player\+Number, Py\+Object $\ast$\+\_\+play\+Mode, Py\+Object $\ast$\+\_\+side, Py\+Object $\ast$pos\+Py, Py\+Object $\ast$ball\+Py, Py\+Object $\ast$team\+Positions\+Py, Py\+Object $\ast$opp\+Positions\+Py, Py\+Object $\ast$team\+Dist\+To\+Ball\+Py, Py\+Object $\ast$Opp\+Dist\+To\+Ball\+Py)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{strategy_8cc_aeb041e62102d02ea2049f174f5783803}{agent\+Body\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{strategy_8cc_a938616a95daf1151dacd15bd40559f91}\label{strategy_8cc_a938616a95daf1151dacd15bd40559f91}} 
+\index{strategy.cc@{strategy.cc}!convertPlayerPositions@{convertPlayerPositions}}
+\index{convertPlayerPositions@{convertPlayerPositions}!strategy.cc@{strategy.cc}}
+\doxysubsubsection{\texorpdfstring{convertPlayerPositions()}{convertPlayerPositions()}}
+{\footnotesize\ttfamily Py\+Object$\ast$ convert\+Player\+Positions (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ Vec\+Position, int $>$ $>$}]{positions }\end{DoxyParamCaption})}
+
+converts the player postions into a Py\+Object 
+\begin{DoxyParams}{Parameters}
+{\em positions} & \+: a vector$<$pair$<$\+Vec\+Position,int$>$$>$ that will be converted to a Py\+Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+py\+List \+: the list of positions as a Py\+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{strategy_8cc_a1646bf5ca40ff2feb0a3b4b8bacb7acd}\label{strategy_8cc_a1646bf5ca40ff2feb0a3b4b8bacb7acd}} 
+\index{strategy.cc@{strategy.cc}!convertVecPos@{convertVecPos}}
+\index{convertVecPos@{convertVecPos}!strategy.cc@{strategy.cc}}
+\doxysubsubsection{\texorpdfstring{convertVecPos()}{convertVecPos()}}
+{\footnotesize\ttfamily Py\+Object$\ast$ convert\+Vec\+Pos (\begin{DoxyParamCaption}\item[{Vec\+Position}]{pos }\end{DoxyParamCaption})}
+
+converts a postion into a Py\+Object 
+\begin{DoxyParams}{Parameters}
+{\em positions} & \+: a Vec\+Position that will be converted to a Py\+Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pos\+Py \+: the list of positions as a Py\+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{strategy_8cc_a2bc860756292b9539d4fdcbe9c45377b}\label{strategy_8cc_a2bc860756292b9539d4fdcbe9c45377b}} 
+\index{strategy.cc@{strategy.cc}!distToball@{distToball}}
+\index{distToball@{distToball}!strategy.cc@{strategy.cc}}
+\doxysubsubsection{\texorpdfstring{distToball()}{distToball()}}
+{\footnotesize\ttfamily Py\+Object$\ast$ dist\+Toball (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ double, int $>$$>$}]{list }\end{DoxyParamCaption})}
+
+converts the player postions reletive to the ball into a Py\+Object 
+\begin{DoxyParams}{Parameters}
+{\em positions} & \+: a vector$<$pair$<$double,int$>$$>$ that will be converted to a Py\+Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+py\+List \+: the list of positions as a Py\+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{strategy_8cc_ac2a3ba220f03e62aa1d8ca59ed8c839a}\label{strategy_8cc_ac2a3ba220f03e62aa1d8ca59ed8c839a}} 
+\index{strategy.cc@{strategy.cc}!pyFunction@{pyFunction}}
+\index{pyFunction@{pyFunction}!strategy.cc@{strategy.cc}}
+\doxysubsubsection{\texorpdfstring{pyFunction()}{pyFunction()}}
+{\footnotesize\ttfamily int py\+Function (\begin{DoxyParamCaption}\item[{Py\+Object $\ast$}]{world\+\_\+data,  }\item[{Vec\+Position \&}]{pos }\end{DoxyParamCaption})}
+
+the function that calls on \mbox{\hyperlink{strategyPy_8py}{strategy\+Py.\+py}} and passes in world data as an argument 
+\begin{DoxyParams}{Parameters}
+{\em world\+\_\+data} & \+: a vector$<$pair$<$\+Vec\+Position,int$>$$>$ that will be converted to a Py\+Object \\
+\hline
+{\em pos} & \+: a Vec\+Position that will be updated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int n \+: the skill that must be performed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{strategy_8cc_a909262716db78f93d8c58d35ac691324}\label{strategy_8cc_a909262716db78f93d8c58d35ac691324}} 
+\index{strategy.cc@{strategy.cc}!worldData@{worldData}}
+\index{worldData@{worldData}!strategy.cc@{strategy.cc}}
+\doxysubsubsection{\texorpdfstring{worldData()}{worldData()}}
+{\footnotesize\ttfamily Py\+Object$\ast$ world\+Data (\begin{DoxyParamCaption}\item[{Py\+Object $\ast$}]{\+\_\+player\+Number,  }\item[{Py\+Object $\ast$}]{\+\_\+play\+Mode,  }\item[{Py\+Object $\ast$}]{\+\_\+side,  }\item[{Py\+Object $\ast$}]{pos\+Py,  }\item[{Py\+Object $\ast$}]{ball\+Py,  }\item[{Py\+Object $\ast$}]{team\+Positions\+Py,  }\item[{Py\+Object $\ast$}]{opp\+Positions\+Py,  }\item[{Py\+Object $\ast$}]{team\+Dist\+To\+Ball\+Py,  }\item[{Py\+Object $\ast$}]{Opp\+Dist\+To\+Ball\+Py }\end{DoxyParamCaption})}
+
+appends the world instance objects which have been converted into Py\+Objects to 1 list
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+player\+Number} & \+: the number of the player which has already been converted to a Py\+Object \\
+\hline
+{\em \+\_\+play\+Mode} & \+: the state the world instance is currently in converted to a Py\+Object \\
+\hline
+{\em \+\_\+side} & \+: the side the player is on which has been converted to a Py\+Object \\
+\hline
+{\em pos\+Py} & \+: the position of the player converted to a python object \\
+\hline
+{\em ball\+Py} & \+: the position of the ball as a Py\+Object \\
+\hline
+{\em team\+Positions\+Py} & \+: the position of the players teammates as a Py\+Object \\
+\hline
+{\em opp\+Positions\+Py} & \+: the position of the players opponents as a Py\+Object \\
+\hline
+{\em team\+Dist\+To\+Ball\+Py} & \+: the position of the players teammates as a Py\+Object relative to the ball \\
+\hline
+{\em Opp\+Dist\+To\+Ball\+Py} & \+: the the position of the players opponents as a Py\+Object relative to the ball \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+py\+List \+: the python list containing all the items listed above 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{strategy_8cc_aeb041e62102d02ea2049f174f5783803}\label{strategy_8cc_aeb041e62102d02ea2049f174f5783803}} 
+\index{strategy.cc@{strategy.cc}!agentBodyType@{agentBodyType}}
+\index{agentBodyType@{agentBodyType}!strategy.cc@{strategy.cc}}
+\doxysubsubsection{\texorpdfstring{agentBodyType}{agentBodyType}}
+{\footnotesize\ttfamily int agent\+Body\+Type}
+
