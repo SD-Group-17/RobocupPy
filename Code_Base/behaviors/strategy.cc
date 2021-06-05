@@ -349,11 +349,12 @@ vector<VecPosition> NaoBehavior::GenerateImportantPositions(int _playMode, int _
 
 
 
-/*  function which calls python functions from python files
- * 
- * 
+/**
+ * the function that calls on strategyPy.py and passes in world data as an argument
+ * @param world_data : a vector<pair<VecPosition,int>> that will be converted to a PyObject
+ * @param pos        : a VecPosition that will be updated 
+ * @return int n     : the skill that must be performed 
  */
-
 int pyFunction(PyObject * world_data, VecPosition &pos)
 {
     //TODO: Edit this function to pass a PyList over to python
@@ -473,6 +474,12 @@ vector<pair<VecPosition, int > > NaoBehavior::opponentPositions(){
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 //python wrapper PyObject utility functions:
+/**
+ * converts a postion into a PyObject
+ * @param positions : a VecPosition that will be converted to a PyObject
+ * @return posPy    : the list of positions as a PyObject
+ */
+
 PyObject * convertVecPos(VecPosition pos)
 {
     PyObject * posPy = PyList_New(3);
@@ -492,6 +499,14 @@ PyObject * convertVecPos(VecPosition pos)
 
     return posPy;
 }
+
+
+/**
+ * converts the player postions reletive to the ball into a PyObject 
+ * @param positions : a vector<pair<double,int>> that will be converted to a PyObject
+ * @return pyList   : the list of positions as a PyObject
+ */
+
 
 PyObject * distToball(vector<pair<double,int>> list)
 {
@@ -523,6 +538,13 @@ PyObject * distToball(vector<pair<double,int>> list)
 
     return pyList;
 }
+
+
+/**
+ * converts the player postions into a PyObject
+ * @param positions : a vector<pair<VecPosition,int>> that will be converted to a PyObject
+ * @return pyList   : the list of positions as a PyObject
+ */
 
 PyObject * convertPlayerPositions(vector<pair<VecPosition, int > > positions)
 {
@@ -559,9 +581,23 @@ PyObject * convertPlayerPositions(vector<pair<VecPosition, int > > positions)
     return pyList;
 }
 
+/** 
+ * appends the world instance objects which have been converted into PyObjects to  1 list
+ *
+ * @param _playerNumber           : the number of the player which has already been converted to a PyObject
+ * @param _playMode               : the state the world instance is currently in converted to a PyObject
+ * @param _side                   : the side the player is on which has been converted to a PyObject
+ * @param posPy                   : the position of the player converted to a python object
+ * @param ballPy                  : the position of the ball as a PyObject
+ * @param teamPositionsPy         : the position of the players teammates as a PyObject
+ * @param oppPositionsPy          : the position of the players opponents as a PyObject
+ * @param teamDistToBallPy        : the position of the players teammates as a PyObject relative to the ball
+ * @param OppDistToBallPy         : the the position of the players opponents as a PyObject relative to the ball
+ * @return pyList                 : the python list containing all the items listed above
+ */
+
 PyObject * worldData(PyObject *  _playerNumber,PyObject * _playMode,PyObject * _side,PyObject * posPy,PyObject * ballPy,PyObject *  teamPositionsPy,PyObject *  oppPositionsPy,PyObject * teamDistToBallPy,PyObject * OppDistToBallPy){
     
-    //This mirrors constructor for Robocup class in Robocup.py
     
     PyObject * pyList;
     pyList = PyList_New(9);
