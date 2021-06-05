@@ -10,12 +10,14 @@ RobocupPy is a wrapper for the UT Austin Villa Codebase that allows you to use p
   * [UML Diagrams](https://github.com/SD-Group-17/RobocupPy/wiki/UML)
 
 ## Installation
-### Installation(Singularity)
+### (Singularity)
 This is a quick instruction guide on how to install the Robocup distribution on your home computer.
 
 Make sure you are connected to the internet as this will require a once off ~300mb download
 #### 4.2.1 Ubuntu 18.04
-
+* Open a terminal
+* Type the command and run it
+`wget lamp.ms.wits.ac.za/robocup/setup`
 
 ## How to wrap more data for python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
