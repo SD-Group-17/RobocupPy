@@ -81,6 +81,38 @@ make
 instructions on how to run first game can be found [here](https://courses.ms.wits.ac.za/~branden/RoboCup/my-first-game.html)
 
 ## Tutorial
+#Coding your first team in python using strategyPy.py
+
+```
+import Robocup as RC #Do Not edit this line
+def selectSkill(world_data): #Do Not edit this line
+    robocup = RC.Robocup(world_data) #Do Not edit this line
+
+    if robocup.playerNumber() == 1:
+        return robocup.STAND()
+    else:
+        if robocup.gameSide() == 0:
+            return robocup.HARD_KICK(robocup.GOAL_LEFT_CENTRE_X +0.1,robocup.GOAL_LEFT_CENTRE_Y)
+        else:
+            return robocup.HARD_KICK(robocup.GOAL_RIGHT_CENTRE_X -0.1,robocup.GOAL_RIGHT_CEN
+```
+The above is example code showing a single 2 player team, where player 0 acts as goalie and player 1 goes ahead to score a goal.
+
+
+in your verison, do not edit the first 3 lines, these are necessary for running a game.
+
+
+You must always return a skill from the robocup class. See provided documentation for the Robocup class in Robocup.py for a list of these skills, and how to call on them. 
+
+The above mentioned documentation provides a detailed list of the rest of the class and how to use it. See also the original documentation.
+
+To return a specific skill, use the following format:
+
+```
+return robocup.<YOUR CHOSEN SKILL>
+
+```
+
 
 ## How to wrap more data for python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
