@@ -64,3 +64,18 @@ int x = (int) PyLong_AsLong(objectPy);
 ```
 
 ### Handling Python Lists 
+* how to define a python list
+```C++
+int n = 5;
+PyObject* pyList = PyList_New(n);
+```
+* how to get an item from the pyList (get the item at index 0)
+```C++
+PyObject* item = PyList_GetItem(pyList, 0);
+```
+* how to set an item in a python list
+```C++
+int value = 5;
+PyObject * item = Py_BuildValue("i",value);
+PyList_SetItem(PyList,0,item);
+```
