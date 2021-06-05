@@ -108,9 +108,8 @@ The above mentioned documentation provides a detailed list of the rest of the cl
 
 To return a specific skill, use the following format:
 
-```
+```python
 return robocup.<YOUR CHOSEN SKILL>
-
 ```
 
 
