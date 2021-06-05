@@ -99,7 +99,7 @@ def selectSkill(world_data): #Do Not edit this line
 The above is example code showing a single 2 player team, where player 0 acts as goalie and player 1 goes ahead to score a goal.
 
 
-in your verison, do not edit the first 3 lines, these are necessary for running a game.
+In your verison, do not edit the first 3 lines, these are necessary for running a game.
 
 
 You must always return a skill from the robocup class. See provided documentation for the Robocup class in Robocup.py for a list of these skills, and how to call on them. 
