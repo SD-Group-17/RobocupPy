@@ -83,7 +83,7 @@ instructions on how to run first game can be found [here](https://courses.ms.wit
 ## Tutorial
 ### Coding your first team in python using strategyPy.py
 
-```
+```python
 import Robocup as RC #Do Not edit this line
 def selectSkill(world_data): #Do Not edit this line
     robocup = RC.Robocup(world_data) #Do Not edit this line
