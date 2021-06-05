@@ -62,3 +62,5 @@ PyObject * objectPy;
 //update objectPy
 int x = (int) PyLong_AsLong(objectPy);
 ```
+
+### Handling Python Lists 
