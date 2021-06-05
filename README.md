@@ -77,6 +77,8 @@ make
  chmod 777 start.sh
 ```
 
+## running first game
+instructions on how to run first game can be found [here](https://courses.ms.wits.ac.za/~branden/RoboCup/my-first-game.html)
 
 ## Tutorial
 
