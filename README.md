@@ -73,6 +73,9 @@ make
 ./start.sh
 ```
 
+
+## Tutorial
+
 ## How to wrap more data for python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
 * the first command that must be run before using or calling python Scripts or PyObjects is Py_Initialize(). this function basically creates a python interpreter to run python commands and files
