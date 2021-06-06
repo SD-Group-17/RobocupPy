@@ -123,7 +123,6 @@ To use the sandbox: Navigate to the Behaviors folder in the Code_Base with your 
 
 ```
 python sandbox.py
-
 ```
 
 This checks your selectSkill() function in strategyPy.py against a single instance of world model data to see if it is returning a skill correctly. It will also reveal any syntax errors or bugs in your code.
