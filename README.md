@@ -4,7 +4,9 @@
 RobocupPy is a wrapper for the UT Austin Villa Codebase that allows you to use python for Robocup.
 
 ## Documentation:
-* Open [html file](https://github.com/SD-Group-17/RobocupPy/tree/core_test/Documentation/html) using a browser
+* [RobocupPy class](https://htmlpreview.github.io/?https://raw.githubusercontent.com/SD-Group-17/RobocupPy/master/Documentation/html/classRobocup_1_1Robocup.html)
+* functions added to [strategy.cc](https://htmlpreview.github.io/?https://github.com/SD-Group-17/RobocupPy/blob/master/Documentation/html/strategy_8cc.html)
+* [strategyPy.py](https://htmlpreview.github.io/?https://github.com/SD-Group-17/RobocupPy/blob/master/Documentation/html/strategyPy_8py.html#a888e37c517600e8648ee1ecf75ec084c)
 * [Wiki](https://github.com/SD-Group-17/RobocupPy/wiki)
   * [Robocup Class Documentation](https://github.com/SD-Group-17/RobocupPy/wiki/Robocup-Class-Documentation)
   * [UML Diagrams](https://github.com/SD-Group-17/RobocupPy/wiki/UML)
