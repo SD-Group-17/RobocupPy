@@ -11,6 +11,7 @@ RobocupPy is a wrapper for the UT Austin Villa Codebase that allows you to use p
   * [Robocup Class Documentation](https://github.com/SD-Group-17/RobocupPy/wiki/Robocup-Class-Documentation)
   * [UML Diagrams](https://github.com/SD-Group-17/RobocupPy/wiki/UML)
 
+for a better view download the documentation and view it on your browser
 ## Installation
 ### (Singularity)
 This is a quick instruction guide on how to install the Robocup distribution on your home computer.
