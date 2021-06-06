@@ -116,7 +116,7 @@ return robocup.<YOUR CHOSEN SKILL>
 ```
 
 
-## How to send more data for python
+## How to send more data to python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
 * the first command that must be run before using or calling python Scripts or PyObjects is Py_Initialize(). this function basically creates a python interpreter to run python commands and files
 * to run a python command use the following command PyRun_SimpleString("import os"). in this example here we are importing the os library to interpreter.
