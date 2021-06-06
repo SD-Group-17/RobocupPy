@@ -115,6 +115,21 @@ To return a specific skill, use the following format:
 return robocup.<YOUR CHOSEN SKILL>
 ```
 
+### Debugging your code using sandbox.py
+
+Often the singularity fails to notify you if your python code is not compiling/running correctly, use sandbox.py to quickly check if your code is able to run.
+
+To use the sandbox: Navigate to the Behaviors folder in the Code_Base with your terminal, then run the following line in terminal:
+
+```
+python sandbox.py
+
+```
+
+This checks your selectSkill() function in strategyPy.py against a single instance of world model data to see if it is returning a skill correctly. It will also reveal any syntax errors or bugs in your code.
+
+
+
 
 ## How to send more data to python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/core_test/Code_Base/behaviors/strategy.cc). the pyFunction.
