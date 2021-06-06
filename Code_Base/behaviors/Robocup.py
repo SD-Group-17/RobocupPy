@@ -155,6 +155,7 @@ class Robocup():
         Parameters
         ----------
         world data passed through to selectSkill() - ALTERATION IS NOT RECOMMENDED
+        This mirrors worldDate object on C++ side
         """
 
         #World Model Data:

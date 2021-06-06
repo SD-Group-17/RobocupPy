@@ -598,6 +598,7 @@ PyObject * convertPlayerPositions(vector<pair<VecPosition, int > > positions)
 
 PyObject * worldData(PyObject *  _playerNumber,PyObject * _playMode,PyObject * _side,PyObject * posPy,PyObject * ballPy,PyObject *  teamPositionsPy,PyObject *  oppPositionsPy,PyObject * teamDistToBallPy,PyObject * OppDistToBallPy){
     
+    //this mirrors constructor for Robocup class on python side
     
     PyObject * pyList;
     pyList = PyList_New(9);
