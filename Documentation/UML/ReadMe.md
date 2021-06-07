@@ -14,3 +14,6 @@
 
 ## Figure 5
 ![Diagram 5](https://github.com/SD-Group-17/RobocupPy/blob/master/Documentation/UML/img5.jpeg)
+
+## Figure 6
+![Diagram 6](https://github.com/SD-Group-17/RobocupPy/blob/master/Documentation/UML/img6.jpeg)
