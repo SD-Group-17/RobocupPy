@@ -323,3 +323,5 @@ class Robocup():
         return self.__your_new_object #since your object is private, you will need a getter
 ```
 
+## Known issues
+* Running the simulator in full screen can cause issues.
