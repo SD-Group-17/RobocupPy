@@ -126,6 +126,26 @@ python sandbox.py
 
 This checks your selectSkill() function in strategyPy.py against a single instance of world model data to see if it is returning a skill correctly. It will also reveal any syntax errors or bugs in your code.
 
+### Adding more methods to strategyPy.py
+
+If you want to add your own functions and methods to strategyPy.py, for certain purposes, you may need to pass through the robocup object, so as to gain access to the world data contained in the robocup instance, as well as the methods and functionality contained in the Robocup class.
+
+Do this inside strategyPy.py:
+
+```python
+import Robocup as RC
+def selectSkill(world_data):
+	robocup = RC.Robocup(world_data)
+	
+	return yourMethod(robocup) #calling 
+
+def yourMethod(robocup):
+	#your method logic here
+	my_number = robocup.playerNumber()
+	chosen_skill = robocup.STAND()
+	return chosen_skill
+```
+
 
 
 
