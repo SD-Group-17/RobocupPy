@@ -137,12 +137,12 @@ import Robocup as RC
 def selectSkill(world_data):
 	robocup = RC.Robocup(world_data)
 	
-	return yourMethod(robocup) #calling 
+	return yourMethod(robocup) #call your method, but remember to pass thorugh the robocup instance
 
 def yourMethod(robocup):
 	#your method logic here
-	my_number = robocup.playerNumber()
-	chosen_skill = robocup.STAND()
+	my_number = robocup.playerNumber() #accessing world data contained in robocup instance
+	chosen_skill = robocup.STAND() #accessing methods of Robocup class
 	return chosen_skill
 ```
 
