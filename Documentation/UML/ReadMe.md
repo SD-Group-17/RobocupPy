@@ -16,6 +16,6 @@
 ![Diagram 5](https://github.com/SD-Group-17/RobocupPy/blob/master/Documentation/UML/img5.jpeg)
 
 ## Figure 6
-A Class Diagram is a type of static structure diagram that describes the structure of the wrapper system. In this case we have only one central class for wrapper, which is the Robocup class. The top half of the diagram describes the attributes of the class, which are all public, and the bottom describes the methods of the class.
+A Class Diagram is a type of static structure diagram that describes the structure of the wrapper system. In this case we have only one central class for wrapper, which is the Robocup class. The top half of the diagram describes the attributes of the class, which are all public, and the bottom describes the methods of the class.\
 ![Diagram 6](https://github.com/SD-Group-17/RobocupPy/blob/master/Documentation/UML/img6.jpeg)
 
