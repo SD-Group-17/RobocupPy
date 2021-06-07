@@ -226,6 +226,7 @@ PyList_SetItem(PyList,0,item);
 ## Using the world data object:
 
 In strategy.cc, there is a method: worldData(), which takes in a series of PyObjects, and returns them as a list. It is this list, world_data, that is passed through to python.
+* Note : algorithm currently takes 300 microseconds to run
 
 ### Passing the world_data list through to python:
 C++ side:
