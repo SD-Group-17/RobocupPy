@@ -221,3 +221,105 @@ int value = 5;
 PyObject * item = Py_BuildValue("i",value);
 PyList_SetItem(PyList,0,item);
 ```
+
+
+## Using the world data object:
+
+In strategy.cc, there is a method: worldData(), which takes in a series of PyObjects, and returns them as a list. It is this list, world_data, that is passed through to python.
+
+### Passing the world_data list through to python:
+C++ side:
+```C++
+PyObject * world_data = worldData(playerNumPy,playModePy,sidePy,posPy,ballPy, teamPositionsPy, oppPositionsPy ,teamDistToBallPy,OppDistToBallPy);
+n = pyFunction(world_data,pos); //This calls on selectSkill() in python, passing it world_data as a parameter
+```
+Python side:
+```python
+import Robocup as RC
+def selectSkill(world_data): #see how selectSkill() takes in world_data as a parameter
+    robocup = RC.Robocup(world_data) #see how the Robocup constructor takes in world_data as a parameter
+```
+
+### Comparing the worldData() method to the constructor for the Robocup class in python:
+
+worldData()
+```C++
+PyObject * worldData(PyObject *  _playerNumber,PyObject * _playMode,PyObject * _side,PyObject * posPy,PyObject * ballPy,PyObject *  teamPositionsPy,PyObject *  oppPositionsPy,PyObject * teamDistToBallPy,PyObject * OppDistToBallPy){
+    
+    //this mirrors constructor for Robocup class on python side
+    
+    PyObject * pyList;
+    pyList = PyList_New(9);
+    PyList_SetItem(pyList,0,_playerNumber);
+    PyList_SetItem(pyList,1,_playMode);
+    PyList_SetItem(pyList,2,_side);
+    PyList_SetItem(pyList,3,posPy);    
+    PyList_SetItem(pyList,4,ballPy);
+    PyList_SetItem(pyList,5,teamPositionsPy);
+    PyList_SetItem(pyList,6,oppPositionsPy);
+
+    PyList_SetItem(pyList,7,teamDistToBallPy);
+    PyList_SetItem(pyList,8,OppDistToBallPy);
+
+
+
+    return pyList;
+```
+
+Robocup constructor:
+```python
+class Robocup():
+    #...
+    def __init__(self, world_data):
+        """
+        Parameters
+        ----------
+        world data passed through to selectSkill() - ALTERATION IS NOT RECOMMENDED
+        This mirrors worldDate object on C++ side
+        """
+
+        #World Model Data:
+        self.__player_number=world_data[0]
+        self.__play_mode=world_data[1]
+        self.__side = world_data[2]
+        self.__player_pos = world_data[3]        
+        self.__ball_pos = world_data[4]
+        self.__team_positions = world_data[5]
+        self.__opponent_positions = world_data[6]
+
+        #Wrapped C++ Functions:
+        self.__team_dist_ball = world_data[7]
+        self.__opp_dist_ball = world_data[8]
+```
+
+As you can see, the constructor for the Robocup class in python clearly mirrors the method for worldData in C++.
+
+### Send through more data using the world data object:
+
+If you wish to pass more data through from C++ to python, simply convert that data to a PyObject (as described above) and edit the worldData() method so it accepts another object parameter, and adds it to the world_data list. 
+
+You will have to initialise the list to be larger, as well as add the object to the list:
+```python
+PyObject * worldData(/*...*/, PyObject yourNewObject){
+    pyList = PyList_New(n);//change the n value to match the number of parameters.
+    // ...
+    PyList_SetItem(pyList,n,yourNewObject);
+    
+    return pyList
+}
+```
+
+Now, make the relevant changes to the Robocup constructor on the python side. This will mirror the worldData() method in C++.
+
+```python
+class Robocup():
+    #...
+    def __init__(self, world_data):        
+        #...
+        self.__your_new_object = world_data[n] #we recommend making this object private, so that users do not edit (and lost) the world data they receive from the server.
+        #...
+
+    def yourObjectGetter(self):
+        return self.__your_new_object #since your object is private, you will need a getter
+```
+
