@@ -137,11 +137,11 @@ import Robocup as RC
 def selectSkill(world_data):
 	robocup = RC.Robocup(world_data)
 	
-	return yourMethod(robocup) #call your method, but remember to pass thorugh the robocup instance
+	return yourMethod(robocup) #call your method, but remember to pass through the robocup instance
 
 def yourMethod(robocup):
 	#your method logic here
-	my_number = robocup.playerNumber() #accessing world data contained in robocup instance
+	my_number = robocup.playerNumber() #accessing world data contained in the robocup instance
 	chosen_skill = robocup.STAND() #accessing methods of Robocup class
 	return chosen_skill
 ```
@@ -151,9 +151,9 @@ def yourMethod(robocup):
 
 ## How to send more data to python
 * To see these techniques in use view [Strategy.cc](https://github.com/SD-Group-17/RobocupPy/blob/master/Code_Base/behaviors/strategy.cc). the pyFunction.
-* the first command that must be run before using or calling python Scripts or PyObjects is Py_Initialize(). this function basically creates a python interpreter to run python commands and files
+* the first command that must be run before using or calling python Scripts or PyObjects is Py_Initialize(). this function basically creates a python interpreter to run python commands and files.
 * to run a python command use the following command PyRun_SimpleString("import os"). in this example here we are importing the os library to interpreter.
-* this is an example on how you can call on a python file. to check if it has imported you can put pModule in an if statement
+* this is an example on how you can call on a python file. to check if it has imported you can put pModule in an if statement.
 ```C++
 
 //calling on myFile.py 
